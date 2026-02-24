@@ -1,0 +1,36 @@
+version: "3"
+
+tasks:
+  install:
+    desc: "Install project"
+    silent: true
+    cmds:
+      - echo "## Installing ASDF plugins..."
+      - asdf plugin add nodejs || true
+      - echo "✅ Asdf plugins installed successfully"
+      - echo ""
+
+      - echo "## Installing ASDF tools..."
+      - asdf install
+      - echo "✅ Asdf tools installed successfully"
+      - echo ""
+
+      - task: build
+
+  build:
+    desc: "Build project"
+    silent: true
+    cmds:
+      - echo "## Building project..."
+      - npm run build
+      - echo "✅ Project built successfully"
+      - echo ""
+
+  test:
+    desc: "Test project"
+    silent: true
+    cmds:
+      - echo "## Testing project..."
+      - npm test
+      - echo "✅ Project test successfully"
+      - echo ""
