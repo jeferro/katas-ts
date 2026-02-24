@@ -21,4 +21,13 @@ describe('Tire Pressure Alarm', () => {
 
         expect(alarm.isOn()).toBeTruthy()
     })
+
+    it('should fail when pressure is less than 21', () => {
+        const sensor = new StubSensor(22)
+        const alarm = new Alarm(sensor)
+
+        alarm.check()
+
+        expect(alarm.isOn()).toBeTruthy()
+    })
 })
