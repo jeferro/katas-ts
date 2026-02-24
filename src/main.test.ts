@@ -56,4 +56,12 @@ describe('String Calculator', () => {
 
         expect(() => calculator.add("-1,-2,3")).toThrow('There are negative values: -1,-2')
     })
+
+    it('should ignore values greater than 1000', () => {
+        const calculator = new StringCalculator()
+
+        const result = calculator.add("2,1001")
+
+        expect(result).toBe(2)
+    })
 })

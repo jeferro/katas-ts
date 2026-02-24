@@ -18,7 +18,8 @@ export default class StringCalculator {
 
         const numbers = numbersStr.replace("\\n", delimiter)
             .split(delimiter)
-            .map(valueStr => parseInt(valueStr, 10));
+            .map(valueStr => parseInt(valueStr, 10))
+            .filter(number => number <= 1000);
 
         const negativeNumbers = numbers.filter(value => value < 0);
 
