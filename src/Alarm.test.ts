@@ -13,7 +13,7 @@ describe('Tire Pressure Alarm', () => {
         expect(alarm.isOn()).toBeFalsy()
     })
 
-    it('should fail when pressure is less than 17', () => {
+    it('should be on when pressure is less than 17', () => {
         const sensor = new StubSensor(16)
         const alarm = new Alarm(sensor)
 
@@ -22,12 +22,21 @@ describe('Tire Pressure Alarm', () => {
         expect(alarm.isOn()).toBeTruthy()
     })
 
-    it('should fail when pressure is less than 21', () => {
+    it('should be on when pressure is less than 21', () => {
         const sensor = new StubSensor(22)
         const alarm = new Alarm(sensor)
 
         alarm.check()
 
         expect(alarm.isOn()).toBeTruthy()
+    })
+
+    it('should be off when pressure is between 17 and 21', () => {
+        const sensor = new StubSensor(18)
+        const alarm = new Alarm(sensor)
+
+        alarm.check()
+
+        expect(alarm.isOn()).toBeFalsy()
     })
 })
