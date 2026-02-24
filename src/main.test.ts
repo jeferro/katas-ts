@@ -10,4 +10,12 @@ describe('String Calculator', () => {
 
         expect(result).toBe(0)
     })
+
+    it('should return value when there is a unique number in string', () => {
+        const calculator = new StringCalculator()
+
+        const result = calculator.add("1")
+
+        expect(result).toBe(1)
+    })
 })
