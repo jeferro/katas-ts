@@ -5,7 +5,8 @@ export default class StringCalculator {
             return 0
         }
 
-        return numbers.split(",")
+        return numbers.replace("\\n", ",")
+            .split(",")
             .map(valueStr => parseInt(valueStr, 10))
             .reduce((a, b) => a + b);
     }

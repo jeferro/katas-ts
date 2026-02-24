@@ -34,4 +34,12 @@ describe('String Calculator', () => {
 
         expect(result).toBe(6)
     })
+
+    it('should return sum of all numbers in different lines', () => {
+        const calculator = new StringCalculator()
+
+        const result = calculator.add("1\\n2,3")
+
+        expect(result).toBe(6)
+    })
 })
