@@ -2,6 +2,7 @@ import {describe, it, expect} from 'vitest'
 
 import Alarm from './Alarm'
 import RandomSensor from "./RandomSensor";
+import StubSensor from "./StubSensor";
 
 describe('Tire Pressure Alarm', () => {
 
@@ -13,7 +14,7 @@ describe('Tire Pressure Alarm', () => {
     })
 
     it('should fail when pressure is less than 17', () => {
-        const sensor = new RandomSensor()
+        const sensor = new StubSensor(16)
         const alarm = new Alarm(sensor)
 
         alarm.check()
