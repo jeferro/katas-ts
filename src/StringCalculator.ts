@@ -1,6 +1,6 @@
 export default class StringCalculator {
 
-    private static readonly DELIMITER_PATTER = /^(?:\/\/\[?(.)\]?\n)?([\s\S]*)$/;
+    private static readonly DELIMITER_PATTER = /^(?:\/\/\[?(.+?)\]?\n)?([\s\S]*)$/;
 
     add(input: string): number {
         if (input === undefined || input === "") {

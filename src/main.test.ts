@@ -56,4 +56,10 @@ describe('String Calculator', () => {
 
         expect(result).toBe(3)
     })
+
+    it('should return sum of all numbers using delimiter (large length)', () => {
+        const result = calculator.add("//[***]\n1***2***3")
+
+        expect(result).toBe(6)
+    })
 })
