@@ -50,4 +50,10 @@ describe('String Calculator', () => {
 
         expect(result).toBe(3)
     })
+
+    it('should fail when there is a negative value', () => {
+        const calculator = new StringCalculator()
+
+        expect(() => calculator.add("-1,-2,3")).toThrow('There are negative values: -1,-2')
+    })
 })

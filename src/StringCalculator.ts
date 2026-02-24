@@ -14,11 +14,19 @@ export default class StringCalculator {
         }
 
         const delimiter = match[1] || ","
-        const numbers = match[2]
+        const numbersStr = match[2]
 
-        return numbers.replace("\\n", delimiter)
+        const numbers = numbersStr.replace("\\n", delimiter)
             .split(delimiter)
-            .map(valueStr => parseInt(valueStr, 10))
-            .reduce((a, b) => a + b);
+            .map(valueStr => parseInt(valueStr, 10));
+
+        const negativeNumbers = numbers.filter(value => value < 0);
+
+        if(negativeNumbers.length > 0){
+            throw new Error(`There are negative values: ${negativeNumbers.join(",")}`)
+        }
+
+
+        return numbers.reduce((a, b) => a + b);
     }
 }
