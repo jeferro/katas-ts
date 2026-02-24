@@ -50,4 +50,10 @@ describe('String Calculator', () => {
 
         expect(result).toBe(2)
     })
+
+    it('should return sum of all numbers using delimiter (branches)', () => {
+        const result = calculator.add("//[;]\n1;2")
+
+        expect(result).toBe(3)
+    })
 })
