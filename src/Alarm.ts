@@ -4,9 +4,10 @@ const LOW_PRESSURE_THRESHOLD = 17
 const HIGH_PRESSURE_THRESHOLD = 21
 
 export default class Alarm {
-    public sensor = new Sensor()
-
     private alarmOn = false
+
+    constructor(private sensor: Sensor) {
+    }
 
     check(): void {
         const psiPressureValue = this.sensor.popNextPressurePsiValue()
