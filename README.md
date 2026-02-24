@@ -2,9 +2,7 @@
 
 Repository of the katas I have done using Typescript.
 
-Each kata is in a different module:
-
-* --
+Each kata is in a different PR in the repository.
 
 
 
