@@ -1,7 +1,12 @@
 export class Dni {
-    static PATTERN = /^\d{8}[a-zA-Z]$/
+    private static readonly PATTERN = /^\d{8}[a-zA-Z]$/
 
-    static INVALID_LETTERS = ["U", "I", "O", "Ñ"]
+    private static readonly INVALID_LETTERS = ["U", "I", "O", "Ñ"]
+
+    private static readonly LETTERS = [
+        'T', 'R', 'W', 'A', 'G', 'M', 'Y', 'F', 'P', 'D', 'X', 'B',
+        'N', 'J', 'Z', 'S', 'Q', 'V', 'H', 'L', 'C', 'K', 'E'
+    ];
 
     private readonly code: number
 
@@ -19,6 +24,12 @@ export class Dni {
 
         if (Dni.INVALID_LETTERS.includes(this.letter)) {
             throw new Error(`DNI ${value} has an invalid letter: ${Dni.INVALID_LETTERS}`)
+        }
+
+        const expectedLetter = Dni.LETTERS[this.code % 23];
+
+        if(expectedLetter !== this.letter) {
+            throw new Error(`DNI ${value} has an invalid letter, expected ${expectedLetter}`)
         }
     }
 

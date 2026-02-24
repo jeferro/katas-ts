@@ -40,4 +40,8 @@ describe('DNI', () => {
     it('should fail because letter is Ñ', () => {
         expect(() => new Dni("04560732Ñ")).toThrow()
     })
+
+    it('should fail because letter is invalid', () => {
+        expect(() => new Dni("04560732A")).toThrow()
+    })
 })
