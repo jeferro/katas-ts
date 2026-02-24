@@ -4,9 +4,11 @@ import {Dni} from "./dni";
 describe('DNI', () => {
 
     it('should create dni', () => {
-        const dni = new Dni("04560732Q")
+        const value = "04560732Q"
+        const dni = new Dni(value)
 
         expect(dni).not.toBeUndefined()
+        expect(dni.toString()).toBe(value)
     })
 
     it('should fail because length is less than 9 characters', () => {

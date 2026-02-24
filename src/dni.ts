@@ -44,6 +44,8 @@ export class Dni {
     }
 
     toString(): string {
-        return `${this.code}${this.letter}`
+        const codeStr = this.code.toString().padStart(8, '0')
+
+        return `${codeStr}${this.letter}`
     }
 }
