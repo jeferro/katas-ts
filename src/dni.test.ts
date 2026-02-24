@@ -24,4 +24,20 @@ describe('DNI', () => {
     it('should fail because last position is a number', () => {
         expect(() => new Dni("045607321")).toThrow()
     })
+
+    it('should fail because letter is U', () => {
+        expect(() => new Dni("04560732U")).toThrow()
+    })
+
+    it('should fail because letter is I', () => {
+        expect(() => new Dni("04560732I")).toThrow()
+    })
+
+    it('should fail because letter is O', () => {
+        expect(() => new Dni("04560732O")).toThrow()
+    })
+
+    it('should fail because letter is Ñ', () => {
+        expect(() => new Dni("04560732Ñ")).toThrow()
+    })
 })

@@ -1,6 +1,8 @@
 export class Dni {
     static PATTERN = /^\d{8}[a-zA-Z]$/
 
+    static INVALID_LETTERS = ["U", "I", "O", "Ñ"]
+
     private code: number
 
     private letter: string
@@ -18,5 +20,9 @@ export class Dni {
         this.code = Number(codeStr)
 
         this.letter = value.slice(-1)
+
+        if(Dni.INVALID_LETTERS.includes(this.letter)) {
+            throw new Error("DNI " + value + " has an invalid letter: " + Dni.INVALID_LETTERS)
+        }
     }
 }
