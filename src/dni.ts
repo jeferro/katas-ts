@@ -1,5 +1,5 @@
 export class Dni {
-    private static readonly PATTERN = /^\d{8}[a-zA-Z]$/
+    private static readonly PATTERN = /^(\d{8})([A-Z])$/
 
     private static readonly INVALID_LETTERS = ["U", "I", "O", "Ñ"]
 
@@ -13,14 +13,15 @@ export class Dni {
     private readonly letter: string
 
     constructor(value: string) {
-        if (!Dni.PATTERN.test(value)) {
+        const cleanValue = value.trim().toUpperCase()
+        const match = cleanValue.match(Dni.PATTERN)
+
+        if (!match) {
             throw new Error(`DNI ${value} has a wrong format`)
         }
 
-        const codeStr = value.slice(0, 8)
-        this.code = Number(codeStr)
-
-        this.letter = value.slice(-1)
+        this.code = parseInt(match[1], 10)
+        this.letter = match[2]
 
         if (Dni.INVALID_LETTERS.includes(this.letter)) {
             throw new Error(`DNI ${value} has an invalid letter: ${Dni.INVALID_LETTERS}`)
@@ -29,7 +30,7 @@ export class Dni {
         const expectedLetter = Dni.LETTERS[this.code % 23];
 
         if(expectedLetter !== this.letter) {
-            throw new Error(`DNI ${value} has an invalid letter, expected ${expectedLetter}`)
+            throw new Error(`DNI ${value} has an wrong letter, expected ${expectedLetter}`)
         }
     }
 
