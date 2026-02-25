@@ -1,4 +1,5 @@
 import {Dessert} from "./Dessert";
+import {Decimal} from "decimal.js";
 
 export class Cupcake extends Dessert {
 
@@ -6,5 +7,7 @@ export class Cupcake extends Dessert {
         return 'Cupcake'
     }
 
-
+    public get price(): Decimal {
+        return Decimal(1)
+    }
 }
