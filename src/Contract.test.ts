@@ -35,10 +35,19 @@ describe('Contract', () => {
 
     it('add one vacational by year in enterprise', () => {
         let startDate = new Date(2019, 0, 1)
-        let birthDate = new Date(1966, 0, 26)
+        let birthDate = new Date(1989, 5, 9)
 
         const contract = new Contract("Laura Martinez", startDate, birthDate)
 
         expect(contract.vacations(testDate)).toBe(30)
+    })
+
+    it('add one vacational by 5 year in enterprise to employees who are 40 years old or more', () => {
+        let startDate = new Date(2014, 0, 1)
+        let birthDate = new Date(1966, 0, 26)
+
+        const contract = new Contract("Ana Gonzalez", startDate, birthDate)
+
+        expect(contract.vacations(testDate)).toBe(32)
     })
 })

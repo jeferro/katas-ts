@@ -12,6 +12,16 @@ export class Contract {
             return (testDate.getMonth() + 1) * 2
         }
 
-        return 24 + DateUtils.numYearBetween(testDate, this.startDate)
+        const age = DateUtils.numYearBetween(testDate, this.birthDate)
+        const numYearInEnterprise = DateUtils.numYearBetween(testDate, this.startDate)
+
+        const plusFirstRangeYears = numYearInEnterprise >= 6 ? 6 : numYearInEnterprise
+        let plusOtherRangeYears = 0
+
+        if(age >= 40){
+            plusOtherRangeYears = Math.trunc(numYearInEnterprise / 5)
+        }
+
+        return 24 + plusFirstRangeYears + plusOtherRangeYears
     }
 }
