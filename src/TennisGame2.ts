@@ -4,16 +4,13 @@ export class TennisGame2 implements TennisGame {
     p1Points: number = 0;
     p2Points: number = 0;
 
-    private player1Name: string;
-    private player2Name: string;
 
-    constructor(player1Name: string, player2Name: string) {
-        this.player1Name = player1Name;
-        this.player2Name = player2Name;
+    constructor(private readonly player1Name: string,
+                private readonly player2Name: string) {
     }
 
     wonPoint(player: string): void {
-        if (player === 'player1')
+        if (player === this.player1Name)
             this.p1Points++;
         else
             this.p2Points++;
@@ -25,7 +22,7 @@ export class TennisGame2 implements TennisGame {
         }
 
         const diffAbs = Math.abs(this.p1Points - this.p2Points)
-        const mostPointPlayer = this.p1Points >= this.p2Points ? 'player1' : 'player2'
+        const mostPointPlayer = this.p1Points >= this.p2Points ? this.player1Name : this.player2Name
 
         switch (diffAbs) {
             case 0:
