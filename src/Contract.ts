@@ -1,7 +1,8 @@
 export class Contract {
 
     constructor(private readonly name: string,
-                private readonly startDate: Date) {
+                private readonly startDate: Date,
+                private readonly birthDate: Date) {
     }
 
     vacations(testDate: Date) {
