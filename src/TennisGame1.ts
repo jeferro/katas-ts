@@ -46,11 +46,7 @@ export class TennisGame1 implements TennisGame {
       else score = 'Win for player2';
     }
     else {
-      for (let i = 1; i < 3; i++) {
-        if (i === 1) tempScore = this.m_score1;
-        else { score += '-'; tempScore = this.m_score2; }
-        score += this.mapScoreToDescription(tempScore);
-      }
+      score = `${this.mapScoreToDescription(this.m_score1)}-${this.mapScoreToDescription(this.m_score2)}`;
     }
     return score;
   }
