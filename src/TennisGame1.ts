@@ -20,24 +20,16 @@ export class TennisGame1 implements TennisGame {
 
   getScore(): string {
     let score: string = '';
-    let tempScore: number = 0;
-    if (this.m_score1 === this.m_score2) {
-      switch (this.m_score1) {
-        case 0:
-          score = 'Love-All';
-          break;
-        case 1:
-          score = 'Fifteen-All';
-          break;
-        case 2:
-          score = 'Thirty-All';
-          break;
-        default:
-          score = 'Deuce';
-          break;
 
+    if (this.playersAreTied()) {
+      if(this.m_score1 < 3){
+        score = `${this.mapScoreToDescription(this.m_score1)}-All`
+      }
+      else{
+        score = 'Deuce'
       }
     }
+
     else if (this.m_score1 >= 4 || this.m_score2 >= 4) {
       const minusResult: number = this.m_score1 - this.m_score2;
       if (minusResult === 1) score = 'Advantage player1';
@@ -49,6 +41,10 @@ export class TennisGame1 implements TennisGame {
       score = `${this.mapScoreToDescription(this.m_score1)}-${this.mapScoreToDescription(this.m_score2)}`;
     }
     return score;
+  }
+
+  private playersAreTied() {
+    return this.m_score1 === this.m_score2;
   }
 
   private mapScoreToDescription(tempScore: number) {
