@@ -1,6 +1,8 @@
 export class Frame {
     private static readonly MAX_PINS = 10
 
+    private bonus = 0
+
     constructor(private readonly attempt1: number,
                 private readonly attempt2: number) {
     }
@@ -23,6 +25,18 @@ export class Frame {
     }
 
     getTotalScore() {
-        return this.attempt1 + this.attempt2
+        return this.attempt1 + this.attempt2 + this.bonus
+    }
+
+    public get isSpare() : boolean {
+        return this.attempt1 + this.attempt2 === Frame.MAX_PINS
+    }
+
+    scoreSpare(attempt1: number) {
+        if(!this.isSpare) {
+            throw new Error(`Frame is not a spare`)
+        }
+
+        this.bonus = attempt1
     }
 }
