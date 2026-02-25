@@ -4,7 +4,7 @@ export class Contract {
 
     constructor(private readonly name: string,
                 private readonly startDate: Date,
-                private readonly birthDate: Date) {
+                private readonly birthDay: Date) {
     }
 
     vacations(testDate: Date) {
@@ -12,7 +12,7 @@ export class Contract {
             return (testDate.getMonth() + 1) * 2
         }
 
-        const age = DateUtils.numYearBetween(testDate, this.birthDate)
+        const age = DateUtils.numYearBetween(testDate, this.birthDay)
         const numYearInEnterprise = DateUtils.numYearBetween(testDate, this.startDate)
 
         const plusFirstRangeYears = numYearInEnterprise >= 6 ? 6 : numYearInEnterprise
