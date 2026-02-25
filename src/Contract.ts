@@ -5,6 +5,10 @@ export class Contract {
     }
 
     vacations(testDate: Date) {
-        return 24
+        if(this.startDate.getFullYear() < testDate.getFullYear()){
+            return 24
+        }
+
+        return (testDate.getMonth() + 1) * 2
     }
 }

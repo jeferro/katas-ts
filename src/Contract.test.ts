@@ -17,4 +17,10 @@ describe('Contract', () => {
 
         expect(contract.vacations(testDate)).toBe(26)
     })
+
+    it('double yearly vacations by worked month', () => {
+        const contract = new Contract("Juan Perez", new Date(2025, 0, 1))
+
+        expect(contract.vacations(testDate)).toBe(12)
+    })
 })
