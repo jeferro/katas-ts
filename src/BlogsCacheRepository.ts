@@ -2,9 +2,9 @@ import {TechBlogs} from "./TechBlogs"
 
 export class BlogsCacheRepository {
 
-    private static cache: string[] = []
+    private cache: string[] = []
 
-    static findAll(): string[] {
+    findAll(): string[] {
         // FIXME : only return blogs that start with a 'T'
 
         if (this.cache.length == 0) {

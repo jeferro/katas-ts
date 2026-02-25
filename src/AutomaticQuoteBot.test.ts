@@ -2,12 +2,14 @@ import {describe, it, expect} from 'vitest'
 import {AutomaticQuoteBot} from "./AutomaticQuoteBot"
 import {BlogAuctionTask} from "./BlogAuctionTask"
 import {mock} from "vitest-mock-extended"
+import {BlogsCacheRepository} from "./BlogsCacheRepository";
 
 describe('AutomaticQuoteBot', () => {
 
     const blogAuctionTask = mock<BlogAuctionTask>()
+    const blogsCacheRepository = new BlogsCacheRepository()
 
-    const automaticQuoteBot = new AutomaticQuoteBot(blogAuctionTask)
+    const automaticQuoteBot = new AutomaticQuoteBot(blogAuctionTask, blogsCacheRepository)
 
     it.beforeEach(() => {
         blogAuctionTask.priceAndPublish.mockClear()

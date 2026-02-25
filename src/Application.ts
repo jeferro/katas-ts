@@ -3,6 +3,7 @@ import {ProposalQuotePublisher} from "./proposal_publisher/ProposalQuotePublishe
 import {DateTimeService} from "./timeservice/DateTimeService";
 import {DataMarketStudyRetriever} from "./data_retriever/DataMarketStudyRetriever";
 import {BlogAuctionTask} from "./BlogAuctionTask";
+import {BlogsCacheRepository} from "./BlogsCacheRepository";
 
 
 export class Application {
@@ -12,9 +13,10 @@ export class Application {
         const timeService = new DateTimeService()
         const dataMarketStudyRetriever = new DataMarketStudyRetriever()
 
+        const blogsCacheRepository = new BlogsCacheRepository()
         const blogAuctionTask = new BlogAuctionTask(dataMarketStudyRetriever, timeService, proposalQuotePublisher)
 
-        const bot = new AutomaticQuoteBot(blogAuctionTask)
+        const bot = new AutomaticQuoteBot(blogAuctionTask, blogsCacheRepository)
 
         bot.sendAllQuotes("FAST")
     }
