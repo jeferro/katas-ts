@@ -16,8 +16,10 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@vitest/coverage-v8": "^4.0.18",
+    "@vitest/ui": "^4.0.18",
     "typescript": "^5.4.5",
     "vitest": "^4.0.18",
-    "@vitest/ui": "^4.0.18"
+    "vitest-mock-extended": "^3.1.0"
   }
 }
