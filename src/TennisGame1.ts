@@ -30,17 +30,20 @@ export class TennisGame1 implements TennisGame {
       }
     }
 
-    else if (this.m_score1 >= 4 || this.m_score2 >= 4) {
-      const minusResult: number = this.m_score1 - this.m_score2;
-      if (minusResult === 1) score = 'Advantage player1';
-      else if (minusResult === -1) score = 'Advantage player2';
-      else if (minusResult >= 2) score = 'Win for player1';
-      else score = 'Win for player2';
+    else if (this.somePlayerHasMore3Points()) {
+      const scoreDif = Math.abs(this.m_score1 - this.m_score2)
+      const playerName = this.m_score1 > this.m_score2 ? 'player1' : 'player2'
+
+      score = scoreDif === 1 ? `Advantage ${playerName}` : `Win for ${playerName}`
     }
     else {
       score = `${this.mapScoreToDescription(this.m_score1)}-${this.mapScoreToDescription(this.m_score2)}`;
     }
     return score;
+  }
+
+  private somePlayerHasMore3Points() {
+    return this.m_score1 >= 4 || this.m_score2 >= 4;
   }
 
   private playersAreTied() {
