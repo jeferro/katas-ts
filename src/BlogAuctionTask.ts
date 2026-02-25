@@ -1,14 +1,13 @@
-import {MarketStudyVendor} from "../lib/MarketStudyVendor"
 import {ProposalPublisher} from "./proposal_publisher/ProposalPublisher";
+import {DataRetriever} from "./data_retriever/DataRetriever";
 
 export class BlogAuctionTask {
-    private marketDataRetriever: MarketStudyVendor = new MarketStudyVendor
-
-    constructor(private proposalPublisher: ProposalPublisher) {
+    constructor(private dataRetriever: DataRetriever,
+                private proposalPublisher: ProposalPublisher) {
     }
 
     priceAndPublish(blog: string, mode: string) {
-        const avgPrice = this.marketDataRetriever.averagePrice(blog)
+        const avgPrice = this.dataRetriever.averagePrice(blog)
 
         // FIXME should actually be +2 not +1
 
