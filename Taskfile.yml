@@ -15,15 +15,13 @@ tasks:
       - echo "✅ Asdf tools installed successfully"
       - echo ""
 
-      - task: build
-
-  build:
-    desc: "Build project"
+  compile:
+    desc: "Compile project"
     silent: true
     cmds:
-      - echo "## Building project..."
+      - echo "## Compiling project..."
       - npm run build
-      - echo "✅ Project built successfully"
+      - echo "✅ Project compiled successfully"
       - echo ""
 
   test:

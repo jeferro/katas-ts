@@ -1,0 +1,49 @@
+
+name: 'PR checker'
+
+on:
+  pull_request:
+    types:
+      - opened
+      - synchronize
+      - reopened
+
+jobs:
+
+  compile:
+    name: Compile
+    runs-on: ubuntu-latest
+    env:
+      # disable default JVM in container
+      JAVA_HOME: ""
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install Tools
+        uses: ./.github/actions/tools-install
+
+      - name: Install dependencies
+        run: npm i
+
+      - name: Compile
+        run: task compile
+
+  test:
+    name: Test
+    runs-on: ubuntu-latest
+    env:
+      # disable default JVM in container
+      JAVA_HOME: ""
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install Tools
+        uses: ./.github/actions/tools-install
+
+      - name: Install dependencies
+        run: npm i
+
+      - name: Test
+        run: task test
