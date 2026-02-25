@@ -1,5 +1,6 @@
 import {Dessert} from "../Dessert";
 import {Topping} from "./Topping";
+import {Decimal} from "decimal.js";
 
 export class Peanuts extends Topping {
 
@@ -9,6 +10,12 @@ export class Peanuts extends Topping {
 
     public get name(): string {
         return `${super.name} with peanuts`
+    }
+
+    public get price(): Decimal {
+        const price = Decimal("0.2")
+
+        return super.price.add(price)
     }
 
 }

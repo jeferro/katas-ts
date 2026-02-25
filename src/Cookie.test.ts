@@ -48,4 +48,11 @@ describe('Cookie', () => {
 
         expect(cake.price).toStrictEqual(Decimal("2.1"))
     })
+
+    it('with peanuts should cost 2,2', () => {
+        const cookie = new Cookie()
+        const cake = new Peanuts(cookie)
+
+        expect(cake.price).toStrictEqual(Decimal("2.2"))
+    })
 })
