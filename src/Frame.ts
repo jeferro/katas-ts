@@ -32,11 +32,23 @@ export class Frame {
         return this.attempt1 + this.attempt2 === Frame.MAX_PINS
     }
 
+    public get isStrike() : boolean {
+        return this.attempt1 === Frame.MAX_PINS
+    }
+
     scoreSpare(attempt1: number) {
         if(!this.isSpare) {
             throw new Error(`Frame is not a spare`)
         }
 
         this.bonus = attempt1
+    }
+
+    scoreStrike(attempt1: number, attempt2: number) {
+        if(!this.isStrike) {
+            throw new Error(`Frame is not a strike`)
+        }
+
+        this.bonus = attempt1 + attempt2
     }
 }

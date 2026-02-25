@@ -16,6 +16,10 @@ export class BowlingPlayer {
             previousFrame.scoreSpare(attempt1)
         }
 
+        if(previousFrame && previousFrame.isStrike){
+            previousFrame.scoreStrike(attempt1, attempt2)
+        }
+
         this._currentFrame += 1
     }
 
