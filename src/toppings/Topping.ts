@@ -12,7 +12,7 @@ export class Topping extends Dessert {
     }
 
     public get price(): Decimal {
-        return Decimal(0)
+        return this._dessert.price
     }
 
 }

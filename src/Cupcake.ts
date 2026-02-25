@@ -8,6 +8,6 @@ export class Cupcake extends Dessert {
     }
 
     public get price(): Decimal {
-        return Decimal(1)
+        return Decimal("1")
     }
 }

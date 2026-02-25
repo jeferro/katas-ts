@@ -35,7 +35,7 @@ describe('Cookie', () => {
         expect(cake.name).toBe('Cookie with peanuts with chocolate')
     })
 
-    it('should has price 2', () => {
+    it('should cost 2', () => {
         const cake = new Cookie()
 
         expect(cake.price).toStrictEqual(Decimal(2))

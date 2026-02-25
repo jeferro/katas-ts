@@ -7,7 +7,7 @@ export class Cookie extends Dessert {
     }
 
     public get price(): Decimal {
-        return Decimal(2)
+        return Decimal("2")
     }
 
 }
