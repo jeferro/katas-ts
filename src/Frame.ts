@@ -8,11 +8,11 @@ export class Frame {
     }
 
     static create(attempt1: number, attempt2: number): Frame {
-        if(attempt1 < 0) {
+        if (attempt1 < 0) {
             throw new Error(`Attempt 1 can not be negative`)
         }
 
-        if(attempt2 < 0) {
+        if (attempt2 < 0) {
             throw new Error(`Attempt 2 can not be negative`)
         }
 
@@ -28,16 +28,20 @@ export class Frame {
         return this.attempt1 + this.attempt2 + this.bonus
     }
 
-    public get isSpare() : boolean {
+    public get isSpare(): boolean {
         return this.attempt1 + this.attempt2 === Frame.MAX_PINS
     }
 
-    public get isStrike() : boolean {
+    public get isStrike(): boolean {
         return this.attempt1 === Frame.MAX_PINS
     }
 
+    public get isSpareOrStrike(): boolean {
+        return this.isSpare || this.isStrike
+    }
+
     scoreSpare(attempt1: number) {
-        if(!this.isSpare) {
+        if (!this.isSpare) {
             throw new Error(`Frame is not a spare`)
         }
 
@@ -45,7 +49,7 @@ export class Frame {
     }
 
     scoreStrike(attempt1: number, attempt2: number) {
-        if(!this.isStrike) {
+        if (!this.isStrike) {
             throw new Error(`Frame is not a strike`)
         }
 

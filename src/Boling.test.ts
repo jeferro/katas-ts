@@ -59,4 +59,23 @@ describe('Bowling', () => {
 
         expect(() => bowlingPlayer.score(1, 1)).toThrowError()
     })
+
+    it('should extra score when previous frame was a spare', () => {
+        const bowlingPlayer = new BowlingPlayer()
+
+        bowlingPlayer.score(1, 1)
+        bowlingPlayer.score(1, 1)
+        bowlingPlayer.score(1, 1)
+        bowlingPlayer.score(1, 1)
+        bowlingPlayer.score(1, 1)
+        bowlingPlayer.score(1, 1)
+        bowlingPlayer.score(1, 1)
+        bowlingPlayer.score(1, 1)
+        bowlingPlayer.score(1, 1)
+        bowlingPlayer.score(1, 9)
+
+        bowlingPlayer.score(1, 0)
+
+        expect(bowlingPlayer.getTotalScore()).toBe(29)
+    })
 })
