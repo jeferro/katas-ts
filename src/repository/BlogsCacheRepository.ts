@@ -1,6 +1,7 @@
-import {TechBlogs} from "./TechBlogs"
+import {TechBlogs} from "../TechBlogs"
+import {BlogRepository} from "./BlogRepository";
 
-export class BlogsCacheRepository {
+export class BlogsCacheRepository implements BlogRepository {
 
     private cache: string[] = []
 

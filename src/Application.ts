@@ -3,7 +3,7 @@ import {ProposalQuotePublisher} from "./proposal_publisher/ProposalQuotePublishe
 import {DateTimeService} from "./timeservice/DateTimeService";
 import {DataMarketStudyRetriever} from "./data_retriever/DataMarketStudyRetriever";
 import {BlogAuctionTask} from "./BlogAuctionTask";
-import {BlogsCacheRepository} from "./BlogsCacheRepository";
+import {BlogsCacheRepository} from "./repository/BlogsCacheRepository";
 
 
 export class Application {

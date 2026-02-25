@@ -2,17 +2,24 @@ import {describe, it, expect} from 'vitest'
 import {AutomaticQuoteBot} from "./AutomaticQuoteBot"
 import {BlogAuctionTask} from "./BlogAuctionTask"
 import {mock} from "vitest-mock-extended"
-import {BlogsCacheRepository} from "./BlogsCacheRepository";
+import {BlogRepository} from "./repository/BlogRepository"
 
 describe('AutomaticQuoteBot', () => {
 
     const blogAuctionTask = mock<BlogAuctionTask>()
-    const blogsCacheRepository = new BlogsCacheRepository()
+    const blogsRepository = mock<BlogRepository>()
 
-    const automaticQuoteBot = new AutomaticQuoteBot(blogAuctionTask, blogsCacheRepository)
+    const automaticQuoteBot = new AutomaticQuoteBot(blogAuctionTask, blogsRepository)
 
     it.beforeEach(() => {
         blogAuctionTask.priceAndPublish.mockClear()
+        blogsRepository.findAll.mockReturnValue(["HackerNews",
+            "Reddit",
+            "TechCrunch",
+            "BuzzFeed",
+            "TheHuffPost",
+            "TMZ",
+            "GigaOM"])
     })
 
     it('should auction all blogs in mode SLOW', () => {
