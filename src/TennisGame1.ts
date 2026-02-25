@@ -9,7 +9,7 @@ export class TennisGame1 implements TennisGame {
     }
 
     wonPoint(playerName: string): void {
-        if (playerName === 'player1')
+        if (playerName === this.player1Name)
             this.m_score1 += 1
         else
             this.m_score2 += 1
@@ -26,7 +26,7 @@ export class TennisGame1 implements TennisGame {
 
         if (this.somePlayerHasMore3Points()) {
             const scoreDifAbs = Math.abs(this.m_score1 - this.m_score2)
-            const playerNameToShow = this.m_score1 > this.m_score2 ? 'player1' : 'player2'
+            const playerNameToShow = this.m_score1 > this.m_score2 ? this.player1Name : this.player2Name
 
             return scoreDifAbs === 1 ? `Advantage ${playerNameToShow}` : `Win for ${playerNameToShow}`
         }
