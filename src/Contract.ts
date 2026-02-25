@@ -4,7 +4,7 @@ export class Contract {
                 private readonly startDate: Date) {
     }
 
-    vacation(testDate: Date) {
+    vacations(testDate: Date) {
         return 24
     }
 }
