@@ -25,13 +25,13 @@ export class TennisGame2 implements TennisGame {
       return 'Win for player2';
     }
 
-    if (this.p1Points === this.p2Points && this.p1Points < 4) {
-      score = this.mapScoreToText(this.p1Points)
-      score += '-All';
+    if (this.p1Points === this.p2Points && this.p1Points < 3) {
+      return `${this.mapScoreToText(this.p1Points)}-All`
     }
 
-    if (this.p1Points === this.p2Points && this.p1Points >= 3)
-      score = 'Deuce';
+    if (this.p1Points === this.p2Points && this.p1Points >= 3) {
+      return 'Deuce';
+    }
 
     if (this.p1Points > 0 && this.p2Points === 0) {
       p1Text = this.mapScoreToText(this.p1Points)
