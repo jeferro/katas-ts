@@ -20,9 +20,6 @@ export class TennisGame2 implements TennisGame {
   }
 
   getScore(): string {
-    let p1Text = '';
-    let p2Text = '';
-
     if (this.p1Points >= 4 && (this.p1Points - this.p2Points) >= 2) {
       return 'Win for player1';
     }
@@ -47,9 +44,7 @@ export class TennisGame2 implements TennisGame {
       return 'Deuce';
     }
 
-    p1Text = this.mapScoreToText(this.p1Points)
-    p2Text = this.mapScoreToText(this.p2Points)
-    return p1Text + '-' + p2Text;
+    return `${this.mapScoreToText(this.p1Points)}-${this.mapScoreToText(this.p2Points)}`
   }
 
   private mapScoreToText(score: number): string {
