@@ -20,6 +20,14 @@ export class TennisGame2 implements TennisGame {
   }
 
   getScore(): string {
+    if (this.p1Points === this.p2Points && this.p1Points < 3) {
+      return `${this.mapScoreToText(this.p1Points)}-All`
+    }
+
+    if (this.p1Points === this.p2Points && this.p1Points >= 3) {
+      return 'Deuce';
+    }
+
     if (this.p1Points >= 4 && (this.p1Points - this.p2Points) >= 2) {
       return 'Win for player1';
     }
@@ -34,14 +42,6 @@ export class TennisGame2 implements TennisGame {
 
     if (this.p2Points > this.p1Points && this.p1Points >= 3) {
       return 'Advantage player2';
-    }
-
-    if (this.p1Points === this.p2Points && this.p1Points < 3) {
-      return `${this.mapScoreToText(this.p1Points)}-All`
-    }
-
-    if (this.p1Points === this.p2Points && this.p1Points >= 3) {
-      return 'Deuce';
     }
 
     return `${this.mapScoreToText(this.p1Points)}-${this.mapScoreToText(this.p2Points)}`
@@ -61,6 +61,6 @@ export class TennisGame2 implements TennisGame {
       return 'Forty'
 
     else
-      return ''
+      throw new Error(`Unknown score: ${score}`)
   }
 }
