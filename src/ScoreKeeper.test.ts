@@ -1,11 +1,11 @@
 import { describe, it, expect } from 'vitest'
 import {ScoreKeeper} from "./ScoreKeeper";
 
-describe('Example Test', () => {
+describe('ScoreKeeper', () => {
 
-    it('should create objects of class ScoreKeeper', () => {
+    it('should start at zero-zero value', () => {
         const scoreKeeper = new ScoreKeeper()
 
-        expect(scoreKeeper).not.toBeUndefined()
+        expect(scoreKeeper.getScore()).toBe("000:000")
     })
 })

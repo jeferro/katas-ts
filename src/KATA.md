@@ -21,3 +21,5 @@ String getScore()
 Rules
 
 The returned String always has seven characters. An example would be `000:000`
+
+Plus: Apply pattern observer to show display in real time
