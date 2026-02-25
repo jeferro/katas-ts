@@ -19,27 +19,22 @@ export class TennisGame1 implements TennisGame {
   }
 
   getScore(): string {
-    let score: string = '';
-
     if (this.playersAreTied()) {
       if(this.m_score1 < 3){
-        score = `${this.mapScoreToDescription(this.m_score1)}-All`
+        return `${this.mapScoreToDescription(this.m_score1)}-All`
       }
-      else{
-        score = 'Deuce'
-      }
+
+        return 'Deuce'
     }
 
-    else if (this.somePlayerHasMore3Points()) {
+    if (this.somePlayerHasMore3Points()) {
       const scoreDif = Math.abs(this.m_score1 - this.m_score2)
       const playerName = this.m_score1 > this.m_score2 ? 'player1' : 'player2'
 
-      score = scoreDif === 1 ? `Advantage ${playerName}` : `Win for ${playerName}`
+      return scoreDif === 1 ? `Advantage ${playerName}` : `Win for ${playerName}`
     }
-    else {
-      score = `${this.mapScoreToDescription(this.m_score1)}-${this.mapScoreToDescription(this.m_score2)}`;
-    }
-    return score;
+
+    return `${this.mapScoreToDescription(this.m_score1)}-${this.mapScoreToDescription(this.m_score2)}`;
   }
 
   private somePlayerHasMore3Points() {
