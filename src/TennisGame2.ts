@@ -15,8 +15,16 @@ export class TennisGame2 implements TennisGame {
   getScore(): string {
     let p1Text = '';
     let p2Text = '';
-
     let score: string = '';
+
+    if (this.p1Points >= 4 && (this.p1Points - this.p2Points) >= 2) {
+      return 'Win for player1';
+    }
+
+    if (this.p2Points >= 4 && (this.p2Points - this.p1Points) >= 2) {
+      return 'Win for player2';
+    }
+
     if (this.p1Points === this.p2Points && this.p1Points < 4) {
       score = this.mapScoreToText(this.p1Points)
       score += '-All';
@@ -56,12 +64,6 @@ export class TennisGame2 implements TennisGame {
       score = 'Advantage player2';
     }
 
-    if (this.p1Points >= 4 && this.p2Points >= 0 && (this.p1Points - this.p2Points) >= 2) {
-      score = 'Win for player1';
-    }
-    if (this.p2Points >= 4 && this.p1Points >= 0 && (this.p2Points - this.p1Points) >= 2) {
-      score = 'Win for player2';
-    }
     return score;
   }
 
