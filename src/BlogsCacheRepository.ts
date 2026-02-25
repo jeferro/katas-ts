@@ -1,9 +1,9 @@
 import {TechBlogs} from "./TechBlogs"
 
-export class AdSpace {
+export class BlogsCacheRepository {
     private static cache: string[] = []
 
-    static getAdSpaces(): string[] {
+    static findAll(): string[] {
         if (this.cache.length > 0) {
             return this.cache
         }
