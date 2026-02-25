@@ -7,7 +7,7 @@ describe('Contract', () => {
     const testDate = new Date(2025, 5, 1)
 
     it('each employee has 24 yearly vacations by default', () => {
-        const contract = new Contract("Marco Gil", new Date(2024, 0, 1))
+        const contract = new Contract("Marco Gil", new Date(2024, 7, 1))
 
         expect(contract.vacations(testDate)).toBe(24)
     })
@@ -22,5 +22,11 @@ describe('Contract', () => {
         const contract = new Contract("Juan Perez", new Date(2025, 0, 1))
 
         expect(contract.vacations(testDate)).toBe(12)
+    })
+
+    it('add one vacational by year in enterprise', () => {
+        const contract = new Contract("Laura Martinez", new Date(2019, 0, 1))
+
+        expect(contract.vacations(testDate)).toBe(30)
     })
 })

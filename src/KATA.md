@@ -16,10 +16,10 @@ La aplicación recibe una fecha (eg: 01-06-2025) y muestra el nombre de cada emp
 
 | Nombre         | Fecha de nacimiento | Inicio de contrato | Contrato especial       | Razón      |
 |----------------|---------------------|--------------------|-------------------------|------------|
-| Marco Gil      | 26.01.2001          | 01.01.2024         | No                      | Caso 1     |
+| Marco Gil      | 26.01.2001          | 01.08.2024         | No                      | Caso 1     |
 | Marco Sanchez  | 12.07.1999          | 01.01.2024         | Si (26 días vacaciones) | Caso 2     |
 | Juan Perez     | 30.12.1997          | 01.01.2025         | No                      | Caso 3     |
-| Laura Martinez | 09.06.1989          | 01.01.2018         | No                      | Caso 4     |
+| Laura Martinez | 09.06.1989          | 01.01.2019         | No                      | Caso 4     |
 | Ana Gonzalez   | 26.01.1966          | 01.01.2014         | No                      | Caso 4 y 5 |
 
 Usando el año **2025** como entrada (suponiendo `01-06-2025`) deberíamos obtener:
