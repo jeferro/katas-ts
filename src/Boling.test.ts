@@ -1,11 +1,11 @@
 import { describe, it, expect } from 'vitest'
-import {Bowling} from "./Bowling";
+import {BowlingPlayer} from "./BowlingPlayer";
 
 describe('Bowling', () => {
 
     it('should pass', () => {
-        const bowling = new Bowling()
+        const bowlingPlayer = new BowlingPlayer()
 
-        expect(bowling).not.toBeUndefined()
+        expect(bowlingPlayer).not.toBeUndefined()
     })
 })

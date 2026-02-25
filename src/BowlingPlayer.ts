@@ -1,5 +1,5 @@
 import {Frame} from "./Frame";
 
-export class Bowling {
+export class BowlingPlayer {
     private _frames: Frame[] = []
 }
