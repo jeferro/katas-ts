@@ -8,4 +8,11 @@ describe('ScoreKeeper', () => {
 
         expect(scoreKeeper.getScore()).toBe("000:000")
     })
+
+    it('should increase 1 to team A', () => {
+        const scoreKeeper = new ScoreKeeper()
+        scoreKeeper.scoreTeamA1()
+
+        expect(scoreKeeper.getScore()).toBe("001:000")
+    })
 })
