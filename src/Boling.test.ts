@@ -7,7 +7,7 @@ describe('Bowling', () => {
         const bowlingPlayer = new BowlingPlayer()
         bowlingPlayer.score(1, 8)
 
-        expect(bowlingPlayer).not.toBeUndefined()
+        expect(bowlingPlayer.getTotalScore()).toBe(9)
     })
 
     it('should fail when attempt 1 is negative', () => {

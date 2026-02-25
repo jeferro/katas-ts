@@ -22,4 +22,7 @@ export class Frame {
         return new Frame(attempt1, attempt2)
     }
 
+    getTotalScore() {
+        return this.attempt1 + this.attempt2
+    }
 }

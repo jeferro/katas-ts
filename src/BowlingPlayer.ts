@@ -10,4 +10,9 @@ export class BowlingPlayer {
 
         this._currentFrame += 1
     }
+
+    getTotalScore(): number {
+        return this._frames.map(frame => frame.getTotalScore())
+            .reduce((a, b) => a + b, 0)
+    }
 }
