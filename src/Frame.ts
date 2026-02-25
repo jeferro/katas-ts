@@ -1,12 +1,25 @@
 export class Frame {
-    private _attempt1 = 0
-    private _attempt2 = 0
+    private static readonly MAX_PINS = 10
 
-    public get attempt1() {
-        return this._attempt1
+    constructor(private readonly attempt1: number,
+                private readonly attempt2: number) {
     }
 
-    public get attempt2() {
-        return this._attempt2
+    static create(attempt1: number, attempt2: number): Frame {
+        if(attempt1 < 0) {
+            throw new Error(`Attempt 1 can not be negative`)
+        }
+
+        if(attempt2 < 0) {
+            throw new Error(`Attempt 2 can not be negative`)
+        }
+
+        if (attempt1 + attempt2 > Frame.MAX_PINS) {
+            throw new Error(`The sum of attempts ${attempt1} and ${attempt2} `
+                + `is greater than ${Frame.MAX_PINS}`)
+        }
+
+        return new Frame(attempt1, attempt2)
     }
+
 }
