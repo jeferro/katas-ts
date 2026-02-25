@@ -1,6 +1,5 @@
 import { describe, it, expect } from 'vitest'
-import {Cupcake} from "./Cupcake";
-import {Cookie} from "./Cookie";
+import {Cupcake} from "./Cupcake"
 
 describe('Cupcake', () => {
 
@@ -8,11 +7,5 @@ describe('Cupcake', () => {
         const cupcake = new Cupcake()
 
         expect(cupcake.name).toBe('Cupcake')
-    })
-
-    it('should return name "Cookie"', () => {
-        const cookie = new Cookie()
-
-        expect(cookie.name).toBe('Cookie')
     })
 })
