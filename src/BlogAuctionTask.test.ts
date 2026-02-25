@@ -33,4 +33,20 @@ describe('BlogAuctionTask', () => {
             expect(proposal).toMatchSnapshot()
         }
     )
+
+    it.each(combinations)(
+        'should generate snapshot to blog (odd proposal): %s and mode: %s',
+        (blog, mode) => {
+
+            vi.spyOn(timeService, 'now').mockReturnValue(new Date('2026-01-15T12:00:00Z'))
+
+            dataRetriever.averagePrice.mockReturnValue(11);
+
+            blogAuctionTask.priceAndPublish(blog, mode)
+
+            const proposal = proposalPublisher.publish.mock.calls[0][0]
+
+            expect(proposal).toMatchSnapshot()
+        }
+    )
 })

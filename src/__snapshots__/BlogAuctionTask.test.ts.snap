@@ -1,5 +1,75 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
+exports[`BlogAuctionTask > should generate snapshot to blog (odd proposal): BuzzFeed and mode: FAST 1`] = `844.1999999999999`;
+
+exports[`BlogAuctionTask > should generate snapshot to blog (odd proposal): BuzzFeed and mode: MEDIUM 1`] = `844.1999999999999`;
+
+exports[`BlogAuctionTask > should generate snapshot to blog (odd proposal): BuzzFeed and mode: OTHER 1`] = `844.1999999999999`;
+
+exports[`BlogAuctionTask > should generate snapshot to blog (odd proposal): BuzzFeed and mode: SLOW 1`] = `844.1999999999999`;
+
+exports[`BlogAuctionTask > should generate snapshot to blog (odd proposal): BuzzFeed and mode: ULTRAFAST 1`] = `844.1999999999999`;
+
+exports[`BlogAuctionTask > should generate snapshot to blog (odd proposal): GigaOM and mode: FAST 1`] = `844.1999999999999`;
+
+exports[`BlogAuctionTask > should generate snapshot to blog (odd proposal): GigaOM and mode: MEDIUM 1`] = `844.1999999999999`;
+
+exports[`BlogAuctionTask > should generate snapshot to blog (odd proposal): GigaOM and mode: OTHER 1`] = `844.1999999999999`;
+
+exports[`BlogAuctionTask > should generate snapshot to blog (odd proposal): GigaOM and mode: SLOW 1`] = `844.1999999999999`;
+
+exports[`BlogAuctionTask > should generate snapshot to blog (odd proposal): GigaOM and mode: ULTRAFAST 1`] = `844.1999999999999`;
+
+exports[`BlogAuctionTask > should generate snapshot to blog (odd proposal): HackerNews and mode: FAST 1`] = `844.1999999999999`;
+
+exports[`BlogAuctionTask > should generate snapshot to blog (odd proposal): HackerNews and mode: MEDIUM 1`] = `844.1999999999999`;
+
+exports[`BlogAuctionTask > should generate snapshot to blog (odd proposal): HackerNews and mode: OTHER 1`] = `844.1999999999999`;
+
+exports[`BlogAuctionTask > should generate snapshot to blog (odd proposal): HackerNews and mode: SLOW 1`] = `844.1999999999999`;
+
+exports[`BlogAuctionTask > should generate snapshot to blog (odd proposal): HackerNews and mode: ULTRAFAST 1`] = `844.1999999999999`;
+
+exports[`BlogAuctionTask > should generate snapshot to blog (odd proposal): Reddit and mode: FAST 1`] = `844.1999999999999`;
+
+exports[`BlogAuctionTask > should generate snapshot to blog (odd proposal): Reddit and mode: MEDIUM 1`] = `844.1999999999999`;
+
+exports[`BlogAuctionTask > should generate snapshot to blog (odd proposal): Reddit and mode: OTHER 1`] = `844.1999999999999`;
+
+exports[`BlogAuctionTask > should generate snapshot to blog (odd proposal): Reddit and mode: SLOW 1`] = `844.1999999999999`;
+
+exports[`BlogAuctionTask > should generate snapshot to blog (odd proposal): Reddit and mode: ULTRAFAST 1`] = `844.1999999999999`;
+
+exports[`BlogAuctionTask > should generate snapshot to blog (odd proposal): TMZ and mode: FAST 1`] = `844.1999999999999`;
+
+exports[`BlogAuctionTask > should generate snapshot to blog (odd proposal): TMZ and mode: MEDIUM 1`] = `844.1999999999999`;
+
+exports[`BlogAuctionTask > should generate snapshot to blog (odd proposal): TMZ and mode: OTHER 1`] = `844.1999999999999`;
+
+exports[`BlogAuctionTask > should generate snapshot to blog (odd proposal): TMZ and mode: SLOW 1`] = `844.1999999999999`;
+
+exports[`BlogAuctionTask > should generate snapshot to blog (odd proposal): TMZ and mode: ULTRAFAST 1`] = `844.1999999999999`;
+
+exports[`BlogAuctionTask > should generate snapshot to blog (odd proposal): TechCrunch and mode: FAST 1`] = `844.1999999999999`;
+
+exports[`BlogAuctionTask > should generate snapshot to blog (odd proposal): TechCrunch and mode: MEDIUM 1`] = `844.1999999999999`;
+
+exports[`BlogAuctionTask > should generate snapshot to blog (odd proposal): TechCrunch and mode: OTHER 1`] = `844.1999999999999`;
+
+exports[`BlogAuctionTask > should generate snapshot to blog (odd proposal): TechCrunch and mode: SLOW 1`] = `844.1999999999999`;
+
+exports[`BlogAuctionTask > should generate snapshot to blog (odd proposal): TechCrunch and mode: ULTRAFAST 1`] = `844.1999999999999`;
+
+exports[`BlogAuctionTask > should generate snapshot to blog (odd proposal): TheHuffPost and mode: FAST 1`] = `844.1999999999999`;
+
+exports[`BlogAuctionTask > should generate snapshot to blog (odd proposal): TheHuffPost and mode: MEDIUM 1`] = `844.1999999999999`;
+
+exports[`BlogAuctionTask > should generate snapshot to blog (odd proposal): TheHuffPost and mode: OTHER 1`] = `844.1999999999999`;
+
+exports[`BlogAuctionTask > should generate snapshot to blog (odd proposal): TheHuffPost and mode: SLOW 1`] = `844.1999999999999`;
+
+exports[`BlogAuctionTask > should generate snapshot to blog (odd proposal): TheHuffPost and mode: ULTRAFAST 1`] = `844.1999999999999`;
+
 exports[`BlogAuctionTask > should generate snapshot to blog: BuzzFeed and mode: FAST 1`] = `844.1999999999999`;
 
 exports[`BlogAuctionTask > should generate snapshot to blog: BuzzFeed and mode: MEDIUM 1`] = `844.1999999999999`;
