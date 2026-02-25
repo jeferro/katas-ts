@@ -18,60 +18,33 @@ export class TennisGame2 implements TennisGame {
 
     let score: string = '';
     if (this.p1Points === this.p2Points && this.p1Points < 4) {
-      if (this.p1Points === 0)
-        score = 'Love';
-      if (this.p1Points === 1)
-        score = 'Fifteen';
-      if (this.p1Points === 2)
-        score = 'Thirty';
+      score = this.mapScoreToText(this.p1Points)
       score += '-All';
     }
+
     if (this.p1Points === this.p2Points && this.p1Points >= 3)
       score = 'Deuce';
 
     if (this.p1Points > 0 && this.p2Points === 0) {
-      if (this.p1Points === 1)
-        p1Text = 'Fifteen';
-      if (this.p1Points === 2)
-        p1Text = 'Thirty';
-      if (this.p1Points === 3)
-        p1Text = 'Forty';
-
+      p1Text = this.mapScoreToText(this.p1Points)
       p2Text = 'Love';
       score = p1Text + '-' + p2Text;
     }
-    if (this.p2Points > 0 && this.p1Points === 0) {
-      if (this.p2Points === 1)
-        p2Text = 'Fifteen';
-      if (this.p2Points === 2)
-        p2Text = 'Thirty';
-      if (this.p2Points === 3)
-        p2Text = 'Forty';
 
+    if (this.p2Points > 0 && this.p1Points === 0) {
       p1Text = 'Love';
+      p2Text = this.mapScoreToText(this.p2Points)
       score = p1Text + '-' + p2Text;
     }
 
     if (this.p1Points > this.p2Points && this.p1Points < 4) {
-      if (this.p1Points === 2)
-        p1Text = 'Thirty';
-      if (this.p1Points === 3)
-        p1Text = 'Forty';
-      if (this.p2Points === 1)
-        p2Text = 'Fifteen';
-      if (this.p2Points === 2)
-        p2Text = 'Thirty';
+      p1Text = this.mapScoreToText(this.p1Points)
+      p2Text = this.mapScoreToText(this.p2Points)
       score = p1Text + '-' + p2Text;
     }
     if (this.p2Points > this.p1Points && this.p2Points < 4) {
-      if (this.p2Points === 2)
-        p2Text = 'Thirty';
-      if (this.p2Points === 3)
-        p2Text = 'Forty';
-      if (this.p1Points === 1)
-        p1Text = 'Fifteen';
-      if (this.p1Points === 2)
-        p1Text = 'Thirty';
+      p1Text = this.mapScoreToText(this.p1Points)
+      p2Text = this.mapScoreToText(this.p2Points)
       score = p1Text + '-' + p2Text;
     }
 
@@ -91,6 +64,24 @@ export class TennisGame2 implements TennisGame {
     }
     return score;
   }
+
+  private mapScoreToText(score: number): string {
+    if (score === 0)
+      return 'Love'
+
+    if (score=== 1)
+      return 'Fifteen'
+
+    if (score === 2)
+      return 'Thirty'
+
+    if (score === 3)
+      return 'Forty'
+
+    else
+      return ''
+  }
+
   wonPoint(player: string): void {
     if (player === 'player1')
       this.p1Points++;
