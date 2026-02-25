@@ -1,8 +1,10 @@
 import {ProposalPublisher} from "./proposal_publisher/ProposalPublisher";
 import {DataRetriever} from "./data_retriever/DataRetriever";
+import {TimeService} from "./timeservice/TimeService";
 
 export class BlogAuctionTask {
     constructor(private dataRetriever: DataRetriever,
+                private timeService: TimeService,
                 private proposalPublisher: ProposalPublisher) {
     }
 
@@ -33,7 +35,11 @@ export class BlogAuctionTask {
         if (proposal % 2 === 0) {
             proposal = 3.14 * proposal
         } else {
-            proposal = 3.15 * timeFactor * Math.round((new Date().getTime() - new Date(new Date().getFullYear(), 0, 0).getTime()) / 10000000)
+            const now = this.timeService.now()
+            const lastDayOfPastYear = this.timeService.lastDayOfPastYear()
+            const diffTime = now.getTime() - lastDayOfPastYear.getTime()
+
+            proposal = 3.15 * timeFactor * Math.round(diffTime / 10000000)
         }
 
         this.proposalPublisher.publish(proposal)
