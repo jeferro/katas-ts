@@ -43,4 +43,20 @@ describe('Bowling', () => {
 
         expect(bowlingPlayer.getTotalScore()).toBe(26)
     })
+
+    it('should allow only 10 frames', () => {
+        const bowlingPlayer = new BowlingPlayer()
+        bowlingPlayer.score(1, 1)
+        bowlingPlayer.score(1, 1)
+        bowlingPlayer.score(1, 1)
+        bowlingPlayer.score(1, 1)
+        bowlingPlayer.score(1, 1)
+        bowlingPlayer.score(1, 1)
+        bowlingPlayer.score(1, 1)
+        bowlingPlayer.score(1, 1)
+        bowlingPlayer.score(1, 1)
+        bowlingPlayer.score(1, 1)
+
+        expect(() => bowlingPlayer.score(1, 1)).toThrowError()
+    })
 })
