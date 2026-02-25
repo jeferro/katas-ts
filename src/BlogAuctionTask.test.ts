@@ -1,7 +1,8 @@
 import {describe, it, expect, vi} from 'vitest'
+import { mock } from 'vitest-mock-extended'
 import {BlogAuctionTask} from './BlogAuctionTask'
-import {QuotePublisher} from "../lib/QuotePublisher";
-import {MarketStudyVendor} from "../lib/MarketStudyVendor";
+import {MarketStudyVendor} from "../lib/MarketStudyVendor"
+import {ProposalPublisher} from "./proposal_publisher/ProposalPublisher"
 
 describe('BlogAuctionTask', () => {
 
@@ -10,7 +11,9 @@ describe('BlogAuctionTask', () => {
 
     const combinations = blogs.flatMap(blog => modes.map(mode => [blog, mode]))
 
-    const task = new BlogAuctionTask()
+    const proposalPublisher = mock<ProposalPublisher>();
+
+    const blogAuctionTask = new BlogAuctionTask(proposalPublisher)
 
     it.each(combinations)(
         'should generate snaphost to blog: %s and mode: %s',
@@ -21,11 +24,9 @@ describe('BlogAuctionTask', () => {
 
             vi.spyOn(MarketStudyVendor.prototype, 'averagePrice').mockReturnValue(12)
 
-            const publishSpy = vi.spyOn(QuotePublisher, 'publish').mockReturnValue()
+            blogAuctionTask.priceAndPublish(blog, mode)
 
-            task.priceAndPublish(blog, mode)
-
-            const proposal = publishSpy.mock.calls[0][0]
+            const proposal = proposalPublisher.publish.mock.calls[0][0]
 
             expect(proposal).toMatchSnapshot()
 

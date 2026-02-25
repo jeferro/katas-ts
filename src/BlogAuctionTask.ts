@@ -1,8 +1,11 @@
 import {MarketStudyVendor} from "../lib/MarketStudyVendor"
-import {QuotePublisher} from "../lib/QuotePublisher"
+import {ProposalPublisher} from "./proposal_publisher/ProposalPublisher";
 
 export class BlogAuctionTask {
     private marketDataRetriever: MarketStudyVendor = new MarketStudyVendor
+
+    constructor(private proposalPublisher: ProposalPublisher) {
+    }
 
     priceAndPublish(blog: string, mode: string) {
         const avgPrice = this.marketDataRetriever.averagePrice(blog)
@@ -34,6 +37,6 @@ export class BlogAuctionTask {
             proposal = 3.15 * timeFactor * Math.round((new Date().getTime() - new Date(new Date().getFullYear(), 0, 0).getTime()) / 10000000)
         }
 
-        QuotePublisher.publish(proposal)
+        this.proposalPublisher.publish(proposal)
     }
 }
