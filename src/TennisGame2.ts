@@ -4,9 +4,6 @@ export class TennisGame2 implements TennisGame {
   p1Points: number = 0;
   p2Points: number = 0;
 
-  p1Res: string = '';
-  p2Res: string = '';
-
   private player1Name: string;
   private player2Name: string;
 
@@ -16,6 +13,9 @@ export class TennisGame2 implements TennisGame {
   }
 
   getScore(): string {
+    let p1Text = '';
+    let p2Text = '';
+
     let score: string = '';
     if (this.p1Points === this.p2Points && this.p1Points < 4) {
       if (this.p1Points === 0)
@@ -31,48 +31,48 @@ export class TennisGame2 implements TennisGame {
 
     if (this.p1Points > 0 && this.p2Points === 0) {
       if (this.p1Points === 1)
-        this.p1Res = 'Fifteen';
+        p1Text = 'Fifteen';
       if (this.p1Points === 2)
-        this.p1Res = 'Thirty';
+        p1Text = 'Thirty';
       if (this.p1Points === 3)
-        this.p1Res = 'Forty';
+        p1Text = 'Forty';
 
-      this.p2Res = 'Love';
-      score = this.p1Res + '-' + this.p2Res;
+      p2Text = 'Love';
+      score = p1Text + '-' + p2Text;
     }
     if (this.p2Points > 0 && this.p1Points === 0) {
       if (this.p2Points === 1)
-        this.p2Res = 'Fifteen';
+        p2Text = 'Fifteen';
       if (this.p2Points === 2)
-        this.p2Res = 'Thirty';
+        p2Text = 'Thirty';
       if (this.p2Points === 3)
-        this.p2Res = 'Forty';
+        p2Text = 'Forty';
 
-      this.p1Res = 'Love';
-      score = this.p1Res + '-' + this.p2Res;
+      p1Text = 'Love';
+      score = p1Text + '-' + p2Text;
     }
 
     if (this.p1Points > this.p2Points && this.p1Points < 4) {
       if (this.p1Points === 2)
-        this.p1Res = 'Thirty';
+        p1Text = 'Thirty';
       if (this.p1Points === 3)
-        this.p1Res = 'Forty';
+        p1Text = 'Forty';
       if (this.p2Points === 1)
-        this.p2Res = 'Fifteen';
+        p2Text = 'Fifteen';
       if (this.p2Points === 2)
-        this.p2Res = 'Thirty';
-      score = this.p1Res + '-' + this.p2Res;
+        p2Text = 'Thirty';
+      score = p1Text + '-' + p2Text;
     }
     if (this.p2Points > this.p1Points && this.p2Points < 4) {
       if (this.p2Points === 2)
-        this.p2Res = 'Thirty';
+        p2Text = 'Thirty';
       if (this.p2Points === 3)
-        this.p2Res = 'Forty';
+        p2Text = 'Forty';
       if (this.p1Points === 1)
-        this.p1Res = 'Fifteen';
+        p1Text = 'Fifteen';
       if (this.p1Points === 2)
-        this.p1Res = 'Thirty';
-      score = this.p1Res + '-' + this.p2Res;
+        p1Text = 'Thirty';
+      score = p1Text + '-' + p2Text;
     }
 
     if (this.p1Points > this.p2Points && this.p2Points >= 3) {
