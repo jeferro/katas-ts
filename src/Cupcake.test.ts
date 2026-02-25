@@ -3,9 +3,9 @@ import {Cupcake} from "./Cupcake";
 
 describe('Cupcake', () => {
 
-    it('should create object', () => {
+    it('should return name "Cupcake"', () => {
         const cupcake = new Cupcake()
 
-        expect(cupcake).not.toBeUndefined()
+        expect(cupcake.name).toBe('Cupcake')
     })
 })
