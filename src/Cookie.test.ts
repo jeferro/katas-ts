@@ -4,8 +4,8 @@ import {Cookie} from "./Cookie"
 describe('Cookie', () => {
 
     it('should return name "Cookie"', () => {
-        const cookie = new Cookie()
+        const cake = new Cookie()
 
-        expect(cookie.name).toBe('Cookie')
+        expect(cake.name).toBe('Cookie')
     })
 })

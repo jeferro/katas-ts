@@ -1,11 +1,19 @@
 import { describe, it, expect } from 'vitest'
 import {Cupcake} from "./Cupcake"
+import {Chocolate} from "./toppings/Chocolate";
 
 describe('Cupcake', () => {
 
     it('should return name "Cupcake"', () => {
-        const cupcake = new Cupcake()
+        const cake = new Cupcake()
 
-        expect(cupcake.name).toBe('Cupcake')
+        expect(cake.name).toBe('Cupcake')
+    })
+
+    it('should return name "Cupcake with chocolate"', () => {
+        const cupcake = new Cupcake()
+        const cake = new Chocolate(cupcake)
+
+        expect(cake.name).toBe('Cupcake with chocolate')
     })
 })
