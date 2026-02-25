@@ -25,4 +25,12 @@ describe('Cookie', () => {
 
         expect(cake.name).toBe('Cookie with chocolate with peanuts')
     })
+
+    it('should return name "Cookie with peanuts with chocolate"', () => {
+        const cookie = new Cookie()
+        const peanuts = new Peanuts(cookie)
+        const cake = new Chocolate(peanuts)
+
+        expect(cake.name).toBe('Cookie with peanuts with chocolate')
+    })
 })
