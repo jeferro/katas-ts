@@ -1,4 +1,4 @@
-import { TennisGame } from './TennisGame';
+import {TennisGame} from './TennisGame';
 
 export class TennisGame2 implements TennisGame {
   p1Points: number = 0;
@@ -91,19 +91,10 @@ export class TennisGame2 implements TennisGame {
     }
     return score;
   }
-
-  P1Score(): void {
-    this.p1Points++;
-  }
-
-  P2Score(): void {
-    this.p2Points++;
-  }
-
   wonPoint(player: string): void {
     if (player === 'player1')
-      this.P1Score();
+      this.p1Points++;
     else
-      this.P2Score();
+      this.p2Points++;
   }
 }
