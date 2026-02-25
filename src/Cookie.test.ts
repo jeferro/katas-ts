@@ -2,7 +2,7 @@ import { describe, it, expect } from 'vitest'
 import {Cookie} from "./Cookie"
 import {Chocolate} from "./toppings/Chocolate"
 import {Peanuts} from "./toppings/Peanuts"
-import {Decimal} from "decimal.js";
+import {Decimal} from "decimal.js"
 
 describe('Cookie', () => {
 
@@ -39,5 +39,13 @@ describe('Cookie', () => {
         const cake = new Cookie()
 
         expect(cake.price).toStrictEqual(Decimal(2))
+    })
+
+
+    it('with chocolate should cost 2,1', () => {
+        const cookie = new Cookie()
+        const cake = new Chocolate(cookie)
+
+        expect(cake.price).toStrictEqual(Decimal("2.1"))
     })
 })
