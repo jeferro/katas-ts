@@ -1,71 +1,71 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`BlogAuctionTask > should generate snaphost to blog: BuzzFeed and mode: FAST 1`] = `844.1999999999999`;
+exports[`BlogAuctionTask > should generate snapshot to blog: BuzzFeed and mode: FAST 1`] = `844.1999999999999`;
 
-exports[`BlogAuctionTask > should generate snaphost to blog: BuzzFeed and mode: MEDIUM 1`] = `844.1999999999999`;
+exports[`BlogAuctionTask > should generate snapshot to blog: BuzzFeed and mode: MEDIUM 1`] = `844.1999999999999`;
 
-exports[`BlogAuctionTask > should generate snaphost to blog: BuzzFeed and mode: OTHER 1`] = `844.1999999999999`;
+exports[`BlogAuctionTask > should generate snapshot to blog: BuzzFeed and mode: OTHER 1`] = `844.1999999999999`;
 
-exports[`BlogAuctionTask > should generate snaphost to blog: BuzzFeed and mode: SLOW 1`] = `844.1999999999999`;
+exports[`BlogAuctionTask > should generate snapshot to blog: BuzzFeed and mode: SLOW 1`] = `844.1999999999999`;
 
-exports[`BlogAuctionTask > should generate snaphost to blog: BuzzFeed and mode: ULTRAFAST 1`] = `844.1999999999999`;
+exports[`BlogAuctionTask > should generate snapshot to blog: BuzzFeed and mode: ULTRAFAST 1`] = `844.1999999999999`;
 
-exports[`BlogAuctionTask > should generate snaphost to blog: GigaOM and mode: FAST 1`] = `844.1999999999999`;
+exports[`BlogAuctionTask > should generate snapshot to blog: GigaOM and mode: FAST 1`] = `844.1999999999999`;
 
-exports[`BlogAuctionTask > should generate snaphost to blog: GigaOM and mode: MEDIUM 1`] = `844.1999999999999`;
+exports[`BlogAuctionTask > should generate snapshot to blog: GigaOM and mode: MEDIUM 1`] = `844.1999999999999`;
 
-exports[`BlogAuctionTask > should generate snaphost to blog: GigaOM and mode: OTHER 1`] = `844.1999999999999`;
+exports[`BlogAuctionTask > should generate snapshot to blog: GigaOM and mode: OTHER 1`] = `844.1999999999999`;
 
-exports[`BlogAuctionTask > should generate snaphost to blog: GigaOM and mode: SLOW 1`] = `844.1999999999999`;
+exports[`BlogAuctionTask > should generate snapshot to blog: GigaOM and mode: SLOW 1`] = `844.1999999999999`;
 
-exports[`BlogAuctionTask > should generate snaphost to blog: GigaOM and mode: ULTRAFAST 1`] = `844.1999999999999`;
+exports[`BlogAuctionTask > should generate snapshot to blog: GigaOM and mode: ULTRAFAST 1`] = `844.1999999999999`;
 
-exports[`BlogAuctionTask > should generate snaphost to blog: HackerNews and mode: FAST 1`] = `844.1999999999999`;
+exports[`BlogAuctionTask > should generate snapshot to blog: HackerNews and mode: FAST 1`] = `844.1999999999999`;
 
-exports[`BlogAuctionTask > should generate snaphost to blog: HackerNews and mode: MEDIUM 1`] = `844.1999999999999`;
+exports[`BlogAuctionTask > should generate snapshot to blog: HackerNews and mode: MEDIUM 1`] = `844.1999999999999`;
 
-exports[`BlogAuctionTask > should generate snaphost to blog: HackerNews and mode: OTHER 1`] = `844.1999999999999`;
+exports[`BlogAuctionTask > should generate snapshot to blog: HackerNews and mode: OTHER 1`] = `844.1999999999999`;
 
-exports[`BlogAuctionTask > should generate snaphost to blog: HackerNews and mode: SLOW 1`] = `844.1999999999999`;
+exports[`BlogAuctionTask > should generate snapshot to blog: HackerNews and mode: SLOW 1`] = `844.1999999999999`;
 
-exports[`BlogAuctionTask > should generate snaphost to blog: HackerNews and mode: ULTRAFAST 1`] = `844.1999999999999`;
+exports[`BlogAuctionTask > should generate snapshot to blog: HackerNews and mode: ULTRAFAST 1`] = `844.1999999999999`;
 
-exports[`BlogAuctionTask > should generate snaphost to blog: Reddit and mode: FAST 1`] = `844.1999999999999`;
+exports[`BlogAuctionTask > should generate snapshot to blog: Reddit and mode: FAST 1`] = `844.1999999999999`;
 
-exports[`BlogAuctionTask > should generate snaphost to blog: Reddit and mode: MEDIUM 1`] = `844.1999999999999`;
+exports[`BlogAuctionTask > should generate snapshot to blog: Reddit and mode: MEDIUM 1`] = `844.1999999999999`;
 
-exports[`BlogAuctionTask > should generate snaphost to blog: Reddit and mode: OTHER 1`] = `844.1999999999999`;
+exports[`BlogAuctionTask > should generate snapshot to blog: Reddit and mode: OTHER 1`] = `844.1999999999999`;
 
-exports[`BlogAuctionTask > should generate snaphost to blog: Reddit and mode: SLOW 1`] = `844.1999999999999`;
+exports[`BlogAuctionTask > should generate snapshot to blog: Reddit and mode: SLOW 1`] = `844.1999999999999`;
 
-exports[`BlogAuctionTask > should generate snaphost to blog: Reddit and mode: ULTRAFAST 1`] = `844.1999999999999`;
+exports[`BlogAuctionTask > should generate snapshot to blog: Reddit and mode: ULTRAFAST 1`] = `844.1999999999999`;
 
-exports[`BlogAuctionTask > should generate snaphost to blog: TMZ and mode: FAST 1`] = `844.1999999999999`;
+exports[`BlogAuctionTask > should generate snapshot to blog: TMZ and mode: FAST 1`] = `844.1999999999999`;
 
-exports[`BlogAuctionTask > should generate snaphost to blog: TMZ and mode: MEDIUM 1`] = `844.1999999999999`;
+exports[`BlogAuctionTask > should generate snapshot to blog: TMZ and mode: MEDIUM 1`] = `844.1999999999999`;
 
-exports[`BlogAuctionTask > should generate snaphost to blog: TMZ and mode: OTHER 1`] = `844.1999999999999`;
+exports[`BlogAuctionTask > should generate snapshot to blog: TMZ and mode: OTHER 1`] = `844.1999999999999`;
 
-exports[`BlogAuctionTask > should generate snaphost to blog: TMZ and mode: SLOW 1`] = `844.1999999999999`;
+exports[`BlogAuctionTask > should generate snapshot to blog: TMZ and mode: SLOW 1`] = `844.1999999999999`;
 
-exports[`BlogAuctionTask > should generate snaphost to blog: TMZ and mode: ULTRAFAST 1`] = `844.1999999999999`;
+exports[`BlogAuctionTask > should generate snapshot to blog: TMZ and mode: ULTRAFAST 1`] = `844.1999999999999`;
 
-exports[`BlogAuctionTask > should generate snaphost to blog: TechCrunch and mode: FAST 1`] = `844.1999999999999`;
+exports[`BlogAuctionTask > should generate snapshot to blog: TechCrunch and mode: FAST 1`] = `844.1999999999999`;
 
-exports[`BlogAuctionTask > should generate snaphost to blog: TechCrunch and mode: MEDIUM 1`] = `844.1999999999999`;
+exports[`BlogAuctionTask > should generate snapshot to blog: TechCrunch and mode: MEDIUM 1`] = `844.1999999999999`;
 
-exports[`BlogAuctionTask > should generate snaphost to blog: TechCrunch and mode: OTHER 1`] = `844.1999999999999`;
+exports[`BlogAuctionTask > should generate snapshot to blog: TechCrunch and mode: OTHER 1`] = `844.1999999999999`;
 
-exports[`BlogAuctionTask > should generate snaphost to blog: TechCrunch and mode: SLOW 1`] = `844.1999999999999`;
+exports[`BlogAuctionTask > should generate snapshot to blog: TechCrunch and mode: SLOW 1`] = `844.1999999999999`;
 
-exports[`BlogAuctionTask > should generate snaphost to blog: TechCrunch and mode: ULTRAFAST 1`] = `844.1999999999999`;
+exports[`BlogAuctionTask > should generate snapshot to blog: TechCrunch and mode: ULTRAFAST 1`] = `844.1999999999999`;
 
-exports[`BlogAuctionTask > should generate snaphost to blog: TheHuffPost and mode: FAST 1`] = `844.1999999999999`;
+exports[`BlogAuctionTask > should generate snapshot to blog: TheHuffPost and mode: FAST 1`] = `844.1999999999999`;
 
-exports[`BlogAuctionTask > should generate snaphost to blog: TheHuffPost and mode: MEDIUM 1`] = `844.1999999999999`;
+exports[`BlogAuctionTask > should generate snapshot to blog: TheHuffPost and mode: MEDIUM 1`] = `844.1999999999999`;
 
-exports[`BlogAuctionTask > should generate snaphost to blog: TheHuffPost and mode: OTHER 1`] = `844.1999999999999`;
+exports[`BlogAuctionTask > should generate snapshot to blog: TheHuffPost and mode: OTHER 1`] = `844.1999999999999`;
 
-exports[`BlogAuctionTask > should generate snaphost to blog: TheHuffPost and mode: SLOW 1`] = `844.1999999999999`;
+exports[`BlogAuctionTask > should generate snapshot to blog: TheHuffPost and mode: SLOW 1`] = `844.1999999999999`;
 
-exports[`BlogAuctionTask > should generate snaphost to blog: TheHuffPost and mode: ULTRAFAST 1`] = `844.1999999999999`;
+exports[`BlogAuctionTask > should generate snapshot to blog: TheHuffPost and mode: ULTRAFAST 1`] = `844.1999999999999`;

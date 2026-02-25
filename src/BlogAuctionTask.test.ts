@@ -19,7 +19,7 @@ describe('BlogAuctionTask', () => {
     const blogAuctionTask = new BlogAuctionTask(dataRetriever, timeService, proposalPublisher)
 
     it.each(combinations)(
-        'should generate snaphost to blog: %s and mode: %s',
+        'should generate snapshot to blog: %s and mode: %s',
         (blog, mode) => {
 
             vi.spyOn(timeService, 'now').mockReturnValue(new Date('2026-01-15T12:00:00Z'))
