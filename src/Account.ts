@@ -1,5 +1,4 @@
-import {Statement} from "./Statement";
-import {TimeService} from "./utils/TimeService";
+import {Statement} from "./Statement"
 
 export class Account {
     private _balance = 0
@@ -10,9 +9,7 @@ export class Account {
 
         this._balance += amount
 
-        const now = TimeService.now()
-
-        const statement = Statement.createDeposit(now, amount, this._balance)
+        const statement = Statement.createDeposit(amount, this._balance)
         this._statements.push(statement)
     }
 
@@ -25,9 +22,7 @@ export class Account {
 
         this._balance -= amount
 
-        const now = TimeService.now()
-
-        const statement = Statement.createWithdraw(now, amount, this._balance)
+        const statement = Statement.createWithdraw(amount, this._balance)
         this._statements.push(statement)
     }
 

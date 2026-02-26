@@ -66,7 +66,8 @@ describe('Account', () => {
     })
 
     it('should add statement after deposit', () => {
-        vi.spyOn(TimeService, 'now').mockReturnValue("24/01/2012")
+        const mockedDate = new Date(2012, 0, 24)
+        vi.spyOn(TimeService, 'now').mockReturnValue(mockedDate)
 
         const account = new Account()
 
@@ -81,7 +82,8 @@ describe('Account', () => {
 
 
     it('should add statement after withdraw', () => {
-        vi.spyOn(TimeService, 'now').mockReturnValue("23/01/2012")
+        const mockedDate = new Date(2012, 0, 23)
+        vi.spyOn(TimeService, 'now').mockReturnValue(mockedDate)
 
         const account = new Account()
 
