@@ -67,7 +67,7 @@ describe('Account', () => {
 
     it('should add statement after deposit', () => {
         vi.spyOn(TimeService, 'now').mockReturnValue("24/01/2012")
-        
+
         const account = new Account()
 
         account.deposit(25)
@@ -77,5 +77,21 @@ describe('Account', () => {
         expect(account.statements[0].date).toBe("24/01/2012")
         expect(account.statements[0].amount).toBe(25)
         expect(account.statements[0].balance).toBe(25)
+    })
+
+
+    it('should add statement after withdraw', () => {
+        vi.spyOn(TimeService, 'now').mockReturnValue("23/01/2012")
+
+        const account = new Account()
+
+        account.deposit(25)
+        account.withdraw(10)
+
+        expect(account.statements.length).toBe(2)
+
+        expect(account.statements[1].date).toBe("23/01/2012")
+        expect(account.statements[1].amount).toBe(10)
+        expect(account.statements[1].balance).toBe(15)
     })
 })

@@ -28,6 +28,11 @@ export class Account {
         }
 
         this._total -= amount
+
+        const now = TimeService.now()
+
+        const statement = Statement.createWithdraw(now, amount, this._total)
+        this._statements.push(statement)
     }
 
     private ensureAmountIsPositive(amount: number) {

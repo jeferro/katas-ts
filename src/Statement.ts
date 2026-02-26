@@ -10,4 +10,8 @@ export class Statement {
     static createDeposit(date: string, amount: number, balance: number): Statement {
         return new Statement(date, amount, balance, true)
     }
+
+    static createWithdraw(date: string, amount: number, balance: number) {
+        return new Statement(date, amount, balance, false)
+    }
 }
