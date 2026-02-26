@@ -1,26 +1,18 @@
 import {UserCsvLoader} from "./loaders/UserCsvLoader";
 import {UserWebLoader} from "./loaders/UserWebLoader";
+import {UserLoader} from "./loaders/UserLoader";
 
 
 export class ImportUserScript {
 
-    private userCsvLoader = new UserCsvLoader()
-    private userWebLoader = new UserWebLoader()
+    private readonly userLoaders: UserLoader[] = [
+        new UserCsvLoader(),
+        new UserWebLoader()
+    ]
 
     async execute(): Promise<void> {
-        const usersFromCsv = await this.userCsvLoader.load()
+        let providers = await this.loadUsers();
 
-        const usersFromWeb = await this.userWebLoader.load()
-
-        /**
-         * Shape: providers array[ id -> number,
-         *                   email -> string
-         *                   first_name -> string
-         *                   last_name -> string ]
-         */
-        const providers = usersFromCsv.concat(usersFromWeb); // merge arrays
-
-        // Print users
         this.log("*********************************************************************************")
         this.log("* ID\t\t* COUNTRY\t* NAME\t\t* EMAIL\t\t\t\t*")
         this.log("*********************************************************************************")
@@ -29,6 +21,18 @@ export class ImportUserScript {
         }
         this.log("*********************************************************************************")
         this.log(providers.length + ' users in total!')
+    }
+
+    private async loadUsers() {
+        let providers: any[] = []
+
+        for (const userLoader of this.userLoaders) {
+            const users = await userLoader.load()
+
+            providers = providers.concat(users)
+        }
+
+        return providers;
     }
 
     public log(data: string) {
