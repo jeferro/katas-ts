@@ -1,11 +1,16 @@
-import fs from "fs";
+import {UserCsvLoader} from "./loaders/UserCsvLoader";
+import {UserWebLoader} from "./loaders/UserWebLoader";
+
 
 export class ImportUserScript {
 
-    async execute(): Promise<void> {
-        const usersFromCsv = this.loadUsersFromCsv();
+    private userCsvLoader = new UserCsvLoader()
+    private userWebLoader = new UserWebLoader()
 
-        const usersFromWeb = await this.loadUsersFromWeb();
+    async execute(): Promise<void> {
+        const usersFromCsv = await this.userCsvLoader.load()
+
+        const usersFromWeb = await this.userWebLoader.load()
 
         /**
          * Shape: providers array[ id -> number,
@@ -13,10 +18,10 @@ export class ImportUserScript {
          *                   first_name -> string
          *                   last_name -> string ]
          */
-        var providers = usersFromCsv.concat(usersFromWeb) // merge arrays
+        const providers = usersFromCsv.concat(usersFromWeb); // merge arrays
 
         // Print users
-        this.log("*********************************************************************************");
+        this.log("*********************************************************************************")
         this.log("* ID\t\t* COUNTRY\t* NAME\t\t* EMAIL\t\t\t\t*")
         this.log("*********************************************************************************")
         for (let j = 0; j < providers.length; j++) {
@@ -24,41 +29,6 @@ export class ImportUserScript {
         }
         this.log("*********************************************************************************")
         this.log(providers.length + ' users in total!')
-    }
-
-    private async loadUsersFromWeb() {
-        const url = 'https://randomuser.me/api/?inc=gender,name,email,location&results=5&seed=a9b25cd955e2037h'
-
-        const response = await fetch(url);
-        const responseJson = await response.json();
-
-        let userId = 1_00_000_000_000.51;
-        const userBirthDay = new Date().getFullYear()
-
-        return responseJson.results
-            .filter((result: any) => result instanceof Object)
-            .map((result: any) => {
-                userId++
-
-                return [
-                    parseInt(userId.toString()),
-                    result.gender,
-                    result.name.first + ' ' + result.name.last,
-                    result.location.country,
-                    result.location.postcode,
-                    result.email,
-                    userBirthDay
-                ]
-            })
-    }
-
-    private loadUsersFromCsv() {
-        const csvLines = fs.readFileSync(__dirname + '/users.csv', 'utf8')
-            .split("\n");
-
-        // fields: ID, gender, Name ,country, postcode, email, Birthdate
-        return csvLines.slice(1)
-            .map(line => line.split(","))
     }
 
     public log(data: string) {
