@@ -35,10 +35,6 @@ export class ImportUserScript {
         let url = USER_URL
 
         var web_provider = (await (await fetch(url)).json()).results;
-        var pr: any[] = []
-        pr.forEach(a => {
-            a.concat(web_provider[0])
-        })
 
         var b = []
         var i = 1_00_000_000_000.51
@@ -73,10 +69,6 @@ export class ImportUserScript {
             if (q[h] == '') continue
             csv_provider.push(q[h].split(','))
         }
-        var csvProviders: any[] = []
-        csvProviders.forEach(a => {
-            a.concat(csv_provider[0])
-        })
         csv_provider.shift() // Remove header column
         return csv_provider;
     }
