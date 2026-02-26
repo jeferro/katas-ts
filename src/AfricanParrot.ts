@@ -8,7 +8,7 @@ export class AfricanParrot extends Parrot {
     }
 
     public getSpeed(): number {
-        return Math.max(0, this.getBaseSpeed() - this.LOCAL_FACTOR * this.numberOfCoconuts);
+        return Math.max(0, this.BASE_SPEED - this.LOCAL_FACTOR * this.numberOfCoconuts);
     }
 
     public getCry(): String {

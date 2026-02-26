@@ -1,4 +1,4 @@
-import {Parrot, ParrotTypes} from "./Parrot";
+import {Parrot} from "./Parrot";
 
 export class EuropeanParrot extends Parrot {
     constructor(numberOfCoconuts: number, voltage: number, isNailed: boolean) {
@@ -6,7 +6,7 @@ export class EuropeanParrot extends Parrot {
     }
 
     public getSpeed(): number {
-        return this.getBaseSpeed();
+        return this.BASE_SPEED;
     }
 
     public getCry(): String {
