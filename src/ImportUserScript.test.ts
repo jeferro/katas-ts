@@ -1,17 +1,17 @@
-import { describe, it, expect, vi } from 'vitest'
+import { describe, it, expect } from 'vitest'
 import {ImportUserScript} from "./ImportUserScript"
-import {ConsoleLogger} from "./logger/ConsoleLogger";
+import {Logger} from "./logger/Logger";
+import {mock} from "vitest-mock-extended";
 
 describe('ImportUserScript', () => {
 
+    const consoleLogger = mock<Logger>()
+    const script = new ImportUserScript(consoleLogger)
+
     it('should import users', async ()=> {
-        const script = new ImportUserScript()
-
-        const logSpy = vi.spyOn(ConsoleLogger.prototype, 'log')
-
         await script.execute()
 
-        const logs = logSpy.mock.calls.map(data => data[0])
+        const logs = consoleLogger.log.mock.calls.map(data => data[0])
 
         expect(logs).toMatchSnapshot()
     })

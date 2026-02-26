@@ -1,8 +1,8 @@
-import {UserCsvLoader} from "./loaders/UserCsvLoader";
-import {UserWebLoader} from "./loaders/UserWebLoader";
-import {UserLoader} from "./loaders/UserLoader";
-import {User} from "./loaders/User";
-import {ConsoleLogger} from "./logger/ConsoleLogger";
+import {UserCsvLoader} from "./loaders/UserCsvLoader"
+import {UserWebLoader} from "./loaders/UserWebLoader"
+import {UserLoader} from "./loaders/UserLoader"
+import {User} from "./loaders/User"
+import {Logger} from "./logger/Logger"
 
 
 export class ImportUserScript {
@@ -12,10 +12,11 @@ export class ImportUserScript {
         new UserWebLoader()
     ]
 
-    private readonly logger = new ConsoleLogger()
+    constructor(private readonly logger: Logger) {
+    }
 
     async execute(): Promise<void> {
-        let providers = await this.loadUsers();
+        let providers = await this.loadUsers()
 
         this.logger.log("*********************************************************************************")
         this.logger.log("* ID\t\t* COUNTRY\t* NAME\t\t* EMAIL\t\t\t\t*")
