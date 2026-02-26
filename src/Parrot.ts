@@ -8,8 +8,7 @@ export enum ParrotTypes {
 export abstract class Parrot {
     protected readonly BASE_SPEED = 12;
 
-    constructor(protected numberOfCoconuts: number,
-                protected isNailed: boolean) {
+    constructor(protected numberOfCoconuts: number) {
     }
 }
 

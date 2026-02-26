@@ -3,8 +3,8 @@ import {Parrot} from "./Parrot";
 export class AfricanParrot extends Parrot {
     private readonly LOCAL_FACTOR = 9;
 
-    constructor(numberOfCoconuts: number, isNailed: boolean) {
-        super(numberOfCoconuts, isNailed);
+    constructor(numberOfCoconuts: number) {
+        super(numberOfCoconuts);
     }
 
     public getSpeed(): number {
