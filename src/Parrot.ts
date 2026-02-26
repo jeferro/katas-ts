@@ -6,10 +6,10 @@ export enum ParrotTypes {
 }
 
 export class Parrot {
-    constructor(private parrotType: ParrotTypes,
-                private numberOfCoconuts: number,
-                private voltage: number,
-                private isNailed: boolean) {
+    constructor(protected parrotType: ParrotTypes,
+                protected numberOfCoconuts: number,
+                protected voltage: number,
+                protected isNailed: boolean) {
     }
 
     public getSpeed(): number {
@@ -24,15 +24,15 @@ export class Parrot {
         throw new Error("Should be unreachable");
     }
 
-    private getBaseSpeed(): number {
+    protected getBaseSpeed(): number {
         return 12;
     }
 
-    private getLoadFactor(): number {
+    protected getLoadFactor(): number {
         return 9;
     }
 
-    private getBaseSpeedWithVoltage(voltage: number): number {
+    protected getBaseSpeedWithVoltage(voltage: number): number {
         return Math.min(24, voltage * this.getBaseSpeed());
     }
 
