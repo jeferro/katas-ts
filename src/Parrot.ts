@@ -5,7 +5,7 @@ export enum ParrotTypes {
     NORWEGIAN_BLUE,
 }
 
-export class Parrot {
+export abstract class Parrot {
     constructor(protected parrotType: ParrotTypes,
                 protected numberOfCoconuts: number,
                 protected voltage: number,
