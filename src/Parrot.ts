@@ -15,9 +15,5 @@ export abstract class Parrot {
         return 12;
     }
 
-    protected getLoadFactor(): number {
-        return 9;
-    }
-
 }
 

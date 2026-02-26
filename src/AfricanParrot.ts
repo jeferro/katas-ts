@@ -12,4 +12,8 @@ export class AfricanParrot extends Parrot {
     public getCry(): String {
         return "Sqaark!";
     }
+
+    private getLoadFactor(): number {
+        return 9;
+    }
 }
