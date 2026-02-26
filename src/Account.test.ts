@@ -39,7 +39,6 @@ describe('Account', () => {
         expect(account.value).toBe(80)
     })
 
-
     it('should fail when withdraw a zero value', () => {
         const account = new Account()
 
@@ -50,5 +49,12 @@ describe('Account', () => {
         const account = new Account()
 
         expect(() => account.withdraw(-1)).toThrowError()
+    })
+
+
+    it('should fail when user try to withdraw amount and account has zero value', () => {
+        const account = new Account()
+
+        expect(() => account.withdraw(50)).toThrowError()
     })
 })

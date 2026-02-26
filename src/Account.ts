@@ -14,6 +14,10 @@ export class Account {
     withdraw(amount: number) {
         this.ensureAmountIsPositive(amount)
 
+        if(this._value < amount) {
+            throw new Error(`Account value (${this._value}) is less than amount (${amount})`)
+        }
+
         this._value -= amount
     }
 
