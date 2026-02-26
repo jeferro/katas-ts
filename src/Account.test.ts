@@ -12,15 +12,18 @@ describe('Account', () => {
     it('should deposit amount', () => {
         const account = new Account()
         account.deposit(100)
+        account.deposit(30)
 
-        expect(account.value).toBe(100)
+        expect(account.value).toBe(130)
     })
 
     it('should withdraw amount', () => {
         const account = new Account()
         account.deposit(100)
+        account.deposit(10)
         account.withdraw(25)
+        account.withdraw(5)
 
-        expect(account.value).toBe(75)
+        expect(account.value).toBe(80)
     })
 })

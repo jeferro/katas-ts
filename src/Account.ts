@@ -6,7 +6,7 @@ export class Account {
     }
 
     deposit(amount: number) {
-        this._value = amount
+        this._value += amount
     }
 
     withdraw(amount: number) {
