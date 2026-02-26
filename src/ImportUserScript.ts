@@ -1,16 +1,14 @@
-import {fileURLToPath} from "url";
 import path from "path";
 import fs from "fs";
 
 export class ImportUserScript {
 
-    async execute() {
+    async execute(): Promise<void> {
         /** This kata uses "fetch()", be aware you need at least Node 18 to run the script */
         var USER_URL = 'https://randomuser.me/api/?inc=gender,name,email,location&results=5&seed=a9b25cd955e2037h';
 
-        // Parse CSV file
-        const __filename = fileURLToPath(import.meta.url);
-        var getcurrentworkingDirectory = path.dirname(__filename)
+        // Parse CSV file (__dirname is available in CommonJS output)
+        var getcurrentworkingDirectory = __dirname
 
         // fields: ID, gender, Name ,country, postcode, email, Birthdate
         var q = fs.readFileSync(
@@ -63,13 +61,17 @@ export class ImportUserScript {
         var providers = csv_provider.concat(b) // merge arrays
 
         // Print users
-        console.log("*********************************************************************************")
-        console.log("* ID\t\t* COUNTRY\t* NAME\t\t* EMAIL\t\t\t\t*")
-        console.log("*********************************************************************************")
+        this.log("*********************************************************************************");
+        this.log("* ID\t\t* COUNTRY\t* NAME\t\t* EMAIL\t\t\t\t*")
+        this.log("*********************************************************************************")
         for (let j = 0; j < providers.length; j++) {
-            console.log(`* ${providers[j][0]}\t* ${providers[j][3]}\t* ${providers[j][2]}\t* ${providers[j][5]}\t*`)
+            this.log(`* ${providers[j][0]}\t* ${providers[j][3]}\t* ${providers[j][2]}\t* ${providers[j][5]}\t*`)
         }
-        console.log("*********************************************************************************")
-        console.log(providers.length + ' users in total!')
+        this.log("*********************************************************************************")
+        this.log(providers.length + ' users in total!')
+    }
+
+    public log(data: string) {
+        console.log(data)
     }
 }
