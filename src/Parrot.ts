@@ -1,3 +1,4 @@
+
 export enum ParrotTypes {
     EUROPEAN,
     AFRICAN,
@@ -9,21 +10,6 @@ export class Parrot {
                 private numberOfCoconuts: number,
                 private voltage: number,
                 private isNailed: boolean) {
-    }
-
-    public static create(parrotType: ParrotTypes,
-                         numberOfCoconuts: number,
-                         voltage: number,
-                         isNailed: boolean): Parrot {
-        switch(parrotType) {
-            case ParrotTypes.AFRICAN:
-                return new Parrot(parrotType, numberOfCoconuts, voltage, isNailed)
-            case ParrotTypes.NORWEGIAN_BLUE:
-                return new Parrot(parrotType, numberOfCoconuts, voltage, isNailed)
-            case ParrotTypes.EUROPEAN:
-                return new Parrot(parrotType, numberOfCoconuts, voltage, isNailed)
-        }
-
     }
 
     public getSpeed(): number {
@@ -63,3 +49,4 @@ export class Parrot {
     }
 
 }
+
