@@ -15,4 +15,12 @@ describe('Account', () => {
 
         expect(account.value).toBe(100)
     })
+
+    it('should withdraw amount', () => {
+        const account = new Account()
+        account.deposit(100)
+        account.withdraw(25)
+
+        expect(account.value).toBe(75)
+    })
 })

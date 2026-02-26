@@ -8,4 +8,8 @@ export class Account {
     deposit(amount: number) {
         this._value = amount
     }
+
+    withdraw(amount: number) {
+        this._value -= amount
+    }
 }
