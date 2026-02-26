@@ -11,6 +11,13 @@ export class Parrot {
                 private isNailed: boolean) {
     }
 
+    public static create(parrotType: ParrotTypes,
+                         numberOfCoconuts: number,
+                         voltage: number,
+                         isNailed: boolean): Parrot {
+        return new Parrot(parrotType, numberOfCoconuts, voltage, isNailed)
+    }
+
     public getSpeed(): number {
         switch (this.parrotType) {
             case ParrotTypes.EUROPEAN:
