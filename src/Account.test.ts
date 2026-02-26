@@ -9,6 +9,18 @@ describe('Account', () => {
         expect(account.value).toBe(0)
     })
 
+    it('should fail when deposit a zero value', () => {
+        const account = new Account()
+
+        expect(() => account.deposit(0)).toThrowError()
+    })
+
+    it('should fail when deposit a negative value', () => {
+        const account = new Account()
+
+        expect(() => account.deposit(-1)).toThrowError()
+    })
+
     it('should deposit amount', () => {
         const account = new Account()
         account.deposit(100)

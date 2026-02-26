@@ -6,6 +6,10 @@ export class Account {
     }
 
     deposit(amount: number) {
+        if(amount <= 0) {
+            throw new Error('Deposit amount must be greater than 0')
+        }
+
         this._value += amount
     }
 
