@@ -1,5 +1,6 @@
-import { describe, it, expect } from 'vitest'
+import {describe, it, expect, vi} from 'vitest'
 import {Account} from "./Account"
+import {TimeService} from "./utils/TimeService";
 
 describe('Account', () => {
 
@@ -65,11 +66,15 @@ describe('Account', () => {
     })
 
     it('should add statement after deposit', () => {
+        vi.spyOn(TimeService, 'now').mockReturnValue("24/01/2012")
+        
         const account = new Account()
+
         account.deposit(25)
 
         expect(account.statements.length).toBe(1)
 
+        expect(account.statements[0].date).toBe("24/01/2012")
         expect(account.statements[0].amount).toBe(25)
         expect(account.statements[0].balance).toBe(25)
     })
