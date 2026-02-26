@@ -1,24 +1,24 @@
 export class Account {
-    private _value = 0
+    private _total = 0
 
-    public get value(): number {
-        return this._value
+    public get total(): number {
+        return this._total
     }
 
     deposit(amount: number) {
         this.ensureAmountIsPositive(amount)
 
-        this._value += amount
+        this._total += amount
     }
 
     withdraw(amount: number) {
         this.ensureAmountIsPositive(amount)
 
-        if(this._value < amount) {
-            throw new Error(`Account value (${this._value}) is less than amount (${amount})`)
+        if(this._total < amount) {
+            throw new Error(`Account value (${this._total}) is less than amount (${amount})`)
         }
 
-        this._value -= amount
+        this._total -= amount
     }
 
     private ensureAmountIsPositive(amount: number) {
