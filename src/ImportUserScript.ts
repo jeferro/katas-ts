@@ -2,6 +2,7 @@ import {UserCsvLoader} from "./loaders/UserCsvLoader";
 import {UserWebLoader} from "./loaders/UserWebLoader";
 import {UserLoader} from "./loaders/UserLoader";
 import {User} from "./loaders/User";
+import {ConsoleLogger} from "./logger/ConsoleLogger";
 
 
 export class ImportUserScript {
@@ -11,19 +12,21 @@ export class ImportUserScript {
         new UserWebLoader()
     ]
 
+    private readonly logger = new ConsoleLogger()
+
     async execute(): Promise<void> {
         let providers = await this.loadUsers();
 
-        this.log("*********************************************************************************")
-        this.log("* ID\t\t* COUNTRY\t* NAME\t\t* EMAIL\t\t\t\t*")
-        this.log("*********************************************************************************")
+        this.logger.log("*********************************************************************************")
+        this.logger.log("* ID\t\t* COUNTRY\t* NAME\t\t* EMAIL\t\t\t\t*")
+        this.logger.log("*********************************************************************************")
 
         providers.forEach(provider => {
-            this.log(`* ${provider.id}\t* ${provider.country}\t* ${provider.fullName}\t* ${provider.email}\t*`)
+            this.logger.log(`* ${provider.id}\t* ${provider.country}\t* ${provider.fullName}\t* ${provider.email}\t*`)
         })
 
-        this.log("*********************************************************************************")
-        this.log(providers.length + ' users in total!')
+        this.logger.log("*********************************************************************************")
+        this.logger.log(providers.length + ' users in total!')
     }
 
     private async loadUsers(): Promise<User[]> {
@@ -36,9 +39,5 @@ export class ImportUserScript {
         }
 
         return providers;
-    }
-
-    public log(data: string) {
-        console.log(data)
     }
 }
