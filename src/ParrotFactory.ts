@@ -19,4 +19,25 @@ export abstract class ParrotFactory {
         }
 
     }
+
+    public static createAfrican(parrotType: ParrotTypes,
+                                numberOfCoconuts: number,
+                                voltage: number,
+                                isNailed: boolean): Parrot {
+        return new AfricanParrot( numberOfCoconuts)
+    }
+
+    public static createNorwegianBlue(parrotType: ParrotTypes,
+                                      numberOfCoconuts: number,
+                                      voltage: number,
+                                      isNailed: boolean): Parrot {
+        return new NorwegianBlueParrot( voltage, isNailed)
+    }
+
+    public static createEuropean(parrotType: ParrotTypes,
+                                      numberOfCoconuts: number,
+                                      voltage: number,
+                                      isNailed: boolean): Parrot {
+        return new EuropeanParrot()
+    }
 }
