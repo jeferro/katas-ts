@@ -13,9 +13,9 @@ export abstract class ParrotFactory {
             case ParrotTypes.AFRICAN:
                 return new AfricanParrot( numberOfCoconuts)
             case ParrotTypes.NORWEGIAN_BLUE:
-                return new NorwegianBlueParrot( numberOfCoconuts, voltage, isNailed)
+                return new NorwegianBlueParrot( voltage, isNailed)
             case ParrotTypes.EUROPEAN:
-                return new EuropeanParrot(numberOfCoconuts)
+                return new EuropeanParrot()
         }
 
     }

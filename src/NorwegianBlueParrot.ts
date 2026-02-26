@@ -5,8 +5,8 @@ export class NorwegianBlueParrot extends Parrot {
 
     protected isNailed: boolean
 
-    constructor(numberOfCoconuts: number, voltage: number, isNailed: boolean) {
-        super(numberOfCoconuts);
+    constructor(voltage: number, isNailed: boolean) {
+        super();
 
         this.voltage = voltage
         this.isNailed = isNailed
