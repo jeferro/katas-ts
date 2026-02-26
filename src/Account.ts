@@ -1,2 +1,7 @@
+export class Account {
+    private _value = 0
 
-export class Account {}
+    public get value(): number {
+        return this._value
+    }
+}

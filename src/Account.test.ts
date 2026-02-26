@@ -3,9 +3,9 @@ import {Account} from "./Account"
 
 describe('Account', () => {
 
-    it('should create instance', () => {
+    it('should has value zero after creation', () => {
         const account = new Account()
 
-        expect(account).not.toBeUndefined()
+        expect(account.value).toBe(0)
     })
 })
