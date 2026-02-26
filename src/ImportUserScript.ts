@@ -1,4 +1,3 @@
-import path from "path";
 import fs from "fs";
 
 export class ImportUserScript {
@@ -56,21 +55,12 @@ export class ImportUserScript {
     }
 
     private loadUsersFromCsv() {
-        // Parse CSV file (__dirname is available in CommonJS output)
-        var getcurrentworkingDirectory = __dirname
+        const csvLines = fs.readFileSync(__dirname + '/users.csv', 'utf8')
+            .split("\n");
 
         // fields: ID, gender, Name ,country, postcode, email, Birthdate
-        var q = fs.readFileSync(
-            getcurrentworkingDirectory + '/users.csv', 'utf8',
-        ).split("\n")
-
-        var csv_provider: any[] = []
-        for (var h = 0; h < q.length; h++) {
-            if (q[h] == '') continue
-            csv_provider.push(q[h].split(','))
-        }
-        csv_provider.shift() // Remove header column
-        return csv_provider;
+        return csvLines.slice(1)
+            .map(line => line.split(","))
     }
 
     public log(data: string) {
