@@ -8,4 +8,11 @@ describe('Account', () => {
 
         expect(account.value).toBe(0)
     })
+
+    it('should deposit amount', () => {
+        const account = new Account()
+        account.deposit(100)
+
+        expect(account.value).toBe(100)
+    })
 })
