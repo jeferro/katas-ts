@@ -11,11 +11,11 @@ export abstract class ParrotFactory {
                          isNailed: boolean): Parrot {
         switch(parrotType) {
             case ParrotTypes.AFRICAN:
-                return new AfricanParrot( numberOfCoconuts, voltage, isNailed)
+                return new AfricanParrot( numberOfCoconuts, isNailed)
             case ParrotTypes.NORWEGIAN_BLUE:
                 return new NorwegianBlueParrot( numberOfCoconuts, voltage, isNailed)
             case ParrotTypes.EUROPEAN:
-                return new EuropeanParrot(numberOfCoconuts, voltage, isNailed)
+                return new EuropeanParrot(numberOfCoconuts, isNailed)
         }
 
     }

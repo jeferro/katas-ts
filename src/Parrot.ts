@@ -9,7 +9,6 @@ export abstract class Parrot {
     protected readonly BASE_SPEED = 12;
 
     constructor(protected numberOfCoconuts: number,
-                protected voltage: number,
                 protected isNailed: boolean) {
     }
 }

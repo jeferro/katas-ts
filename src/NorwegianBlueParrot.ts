@@ -1,9 +1,12 @@
 import {Parrot} from "./Parrot";
 
 export class NorwegianBlueParrot extends Parrot {
+    protected voltage: number
+
     constructor(numberOfCoconuts: number, voltage: number, isNailed: boolean) {
-        super(numberOfCoconuts, voltage, isNailed);
-    }
+        super(numberOfCoconuts, isNailed);
+
+        this.voltage = voltage    }
 
     public getSpeed(): number {
         return (this.isNailed) ? 0 : this.getBaseSpeedWithVoltage(this.voltage);
