@@ -7,7 +7,7 @@ describe('Account', () => {
     it('should has value zero after creation', () => {
         const account = new Account()
 
-        expect(account.total).toBe(0)
+        expect(account.balance).toBe(0)
     })
 
     it('should deposit amount', () => {
@@ -15,7 +15,7 @@ describe('Account', () => {
         account.deposit(100)
         account.deposit(30)
 
-        expect(account.total).toBe(130)
+        expect(account.balance).toBe(130)
     })
 
     it('should fail when deposit a zero value', () => {
@@ -37,7 +37,7 @@ describe('Account', () => {
         account.withdraw(25)
         account.withdraw(5)
 
-        expect(account.total).toBe(80)
+        expect(account.balance).toBe(80)
     })
 
     it('should fail when withdraw a zero value', () => {

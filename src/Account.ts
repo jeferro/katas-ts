@@ -2,36 +2,32 @@ import {Statement} from "./Statement";
 import {TimeService} from "./utils/TimeService";
 
 export class Account {
-    private _total = 0
+    private _balance = 0
     private _statements: Statement[] = []
-
-    public get total(): number {
-        return this._total
-    }
 
     deposit(amount: number) {
         this.ensureAmountIsPositive(amount)
 
-        this._total += amount
+        this._balance += amount
 
         const now = TimeService.now()
 
-        const statement = Statement.createDeposit(now, amount, this._total)
+        const statement = Statement.createDeposit(now, amount, this._balance)
         this._statements.push(statement)
     }
 
     withdraw(amount: number) {
         this.ensureAmountIsPositive(amount)
 
-        if(this._total < amount) {
-            throw new Error(`Account value (${this._total}) is less than amount (${amount})`)
+        if(this._balance < amount) {
+            throw new Error(`Account value (${this._balance}) is less than amount (${amount})`)
         }
 
-        this._total -= amount
+        this._balance -= amount
 
         const now = TimeService.now()
 
-        const statement = Statement.createWithdraw(now, amount, this._total)
+        const statement = Statement.createWithdraw(now, amount, this._balance)
         this._statements.push(statement)
     }
 
@@ -41,7 +37,11 @@ export class Account {
         }
     }
 
-    get statements(): Statement[] {
+    public get balance(): number {
+        return this._balance
+    }
+
+    public get statements(): Statement[] {
         return this._statements;
     }
 }
