@@ -17,9 +17,11 @@ export class ImportUserScript {
         this.log("*********************************************************************************")
         this.log("* ID\t\t* COUNTRY\t* NAME\t\t* EMAIL\t\t\t\t*")
         this.log("*********************************************************************************")
-        for (let j = 0; j < providers.length; j++) {
-            this.log(`* ${providers[j].id}\t* ${providers[j].country}\t* ${providers[j].fullName}\t* ${providers[j].email}\t*`)
-        }
+
+        providers.forEach(provider => {
+            this.log(`* ${provider.id}\t* ${provider.country}\t* ${provider.fullName}\t* ${provider.email}\t*`)
+        })
+
         this.log("*********************************************************************************")
         this.log(providers.length + ' users in total!')
     }
