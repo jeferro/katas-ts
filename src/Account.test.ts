@@ -63,4 +63,14 @@ describe('Account', () => {
 
         expect(() => account.withdraw(50)).toThrowError()
     })
+
+    it('should add statement after deposit', () => {
+        const account = new Account()
+        account.deposit(25)
+
+        expect(account.statements.length).toBe(1)
+
+        expect(account.statements[0].amount).toBe(25)
+        expect(account.statements[0].balance).toBe(25)
+    })
 })
