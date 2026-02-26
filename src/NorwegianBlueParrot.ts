@@ -1,8 +1,10 @@
 import {Parrot, ParrotTypes} from "./Parrot";
 
 export class NorwegianBlueParrot extends Parrot {
+    protected parrotType = ParrotTypes.NORWEGIAN_BLUE
+
     constructor(numberOfCoconuts: number, voltage: number, isNailed: boolean) {
-        super(ParrotTypes.NORWEGIAN_BLUE, numberOfCoconuts, voltage, isNailed);
+        super(numberOfCoconuts, voltage, isNailed);
     }
 
     public getSpeed(): number {

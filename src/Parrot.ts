@@ -6,8 +6,7 @@ export enum ParrotTypes {
 }
 
 export abstract class Parrot {
-    constructor(protected parrotType: ParrotTypes,
-                protected numberOfCoconuts: number,
+    constructor(protected numberOfCoconuts: number,
                 protected voltage: number,
                 protected isNailed: boolean) {
     }
