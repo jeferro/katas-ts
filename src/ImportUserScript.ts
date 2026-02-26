@@ -3,9 +3,9 @@ import fs from "fs";
 export class ImportUserScript {
 
     async execute(): Promise<void> {
-        var csv_provider = this.loadUsersFromCsv();
+        const usersFromCsv = this.loadUsersFromCsv();
 
-        var b = await this.loadUsersFromWeb();
+        const usersFromWeb = await this.loadUsersFromWeb();
 
         /**
          * Shape: providers array[ id -> number,
@@ -13,7 +13,7 @@ export class ImportUserScript {
          *                   first_name -> string
          *                   last_name -> string ]
          */
-        var providers = csv_provider.concat(b) // merge arrays
+        var providers = usersFromCsv.concat(usersFromWeb) // merge arrays
 
         // Print users
         this.log("*********************************************************************************");
