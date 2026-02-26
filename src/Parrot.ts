@@ -19,9 +19,5 @@ export abstract class Parrot {
         return 9;
     }
 
-    protected getBaseSpeedWithVoltage(voltage: number): number {
-        return Math.min(24, voltage * this.getBaseSpeed());
-    }
-
 }
 
