@@ -1,8 +1,6 @@
 import {Parrot, ParrotTypes} from "./Parrot";
 
 export class AfricanParrot extends Parrot {
-    protected readonly parrotType = ParrotTypes.AFRICAN
-
     constructor(numberOfCoconuts: number, voltage: number, isNailed: boolean) {
         super(numberOfCoconuts, voltage, isNailed);
     }
