@@ -1,6 +1,6 @@
 import { describe, expect } from 'vitest'
 import {GildedRose} from "./gilded-rose";
-import {ItemCreator} from "./ItemCreator";
+import {ItemCreator} from "./items/ItemCreator";
 
 function cartesianProduct<T extends any[][]>(...arrays: T): any[][] {
     return arrays.reduce(
