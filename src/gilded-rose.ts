@@ -8,10 +8,7 @@ export class GildedRose {
   }
 
   updateQuality() {
-    for (let i = 0; i < this.items.length; i++) {
-
-      this.items[i].update()
-    }
+    this.items.forEach(item => item.update())
 
     return this.items;
   }
