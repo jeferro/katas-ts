@@ -2,7 +2,7 @@
 
 exports[`Gilded Rose > golden test: name:Aged Brie sellIn:-1 quality:1 1`] = `
 [
-  Item {
+  AgedBrie {
     "name": "Aged Brie",
     "quality": 3,
     "sellIn": -2,
@@ -12,7 +12,7 @@ exports[`Gilded Rose > golden test: name:Aged Brie sellIn:-1 quality:1 1`] = `
 
 exports[`Gilded Rose > golden test: name:Aged Brie sellIn:-1 quality:5 1`] = `
 [
-  Item {
+  AgedBrie {
     "name": "Aged Brie",
     "quality": 7,
     "sellIn": -2,
@@ -22,7 +22,7 @@ exports[`Gilded Rose > golden test: name:Aged Brie sellIn:-1 quality:5 1`] = `
 
 exports[`Gilded Rose > golden test: name:Aged Brie sellIn:-1 quality:10 1`] = `
 [
-  Item {
+  AgedBrie {
     "name": "Aged Brie",
     "quality": 12,
     "sellIn": -2,
@@ -32,7 +32,7 @@ exports[`Gilded Rose > golden test: name:Aged Brie sellIn:-1 quality:10 1`] = `
 
 exports[`Gilded Rose > golden test: name:Aged Brie sellIn:1 quality:1 1`] = `
 [
-  Item {
+  AgedBrie {
     "name": "Aged Brie",
     "quality": 2,
     "sellIn": 0,
@@ -42,7 +42,7 @@ exports[`Gilded Rose > golden test: name:Aged Brie sellIn:1 quality:1 1`] = `
 
 exports[`Gilded Rose > golden test: name:Aged Brie sellIn:1 quality:5 1`] = `
 [
-  Item {
+  AgedBrie {
     "name": "Aged Brie",
     "quality": 6,
     "sellIn": 0,
@@ -52,7 +52,7 @@ exports[`Gilded Rose > golden test: name:Aged Brie sellIn:1 quality:5 1`] = `
 
 exports[`Gilded Rose > golden test: name:Aged Brie sellIn:1 quality:10 1`] = `
 [
-  Item {
+  AgedBrie {
     "name": "Aged Brie",
     "quality": 11,
     "sellIn": 0,
@@ -62,7 +62,7 @@ exports[`Gilded Rose > golden test: name:Aged Brie sellIn:1 quality:10 1`] = `
 
 exports[`Gilded Rose > golden test: name:Aged Brie sellIn:5 quality:1 1`] = `
 [
-  Item {
+  AgedBrie {
     "name": "Aged Brie",
     "quality": 2,
     "sellIn": 4,
@@ -72,7 +72,7 @@ exports[`Gilded Rose > golden test: name:Aged Brie sellIn:5 quality:1 1`] = `
 
 exports[`Gilded Rose > golden test: name:Aged Brie sellIn:5 quality:5 1`] = `
 [
-  Item {
+  AgedBrie {
     "name": "Aged Brie",
     "quality": 6,
     "sellIn": 4,
@@ -82,7 +82,7 @@ exports[`Gilded Rose > golden test: name:Aged Brie sellIn:5 quality:5 1`] = `
 
 exports[`Gilded Rose > golden test: name:Aged Brie sellIn:5 quality:10 1`] = `
 [
-  Item {
+  AgedBrie {
     "name": "Aged Brie",
     "quality": 11,
     "sellIn": 4,
@@ -92,7 +92,7 @@ exports[`Gilded Rose > golden test: name:Aged Brie sellIn:5 quality:10 1`] = `
 
 exports[`Gilded Rose > golden test: name:Aged Brie sellIn:10 quality:1 1`] = `
 [
-  Item {
+  AgedBrie {
     "name": "Aged Brie",
     "quality": 2,
     "sellIn": 9,
@@ -102,7 +102,7 @@ exports[`Gilded Rose > golden test: name:Aged Brie sellIn:10 quality:1 1`] = `
 
 exports[`Gilded Rose > golden test: name:Aged Brie sellIn:10 quality:5 1`] = `
 [
-  Item {
+  AgedBrie {
     "name": "Aged Brie",
     "quality": 6,
     "sellIn": 9,
@@ -112,7 +112,7 @@ exports[`Gilded Rose > golden test: name:Aged Brie sellIn:10 quality:5 1`] = `
 
 exports[`Gilded Rose > golden test: name:Aged Brie sellIn:10 quality:10 1`] = `
 [
-  Item {
+  AgedBrie {
     "name": "Aged Brie",
     "quality": 11,
     "sellIn": 9,
@@ -122,7 +122,7 @@ exports[`Gilded Rose > golden test: name:Aged Brie sellIn:10 quality:10 1`] = `
 
 exports[`Gilded Rose > golden test: name:Backstage passes to a TAFKAL80ETC concert sellIn:-1 quality:1 1`] = `
 [
-  Item {
+  BackstagePasses {
     "name": "Backstage passes to a TAFKAL80ETC concert",
     "quality": 0,
     "sellIn": -2,
@@ -132,7 +132,7 @@ exports[`Gilded Rose > golden test: name:Backstage passes to a TAFKAL80ETC conce
 
 exports[`Gilded Rose > golden test: name:Backstage passes to a TAFKAL80ETC concert sellIn:-1 quality:5 1`] = `
 [
-  Item {
+  BackstagePasses {
     "name": "Backstage passes to a TAFKAL80ETC concert",
     "quality": 0,
     "sellIn": -2,
@@ -142,7 +142,7 @@ exports[`Gilded Rose > golden test: name:Backstage passes to a TAFKAL80ETC conce
 
 exports[`Gilded Rose > golden test: name:Backstage passes to a TAFKAL80ETC concert sellIn:-1 quality:10 1`] = `
 [
-  Item {
+  BackstagePasses {
     "name": "Backstage passes to a TAFKAL80ETC concert",
     "quality": 0,
     "sellIn": -2,
@@ -152,7 +152,7 @@ exports[`Gilded Rose > golden test: name:Backstage passes to a TAFKAL80ETC conce
 
 exports[`Gilded Rose > golden test: name:Backstage passes to a TAFKAL80ETC concert sellIn:1 quality:1 1`] = `
 [
-  Item {
+  BackstagePasses {
     "name": "Backstage passes to a TAFKAL80ETC concert",
     "quality": 4,
     "sellIn": 0,
@@ -162,7 +162,7 @@ exports[`Gilded Rose > golden test: name:Backstage passes to a TAFKAL80ETC conce
 
 exports[`Gilded Rose > golden test: name:Backstage passes to a TAFKAL80ETC concert sellIn:1 quality:5 1`] = `
 [
-  Item {
+  BackstagePasses {
     "name": "Backstage passes to a TAFKAL80ETC concert",
     "quality": 8,
     "sellIn": 0,
@@ -172,7 +172,7 @@ exports[`Gilded Rose > golden test: name:Backstage passes to a TAFKAL80ETC conce
 
 exports[`Gilded Rose > golden test: name:Backstage passes to a TAFKAL80ETC concert sellIn:1 quality:10 1`] = `
 [
-  Item {
+  BackstagePasses {
     "name": "Backstage passes to a TAFKAL80ETC concert",
     "quality": 13,
     "sellIn": 0,
@@ -182,7 +182,7 @@ exports[`Gilded Rose > golden test: name:Backstage passes to a TAFKAL80ETC conce
 
 exports[`Gilded Rose > golden test: name:Backstage passes to a TAFKAL80ETC concert sellIn:5 quality:1 1`] = `
 [
-  Item {
+  BackstagePasses {
     "name": "Backstage passes to a TAFKAL80ETC concert",
     "quality": 4,
     "sellIn": 4,
@@ -192,7 +192,7 @@ exports[`Gilded Rose > golden test: name:Backstage passes to a TAFKAL80ETC conce
 
 exports[`Gilded Rose > golden test: name:Backstage passes to a TAFKAL80ETC concert sellIn:5 quality:5 1`] = `
 [
-  Item {
+  BackstagePasses {
     "name": "Backstage passes to a TAFKAL80ETC concert",
     "quality": 8,
     "sellIn": 4,
@@ -202,7 +202,7 @@ exports[`Gilded Rose > golden test: name:Backstage passes to a TAFKAL80ETC conce
 
 exports[`Gilded Rose > golden test: name:Backstage passes to a TAFKAL80ETC concert sellIn:5 quality:10 1`] = `
 [
-  Item {
+  BackstagePasses {
     "name": "Backstage passes to a TAFKAL80ETC concert",
     "quality": 13,
     "sellIn": 4,
@@ -212,7 +212,7 @@ exports[`Gilded Rose > golden test: name:Backstage passes to a TAFKAL80ETC conce
 
 exports[`Gilded Rose > golden test: name:Backstage passes to a TAFKAL80ETC concert sellIn:10 quality:1 1`] = `
 [
-  Item {
+  BackstagePasses {
     "name": "Backstage passes to a TAFKAL80ETC concert",
     "quality": 3,
     "sellIn": 9,
@@ -222,7 +222,7 @@ exports[`Gilded Rose > golden test: name:Backstage passes to a TAFKAL80ETC conce
 
 exports[`Gilded Rose > golden test: name:Backstage passes to a TAFKAL80ETC concert sellIn:10 quality:5 1`] = `
 [
-  Item {
+  BackstagePasses {
     "name": "Backstage passes to a TAFKAL80ETC concert",
     "quality": 7,
     "sellIn": 9,
@@ -232,7 +232,7 @@ exports[`Gilded Rose > golden test: name:Backstage passes to a TAFKAL80ETC conce
 
 exports[`Gilded Rose > golden test: name:Backstage passes to a TAFKAL80ETC concert sellIn:10 quality:10 1`] = `
 [
-  Item {
+  BackstagePasses {
     "name": "Backstage passes to a TAFKAL80ETC concert",
     "quality": 12,
     "sellIn": 9,
@@ -242,7 +242,7 @@ exports[`Gilded Rose > golden test: name:Backstage passes to a TAFKAL80ETC conce
 
 exports[`Gilded Rose > golden test: name:Sulfuras, Hand of Ragnaros sellIn:-1 quality:1 1`] = `
 [
-  Item {
+  Sulfuras {
     "name": "Sulfuras, Hand of Ragnaros",
     "quality": 1,
     "sellIn": -1,
@@ -252,7 +252,7 @@ exports[`Gilded Rose > golden test: name:Sulfuras, Hand of Ragnaros sellIn:-1 qu
 
 exports[`Gilded Rose > golden test: name:Sulfuras, Hand of Ragnaros sellIn:-1 quality:5 1`] = `
 [
-  Item {
+  Sulfuras {
     "name": "Sulfuras, Hand of Ragnaros",
     "quality": 5,
     "sellIn": -1,
@@ -262,7 +262,7 @@ exports[`Gilded Rose > golden test: name:Sulfuras, Hand of Ragnaros sellIn:-1 qu
 
 exports[`Gilded Rose > golden test: name:Sulfuras, Hand of Ragnaros sellIn:-1 quality:10 1`] = `
 [
-  Item {
+  Sulfuras {
     "name": "Sulfuras, Hand of Ragnaros",
     "quality": 10,
     "sellIn": -1,
@@ -272,7 +272,7 @@ exports[`Gilded Rose > golden test: name:Sulfuras, Hand of Ragnaros sellIn:-1 qu
 
 exports[`Gilded Rose > golden test: name:Sulfuras, Hand of Ragnaros sellIn:1 quality:1 1`] = `
 [
-  Item {
+  Sulfuras {
     "name": "Sulfuras, Hand of Ragnaros",
     "quality": 1,
     "sellIn": 1,
@@ -282,7 +282,7 @@ exports[`Gilded Rose > golden test: name:Sulfuras, Hand of Ragnaros sellIn:1 qua
 
 exports[`Gilded Rose > golden test: name:Sulfuras, Hand of Ragnaros sellIn:1 quality:5 1`] = `
 [
-  Item {
+  Sulfuras {
     "name": "Sulfuras, Hand of Ragnaros",
     "quality": 5,
     "sellIn": 1,
@@ -292,7 +292,7 @@ exports[`Gilded Rose > golden test: name:Sulfuras, Hand of Ragnaros sellIn:1 qua
 
 exports[`Gilded Rose > golden test: name:Sulfuras, Hand of Ragnaros sellIn:1 quality:10 1`] = `
 [
-  Item {
+  Sulfuras {
     "name": "Sulfuras, Hand of Ragnaros",
     "quality": 10,
     "sellIn": 1,
@@ -302,7 +302,7 @@ exports[`Gilded Rose > golden test: name:Sulfuras, Hand of Ragnaros sellIn:1 qua
 
 exports[`Gilded Rose > golden test: name:Sulfuras, Hand of Ragnaros sellIn:5 quality:1 1`] = `
 [
-  Item {
+  Sulfuras {
     "name": "Sulfuras, Hand of Ragnaros",
     "quality": 1,
     "sellIn": 5,
@@ -312,7 +312,7 @@ exports[`Gilded Rose > golden test: name:Sulfuras, Hand of Ragnaros sellIn:5 qua
 
 exports[`Gilded Rose > golden test: name:Sulfuras, Hand of Ragnaros sellIn:5 quality:5 1`] = `
 [
-  Item {
+  Sulfuras {
     "name": "Sulfuras, Hand of Ragnaros",
     "quality": 5,
     "sellIn": 5,
@@ -322,7 +322,7 @@ exports[`Gilded Rose > golden test: name:Sulfuras, Hand of Ragnaros sellIn:5 qua
 
 exports[`Gilded Rose > golden test: name:Sulfuras, Hand of Ragnaros sellIn:5 quality:10 1`] = `
 [
-  Item {
+  Sulfuras {
     "name": "Sulfuras, Hand of Ragnaros",
     "quality": 10,
     "sellIn": 5,
@@ -332,7 +332,7 @@ exports[`Gilded Rose > golden test: name:Sulfuras, Hand of Ragnaros sellIn:5 qua
 
 exports[`Gilded Rose > golden test: name:Sulfuras, Hand of Ragnaros sellIn:10 quality:1 1`] = `
 [
-  Item {
+  Sulfuras {
     "name": "Sulfuras, Hand of Ragnaros",
     "quality": 1,
     "sellIn": 10,
@@ -342,7 +342,7 @@ exports[`Gilded Rose > golden test: name:Sulfuras, Hand of Ragnaros sellIn:10 qu
 
 exports[`Gilded Rose > golden test: name:Sulfuras, Hand of Ragnaros sellIn:10 quality:5 1`] = `
 [
-  Item {
+  Sulfuras {
     "name": "Sulfuras, Hand of Ragnaros",
     "quality": 5,
     "sellIn": 10,
@@ -352,7 +352,7 @@ exports[`Gilded Rose > golden test: name:Sulfuras, Hand of Ragnaros sellIn:10 qu
 
 exports[`Gilded Rose > golden test: name:Sulfuras, Hand of Ragnaros sellIn:10 quality:10 1`] = `
 [
-  Item {
+  Sulfuras {
     "name": "Sulfuras, Hand of Ragnaros",
     "quality": 10,
     "sellIn": 10,
