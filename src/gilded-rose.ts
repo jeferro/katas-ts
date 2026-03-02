@@ -5,6 +5,10 @@ export class Item {
               public quality: number) {
   }
 
+  static create(name: string, sellIn: number, quality: number) {
+    return new Item(name, sellIn, quality);
+  }
+
   update(): void {
     if (this.name === 'Sulfuras, Hand of Ragnaros') {
       return;

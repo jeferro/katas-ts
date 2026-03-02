@@ -20,7 +20,7 @@ describe('Gilded Rose', () => {
         'golden test: name:%s sellIn:%s quality:%s',
         (name: string, sellIn: number, quality) => {
             const items = [
-                new Item(name, sellIn, quality),
+                Item.create(name, sellIn, quality),
             ]
             const gildedRose = new GildedRose(items)
 
