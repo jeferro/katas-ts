@@ -5,4 +5,24 @@ export abstract class Item {
   }
 
   abstract update(): void;
+
+  protected incrementQuality(qualityDiff: number) {
+    this.quality += qualityDiff
+
+    if(qualityDiff > 50){
+      this.quality = 50
+    }
+  }
+
+  protected decrementSellIn() {
+    this.sellIn = this.sellIn - 1
+  }
+
+  protected hasSellInPassed() {
+    return this.sellIn < 0;
+  }
+
+  protected removeQuality() {
+    this.quality = 0
+  }
 }

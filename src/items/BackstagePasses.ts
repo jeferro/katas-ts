@@ -8,17 +8,15 @@ export class BackstagePasses extends Item {
   }
 
   update(): void {
-    this.sellIn = this.sellIn - 1;
+    this.decrementSellIn()
 
-    if (this.sellIn < 0) {
-      this.quality = 0
+    if (this.hasSellInPassed()) {
+      this.removeQuality();
       return;
     }
 
-    if (this.quality < 50) {
-      const qualityDiff = this.sellIn < 7 ? 3 : 2
+    const qualityDiff = this.sellIn < 7 ? 3 : 2
 
-      this.quality += qualityDiff
-    }
+    this.incrementQuality(qualityDiff)
   }
 }

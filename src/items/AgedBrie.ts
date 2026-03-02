@@ -8,13 +8,10 @@ export class AgedBrie extends Item {
   }
 
   update(): void {
-    this.sellIn = this.sellIn - 1
+    this.decrementSellIn();
 
-    if (this.quality < 50) {
-      const qualityDiff = this.sellIn < 0 ? 2 : 1
+    const qualityDiff = this.hasSellInPassed() ? 2 : 1
 
-      this.quality += qualityDiff
-    }
+    this.incrementQuality(qualityDiff);
   }
-
 }
