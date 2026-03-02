@@ -1,5 +1,6 @@
 import { describe, expect } from 'vitest'
-import {GildedRose, Item} from "./gilded-rose";
+import {GildedRose} from "./gilded-rose";
+import {ItemCreator} from "./ItemCreator";
 
 function cartesianProduct<T extends any[][]>(...arrays: T): any[][] {
     return arrays.reduce(
@@ -20,7 +21,7 @@ describe('Gilded Rose', () => {
         'golden test: name:%s sellIn:%s quality:%s',
         (name: string, sellIn: number, quality) => {
             const items = [
-                Item.create(name, sellIn, quality),
+                ItemCreator.create(name, sellIn, quality),
             ]
             const gildedRose = new GildedRose(items)
 
