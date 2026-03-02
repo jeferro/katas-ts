@@ -42,6 +42,19 @@ export class Item {
   }
 }
 
+class AgedBrie extends Item {
+
+
+}
+
+class BackstagePasses extends Item {
+}
+
+class Sulfuras extends Item {
+
+
+}
+
 export class GildedRose {
   items: Array<Item>;
 
