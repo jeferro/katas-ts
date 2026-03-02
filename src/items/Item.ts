@@ -1,7 +1,7 @@
 export abstract class Item {
 
-  constructor(public sellIn: number,
-              public quality: number) {
+  protected constructor(public sellIn: number,
+                        public quality: number) {
   }
 
   abstract update(): void;
@@ -14,15 +14,15 @@ export abstract class Item {
     }
   }
 
+  protected removeQuality() {
+    this.quality = 0
+  }
+
   protected decrementSellIn() {
     this.sellIn = this.sellIn - 1
   }
 
   protected hasSellInPassed() {
     return this.sellIn < 0;
-  }
-
-  protected removeQuality() {
-    this.quality = 0
   }
 }
