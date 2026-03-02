@@ -2,8 +2,7 @@ import {Item} from "./Item";
 
 export class AgedBrie extends Item {
 
-  constructor(name: string,
-              sellIn: number,
+  constructor(sellIn: number,
               quality: number) {
     super('Aged Brie', sellIn, quality);
   }
