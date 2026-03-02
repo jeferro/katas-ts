@@ -1,11 +1,32 @@
-import { describe, it, expect } from 'vitest'
-import {GildedRose} from "./gilded-rose";
+import { describe, expect } from 'vitest'
+import {GildedRose, Item} from "./gilded-rose";
+
+function cartesianProduct<T extends any[][]>(...arrays: T): any[][] {
+    return arrays.reduce(
+        (acc, curr) => acc.flatMap(combo => curr.map(item => [...combo, item])),
+        [[]]
+    );
+}
 
 describe('Gilded Rose', () => {
 
-    it('should create object', () => {
-        const gildedRose = new GildedRose()
+    const names = ['Sulfuras, Hand of Ragnaros', 'Aged Brie', 'Backstage passes to a TAFKAL80ETC concert'];
+    const sellIns = [-1, 1, 5, 10]
+    const qualities = [1, 5, 10]
 
-        expect(gildedRose).not.toBeUndefined()
-    })
+    const cases = cartesianProduct(names, sellIns, qualities)
+
+    test.each(cases)(
+        'golden test: name:%s sellIn:%s quality:%s',
+        (name: string, sellIn: number, quality) => {
+            const items = [
+                new Item(name, sellIn, quality),
+            ]
+            const gildedRose = new GildedRose(items)
+
+            const result = gildedRose.updateQuality()
+
+            expect(result).toMatchSnapshot()
+        }
+    )
 })

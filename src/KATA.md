@@ -11,3 +11,5 @@ propósito general:
 > tipo serio y práctico llamado Leeroy, que ahora se encuentra en otras aventuras.
 
 Se plantea crear un Golden Test que cubra el 100% del código. Y a continuación, desarrollar el refactor para mejorarlo.
+
+Después del refacto y como paso opción, crear assertion test para reemplazar al golden test.
