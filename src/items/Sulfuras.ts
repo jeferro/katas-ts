@@ -2,9 +2,9 @@ import {Item} from "./Item";
 
 export class Sulfuras extends Item {
 
-  constructor(public name: string,
-              public sellIn: number,
-              public quality: number) {
+  constructor(name: string,
+              sellIn: number,
+              quality: number) {
     super('Sulfuras, Hand of Ragnaros', sellIn, quality);
   }
 

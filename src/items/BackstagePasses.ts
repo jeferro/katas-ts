@@ -2,9 +2,9 @@ import {Item} from "./Item";
 
 export class BackstagePasses extends Item {
 
-  constructor(public name: string,
-              public sellIn: number,
-              public quality: number) {
+  constructor(name: string,
+              sellIn: number,
+              quality: number) {
     super('Backstage passes to a TAFKAL80ETC concert', sellIn, quality);
   }
 
