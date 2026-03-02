@@ -16,15 +16,9 @@ export class BackstagePasses extends Item {
     }
 
     if (this.quality < 50) {
-      this.quality = this.quality + 1
+      const qualityDiff = this.sellIn < 7 ? 3 : 2
 
-      if (this.quality < 50) {
-
-        const qualityDiff = this.sellIn < 7 ? 2 : 1
-
-        this.quality = this.quality + qualityDiff
-
-      }
+      this.quality += qualityDiff
     }
   }
 }
