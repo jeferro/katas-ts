@@ -1,0 +1,325 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Gilded Rose > golden test: name:Aged Brie sellIn:-1 quality:1 1`] = `
+[
+  AgedBrie {
+    "quality": 3,
+    "sellIn": -2,
+  },
+]
+`;
+
+exports[`Gilded Rose > golden test: name:Aged Brie sellIn:-1 quality:5 1`] = `
+[
+  AgedBrie {
+    "quality": 7,
+    "sellIn": -2,
+  },
+]
+`;
+
+exports[`Gilded Rose > golden test: name:Aged Brie sellIn:-1 quality:10 1`] = `
+[
+  AgedBrie {
+    "quality": 12,
+    "sellIn": -2,
+  },
+]
+`;
+
+exports[`Gilded Rose > golden test: name:Aged Brie sellIn:1 quality:1 1`] = `
+[
+  AgedBrie {
+    "quality": 2,
+    "sellIn": 0,
+  },
+]
+`;
+
+exports[`Gilded Rose > golden test: name:Aged Brie sellIn:1 quality:5 1`] = `
+[
+  AgedBrie {
+    "quality": 6,
+    "sellIn": 0,
+  },
+]
+`;
+
+exports[`Gilded Rose > golden test: name:Aged Brie sellIn:1 quality:10 1`] = `
+[
+  AgedBrie {
+    "quality": 11,
+    "sellIn": 0,
+  },
+]
+`;
+
+exports[`Gilded Rose > golden test: name:Aged Brie sellIn:5 quality:1 1`] = `
+[
+  AgedBrie {
+    "quality": 2,
+    "sellIn": 4,
+  },
+]
+`;
+
+exports[`Gilded Rose > golden test: name:Aged Brie sellIn:5 quality:5 1`] = `
+[
+  AgedBrie {
+    "quality": 6,
+    "sellIn": 4,
+  },
+]
+`;
+
+exports[`Gilded Rose > golden test: name:Aged Brie sellIn:5 quality:10 1`] = `
+[
+  AgedBrie {
+    "quality": 11,
+    "sellIn": 4,
+  },
+]
+`;
+
+exports[`Gilded Rose > golden test: name:Aged Brie sellIn:10 quality:1 1`] = `
+[
+  AgedBrie {
+    "quality": 2,
+    "sellIn": 9,
+  },
+]
+`;
+
+exports[`Gilded Rose > golden test: name:Aged Brie sellIn:10 quality:5 1`] = `
+[
+  AgedBrie {
+    "quality": 6,
+    "sellIn": 9,
+  },
+]
+`;
+
+exports[`Gilded Rose > golden test: name:Aged Brie sellIn:10 quality:10 1`] = `
+[
+  AgedBrie {
+    "quality": 11,
+    "sellIn": 9,
+  },
+]
+`;
+
+exports[`Gilded Rose > golden test: name:Backstage passes to a TAFKAL80ETC concert sellIn:-1 quality:1 1`] = `
+[
+  BackstagePasses {
+    "quality": 0,
+    "sellIn": -2,
+  },
+]
+`;
+
+exports[`Gilded Rose > golden test: name:Backstage passes to a TAFKAL80ETC concert sellIn:-1 quality:5 1`] = `
+[
+  BackstagePasses {
+    "quality": 0,
+    "sellIn": -2,
+  },
+]
+`;
+
+exports[`Gilded Rose > golden test: name:Backstage passes to a TAFKAL80ETC concert sellIn:-1 quality:10 1`] = `
+[
+  BackstagePasses {
+    "quality": 0,
+    "sellIn": -2,
+  },
+]
+`;
+
+exports[`Gilded Rose > golden test: name:Backstage passes to a TAFKAL80ETC concert sellIn:1 quality:1 1`] = `
+[
+  BackstagePasses {
+    "quality": 4,
+    "sellIn": 0,
+  },
+]
+`;
+
+exports[`Gilded Rose > golden test: name:Backstage passes to a TAFKAL80ETC concert sellIn:1 quality:5 1`] = `
+[
+  BackstagePasses {
+    "quality": 8,
+    "sellIn": 0,
+  },
+]
+`;
+
+exports[`Gilded Rose > golden test: name:Backstage passes to a TAFKAL80ETC concert sellIn:1 quality:10 1`] = `
+[
+  BackstagePasses {
+    "quality": 13,
+    "sellIn": 0,
+  },
+]
+`;
+
+exports[`Gilded Rose > golden test: name:Backstage passes to a TAFKAL80ETC concert sellIn:5 quality:1 1`] = `
+[
+  BackstagePasses {
+    "quality": 4,
+    "sellIn": 4,
+  },
+]
+`;
+
+exports[`Gilded Rose > golden test: name:Backstage passes to a TAFKAL80ETC concert sellIn:5 quality:5 1`] = `
+[
+  BackstagePasses {
+    "quality": 8,
+    "sellIn": 4,
+  },
+]
+`;
+
+exports[`Gilded Rose > golden test: name:Backstage passes to a TAFKAL80ETC concert sellIn:5 quality:10 1`] = `
+[
+  BackstagePasses {
+    "quality": 13,
+    "sellIn": 4,
+  },
+]
+`;
+
+exports[`Gilded Rose > golden test: name:Backstage passes to a TAFKAL80ETC concert sellIn:10 quality:1 1`] = `
+[
+  BackstagePasses {
+    "quality": 3,
+    "sellIn": 9,
+  },
+]
+`;
+
+exports[`Gilded Rose > golden test: name:Backstage passes to a TAFKAL80ETC concert sellIn:10 quality:5 1`] = `
+[
+  BackstagePasses {
+    "quality": 7,
+    "sellIn": 9,
+  },
+]
+`;
+
+exports[`Gilded Rose > golden test: name:Backstage passes to a TAFKAL80ETC concert sellIn:10 quality:10 1`] = `
+[
+  BackstagePasses {
+    "quality": 12,
+    "sellIn": 9,
+  },
+]
+`;
+
+exports[`Gilded Rose > golden test: name:Sulfuras, Hand of Ragnaros sellIn:-1 quality:1 1`] = `
+[
+  Sulfuras {
+    "quality": 1,
+    "sellIn": -1,
+  },
+]
+`;
+
+exports[`Gilded Rose > golden test: name:Sulfuras, Hand of Ragnaros sellIn:-1 quality:5 1`] = `
+[
+  Sulfuras {
+    "quality": 5,
+    "sellIn": -1,
+  },
+]
+`;
+
+exports[`Gilded Rose > golden test: name:Sulfuras, Hand of Ragnaros sellIn:-1 quality:10 1`] = `
+[
+  Sulfuras {
+    "quality": 10,
+    "sellIn": -1,
+  },
+]
+`;
+
+exports[`Gilded Rose > golden test: name:Sulfuras, Hand of Ragnaros sellIn:1 quality:1 1`] = `
+[
+  Sulfuras {
+    "quality": 1,
+    "sellIn": 1,
+  },
+]
+`;
+
+exports[`Gilded Rose > golden test: name:Sulfuras, Hand of Ragnaros sellIn:1 quality:5 1`] = `
+[
+  Sulfuras {
+    "quality": 5,
+    "sellIn": 1,
+  },
+]
+`;
+
+exports[`Gilded Rose > golden test: name:Sulfuras, Hand of Ragnaros sellIn:1 quality:10 1`] = `
+[
+  Sulfuras {
+    "quality": 10,
+    "sellIn": 1,
+  },
+]
+`;
+
+exports[`Gilded Rose > golden test: name:Sulfuras, Hand of Ragnaros sellIn:5 quality:1 1`] = `
+[
+  Sulfuras {
+    "quality": 1,
+    "sellIn": 5,
+  },
+]
+`;
+
+exports[`Gilded Rose > golden test: name:Sulfuras, Hand of Ragnaros sellIn:5 quality:5 1`] = `
+[
+  Sulfuras {
+    "quality": 5,
+    "sellIn": 5,
+  },
+]
+`;
+
+exports[`Gilded Rose > golden test: name:Sulfuras, Hand of Ragnaros sellIn:5 quality:10 1`] = `
+[
+  Sulfuras {
+    "quality": 10,
+    "sellIn": 5,
+  },
+]
+`;
+
+exports[`Gilded Rose > golden test: name:Sulfuras, Hand of Ragnaros sellIn:10 quality:1 1`] = `
+[
+  Sulfuras {
+    "quality": 1,
+    "sellIn": 10,
+  },
+]
+`;
+
+exports[`Gilded Rose > golden test: name:Sulfuras, Hand of Ragnaros sellIn:10 quality:5 1`] = `
+[
+  Sulfuras {
+    "quality": 5,
+    "sellIn": 10,
+  },
+]
+`;
+
+exports[`Gilded Rose > golden test: name:Sulfuras, Hand of Ragnaros sellIn:10 quality:10 1`] = `
+[
+  Sulfuras {
+    "quality": 10,
+    "sellIn": 10,
+  },
+]
+`;
