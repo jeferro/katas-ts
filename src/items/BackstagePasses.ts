@@ -4,7 +4,7 @@ export class BackstagePasses extends Item {
 
   constructor(sellIn: number,
               quality: number) {
-    super('Backstage passes to a TAFKAL80ETC concert', sellIn, quality);
+    super(sellIn, quality);
   }
 
   update(): void {

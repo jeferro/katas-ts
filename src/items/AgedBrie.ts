@@ -4,7 +4,7 @@ export class AgedBrie extends Item {
 
   constructor(sellIn: number,
               quality: number) {
-    super('Aged Brie', sellIn, quality);
+    super(sellIn, quality);
   }
 
   update(): void {
