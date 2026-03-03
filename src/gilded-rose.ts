@@ -17,7 +17,7 @@ export class Item {
         this.updateQualityOfBackstagePasses()
         break
       default:
-        this.updateQualityOther(name)
+        this.updateQualityOther()
     }
   }
 
@@ -55,7 +55,7 @@ export class Item {
 
   }
 
-  private updateQualityOther(name: string) {
+  private updateQualityOther() {
     if (this.quality > 0) {
       this.quality = this.quality - 1
     }
