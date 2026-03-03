@@ -62,28 +62,6 @@ describe('Gilded Rose', () => {
         expect(items[0].quality).toBe(0)
     })
 
-    it('Support other item decrease quality by 1', () => {
-        const items = [
-            new Item('Other', 1, 20),
-        ]
-
-        const gildedRose = new GildedRose(items)
-        gildedRose.updateQuality()
-
-        expect(items[0].quality).toBe(19)
-    })
-
-    it('Support other item decrease quality by 2 once the sell by date has passed', () => {
-        const items = [
-            new Item('Other', 0, 20),
-        ]
-
-        const gildedRose = new GildedRose(items)
-        gildedRose.updateQuality()
-
-        expect(items[0].quality).toBe(18)
-    })
-
     it('Backstage passes Quality drops to 0 after the concert', () => {
         const items = [
             new Item('Backstage passes to a TAFKAL80ETC concert', 0, 20),
@@ -95,7 +73,6 @@ describe('Gilded Rose', () => {
         expect(items[0].quality).toBe(0)
     })
 
-
     it('Sulfuras never has to be sold or decreases in Quality', () => {
         const items = [
             new Item('Sulfuras, Hand of Ragnaros', 12, 20),
@@ -106,5 +83,28 @@ describe('Gilded Rose', () => {
 
         expect(items[0].sellIn).toBe(12)
         expect(items[0].quality).toBe(20)
+    })
+
+    it('Support other item decrease quality by 1', () => {
+        const items = [
+            new Item('Other', 1, 20),
+        ]
+
+        const gildedRose = new GildedRose(items)
+        gildedRose.updateQuality()
+
+        expect(items[0].quality).toBe(19)
+    })
+
+
+    it('Support other item decrease quality by 2 once the sell by date has passed', () => {
+        const items = [
+            new Item('Other', 0, 20),
+        ]
+
+        const gildedRose = new GildedRose(items)
+        gildedRose.updateQuality()
+
+        expect(items[0].quality).toBe(18)
     })
 })
