@@ -22,9 +22,9 @@ export class Item {
   }
 
   private updateQualityOfAgedBrie() {
-    this.incrementQuality()
-
     this.decrementSellIn();
+
+    this.incrementQuality()
 
     if (this.hasSellInPassed()) {
       this.incrementQuality();
@@ -32,23 +32,21 @@ export class Item {
   }
 
   private updateQualityOfBackstagePasses() {
-    if (this.quality < 50) {
-      this.quality = this.quality + 1
-    }
-
-    if (this.quality < 50) {
-      if (this.sellIn < 11) {
-        this.quality = this.quality + 1
-      }
-      if (this.sellIn < 6) {
-        this.quality = this.quality + 1
-      }
-    }
-
-    this.sellIn = this.sellIn - 1;
+    this.decrementSellIn()
 
     if (this.hasSellInPassed()) {
       this.quality = 0
+      return
+    }
+
+    this.incrementQuality()
+
+    if (this.sellIn < 11) {
+      this.incrementQuality()
+    }
+
+    if (this.sellIn < 6) {
+      this.incrementQuality()
     }
   }
 
