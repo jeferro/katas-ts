@@ -62,6 +62,17 @@ describe('Gilded Rose', () => {
         expect(items[0].quality).toBe(0)
     })
 
+    it('Support other item decrease quality by 1', () => {
+        const items = [
+            new Item('Other', 1, 20),
+        ]
+
+        const gildedRose = new GildedRose(items)
+        gildedRose.updateQuality()
+
+        expect(items[0].quality).toBe(19)
+    })
+
     it('Backstage passes Quality drops to 0 after the concert', () => {
         const items = [
             new Item('Backstage passes to a TAFKAL80ETC concert', 0, 20),
