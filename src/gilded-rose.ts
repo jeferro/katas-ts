@@ -22,14 +22,11 @@ export class Item {
   }
 
   private updateQualityOfAgedBrie() {
-    this.decrementSellIn();
+    this.decrementSellIn()
 
-    if (this.hasSellInPassed()) {
-      this.incrementQuality(2)
-    }
-    else{
-      this.incrementQuality(1)
-    }
+    const increment = this.hasSellInPassed() ? 2 : 1
+
+    this.incrementQuality(increment)
   }
 
   private updateQualityOfBackstagePasses() {
