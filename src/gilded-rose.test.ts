@@ -18,7 +18,7 @@ describe('Gilded Rose', () => {
         expect(items[2].quality).toBe(50)
     })
 
-    it('Aged Brie Quality degrades twice as fast Once the sell by date has passed', () => {
+    it('Aged Brie Quality degrades twice as fast once the sell by date has passed', () => {
         const items = [
             new Item('Aged Brie', 0, 20)
         ]
@@ -49,6 +49,17 @@ describe('Gilded Rose', () => {
         gildedRose.updateQuality()
 
         expect(items[0].quality).toBe(23)
+    })
+
+    it('Backstage passes Quality set zero once the sell by date has passed', () => {
+        const items = [
+            new Item('Backstage passes to a TAFKAL80ETC concert', 0, 20),
+        ]
+
+        const gildedRose = new GildedRose(items)
+        gildedRose.updateQuality()
+
+        expect(items[0].quality).toBe(0)
     })
 
     it('Backstage passes Quality drops to 0 after the concert', () => {
