@@ -26,7 +26,7 @@ export class Item {
 
     this.decrementSellIn();
 
-    if (this.sellIn < 0) {
+    if (this.hasSellInPassed()) {
       this.incrementQuality();
     }
   }
@@ -47,7 +47,7 @@ export class Item {
 
     this.sellIn = this.sellIn - 1;
 
-    if (this.sellIn < 0) {
+    if (this.hasSellInPassed()) {
       this.quality = 0
     }
   }
@@ -63,12 +63,16 @@ export class Item {
 
     this.sellIn = this.sellIn - 1;
 
-    if (this.sellIn < 0) {
+    if (this.hasSellInPassed()) {
       if (this.quality > 0) {
         this.quality = this.quality - 1
       }
 
     }
+  }
+
+  private hasSellInPassed() {
+    return this.sellIn < 0;
   }
 
   private decrementSellIn() {
