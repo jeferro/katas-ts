@@ -28,4 +28,15 @@ describe('Gilded Rose', () => {
 
         expect(items[0].quality).toBe(22)
     })
+
+    it('Backstage passes Quality increases by 3 when there are 5 days or less', () => {
+        const items = [
+            new Item('Backstage passes to a TAFKAL80ETC concert', 5, 20),
+        ]
+
+        const gildedRose = new GildedRose(items)
+        gildedRose.updateQuality()
+
+        expect(items[0].quality).toBe(23)
+    })
 })
