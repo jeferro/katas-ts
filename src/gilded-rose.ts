@@ -29,6 +29,14 @@ export class Item {
     this.incrementQuality(increment)
   }
 
+  private updateQualityOther() {
+    this.decrementSellIn()
+
+    const decrement = this.hasSellInPassed() ? 2 : 1
+
+    this.decrementQuality(decrement)
+  }
+
   private updateQualityOfBackstagePasses() {
     this.decrementSellIn()
 
@@ -56,21 +64,6 @@ export class Item {
 
   }
 
-  private updateQualityOther() {
-    if (this.quality > 0) {
-      this.quality = this.quality - 1
-    }
-
-    this.sellIn = this.sellIn - 1;
-
-    if (this.hasSellInPassed()) {
-      if (this.quality > 0) {
-        this.quality = this.quality - 1
-      }
-
-    }
-  }
-
   private hasSellInPassed() {
     return this.sellIn < 0;
   }
@@ -80,8 +73,18 @@ export class Item {
   }
 
   private incrementQuality(increment: number) {
-    if (this.quality < 50) {
-      this.quality = this.quality + increment
+    this.quality = this.quality + increment
+
+    if (this.quality > 50) {
+      this.quality = 50
+    }
+  }
+
+  private decrementQuality(decrement: number) {
+    this.quality = this.quality - decrement
+
+    if (this.quality < 0) {
+      this.quality = 0
     }
   }
 }
