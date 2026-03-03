@@ -10,6 +10,22 @@ export class Item {
   }
 
   public updateQualityOfItem(name: string = this.name) {
+    switch (name){
+      case 'Aged Brie':
+        this.updateQuality('Aged Brie')
+        break
+      case 'Sulfuras, Hand of Ragnaros':
+        this.updateQuality('Sulfuras, Hand of Ragnaros')
+        break
+      case 'Backstage passes to a TAFKAL80ETC concert':
+        this.updateQuality('Backstage passes to a TAFKAL80ETC concert')
+        break
+      default:
+        this.updateQuality(name)
+    }
+  }
+
+  private updateQuality(name: string) {
     if (name != 'Aged Brie' && name != 'Backstage passes to a TAFKAL80ETC concert') {
       if (name != 'Sulfuras, Hand of Ragnaros') {
         if (this.quality > 0) {
