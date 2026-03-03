@@ -37,15 +37,19 @@ export class Item {
       return
     }
 
-    this.incrementQuality(1)
+    let increment: number
 
-    if (this.sellIn < 11) {
-      this.incrementQuality(1)
+    if(this.sellIn < 6) {
+      increment = 3
+    }
+    else if(this.sellIn < 11) {
+      increment = 2
+    }
+    else{
+      increment = 1
     }
 
-    if (this.sellIn < 6) {
-      this.incrementQuality(1)
-    }
+    this.incrementQuality(increment)
   }
 
   private updateQualitySulfuras() {
