@@ -12,5 +12,12 @@ describe('Character', () => {
         expect(character.isDead).toBeFalsy()
     })
 
+    it('should damage character in 100', () => {
+        const character = Character.create()
+        character.damage(100)
+
+        expect(character.health).toBe(900)
+    })
+
 
 })
