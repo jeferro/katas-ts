@@ -1,9 +1,12 @@
 
 export class Character {
-  private _health: number = 1000
+
+  constructor(private _health: number,
+              private _level: number) {
+  }
 
   static create(): Character {
-    return new Character()
+    return new Character(1000, 1)
   }
 
   damage(damage: number) {
@@ -24,6 +27,10 @@ export class Character {
 
   public get health(): number {
     return this._health
+  }
+
+  public get level(): number {
+    return this._level
   }
 
   public get isAlive() {
