@@ -26,10 +26,12 @@ export class Character {
 
     if(this._health > 1000 && this._level < 6) {
       this._health = 1000
+      return
     }
 
     if(this._health > 1500) {
       this._health = 1500
+      return
     }
   }
 
