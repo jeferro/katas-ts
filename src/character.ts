@@ -23,6 +23,10 @@ export class Character {
     }
 
     this._health += value
+
+    if(this._health > 1000 && this._level < 6) {
+      this._health = 1000
+    }
   }
 
   public get health(): number {
@@ -39,5 +43,9 @@ export class Character {
 
   public get isDead() {
     return !this.isAlive
+  }
+
+  setLevel(level: number) {
+    this._level = level
   }
 }

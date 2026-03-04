@@ -31,6 +31,15 @@ describe('Character', () => {
 
     it('should health themselves', () => {
         const character = Character.create()
+        character.damage(100)
+        character.addHealth(50)
+
+        expect(character.health).toBe(950)
+    })
+
+    it('should have a health above 1000 when they reach level 6', () => {
+        const character = Character.create()
+        character.setLevel(6)
         character.addHealth(100)
 
         expect(character.health).toBe(1100)
