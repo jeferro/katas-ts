@@ -35,5 +35,12 @@ describe('Character', () => {
         expect(character.health).toBe(1100)
     })
 
+    it('not should health themselves when character is dead', () => {
+        const character = Character.create()
+        character.damage(1000)
+
+        expect(() => character.addHealth(100)).toThrowError()
+    })
+
 
 })
