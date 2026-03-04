@@ -19,5 +19,14 @@ describe('Character', () => {
         expect(character.health).toBe(900)
     })
 
+    it('should set health to 0 when damage is greater than health', () => {
+        const character = Character.create()
+        character.damage(2000)
+
+        expect(character.health).toBe(0)
+        expect(character.isAlive).toBeFalsy()
+        expect(character.isDead).toBeTruthy()
+    })
+
 
 })

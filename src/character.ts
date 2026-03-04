@@ -8,6 +8,10 @@ export class Character {
 
   damage(damage: number) {
     this._health -= damage
+
+    if(this._health < 0) {
+      this._health = 0
+    }
   }
 
   public get health(): number {
