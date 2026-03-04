@@ -14,6 +14,10 @@ export class Character {
     }
   }
 
+  addHealth(value: number) {
+    this._health += value
+  }
+
   public get health(): number {
     return this._health
   }
