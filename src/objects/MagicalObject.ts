@@ -14,7 +14,7 @@ export class MagicalObject {
     return this._health === 0
   }
 
-  decreaseHealth(realIncrease: number) {
+  consume(realIncrease: number) {
     if(this._health < realIncrease) {
       this._health = 0
       return

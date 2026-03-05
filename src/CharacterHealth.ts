@@ -35,6 +35,7 @@ export class CharacterHealth {
 
     return realIncrease
   }
+
   public get value(): number {
     return this._value
   }

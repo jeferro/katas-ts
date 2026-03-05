@@ -1,5 +1,5 @@
 import {Faction} from "./Faction"
-import {MagicalObject} from "./MagicalObject"
+import {MagicalObject} from "./objects/MagicalObject"
 import {CharacterHealth} from "./CharacterHealth";
 
 export class Character {
@@ -43,7 +43,7 @@ export class Character {
   healthFromMagicalObject(magicalObject: MagicalObject) {
     const realIncrease = this._health.increase(magicalObject.health)
 
-    magicalObject.decreaseHealth(realIncrease)
+    magicalObject.consume(realIncrease)
   }
 
   setLevel(level: number) {
