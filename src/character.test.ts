@@ -1,6 +1,7 @@
 import { describe, it, expect } from 'vitest'
 
 import {Character} from "./character"
+import {Faction} from "./Faction";
 
 
 describe('Character.create', () => {
@@ -13,6 +14,19 @@ describe('Character.create', () => {
         expect(character.factionId).toBeUndefined()
         expect(character.isAlive).toBeTruthy()
         expect(character.isDead).toBeFalsy()
+    })
+})
+
+describe('Character.join', () => {
+
+    it('should join to faction', () => {
+        const faction = Faction.create(1, "My faction")
+
+        const character = Character.create()
+
+        character.join(faction)
+
+        expect(character.factionId).toBe(faction.id)
     })
 })
 

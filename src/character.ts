@@ -1,3 +1,5 @@
+import {Faction} from "./Faction";
+
 export class Character {
 
   constructor(private _health: number,
@@ -41,6 +43,10 @@ export class Character {
 
   setLevel(level: number) {
     this._level = level
+  }
+
+  join(faction: Faction) {
+    this._factionId = faction.id
   }
 
   public get health(): number {
