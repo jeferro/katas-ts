@@ -1,18 +1,19 @@
-import {Faction} from "./Faction";
-import {MagicalObject} from "./MagicalObject";
+import {Faction} from "./Faction"
+import {MagicalObject} from "./MagicalObject"
+import {CharacterHealth} from "./CharacterHealth";
 
 export class Character {
 
-  constructor(private _health: number,
-              private _maxHealth: number,
+  constructor(private _health: CharacterHealth,
               private _level: number,
               private _factionIds: Set<number>) {
   }
 
   static create(): Character {
-    const factions = new Set<number>();
+    const factions = new Set<number>()
+    const health = CharacterHealth.create(1000, 1000)
 
-    return new Character(1000, 1000,1, factions)
+    return new Character(health,1, factions)
   }
 
   damage(attacker: Character, damage: number) {
@@ -24,15 +25,7 @@ export class Character {
         ? damage * 0.5
         : damage * 1.5;
 
-    this.decreaseHealth(newDamage);
-  }
-
-  private decreaseHealth(newDamage: number) {
-    this._health -= newDamage
-
-    if (this._health < 0) {
-      this._health = 0
-    }
+    this._health.decrease(newDamage);
   }
 
   healthHimself(value: number) {
@@ -58,23 +51,13 @@ export class Character {
       throw new Error('Health is already dead')
     }
 
-    const realIncrease = this.calculateRealIncrease(increase, this._maxHealth)
-
-    this._health += realIncrease
-
-    return realIncrease
-  }
-
-  private calculateRealIncrease(increase: number, maxHealth: number) {
-    return this._health + increase > this._maxHealth
-        ? this._maxHealth - this._health
-        : increase;
+    return this._health.increase(increase)
   }
 
   setLevel(level: number) {
     this._level = level
 
-    this._maxHealth = this._level < 6 ? 1000 : 1500
+    this._health.setMaxHealth(this._level < 6 ? 1000 : 1500)
   }
 
   join(faction: Faction) {
@@ -108,15 +91,15 @@ export class Character {
   }
 
   public get health(): number {
-    return this._health
+    return this._health.value
   }
 
-  public get isAlive() {
-    return this._health > 0
+  public get isAlive(): boolean {
+    return this._health.isAlive
   }
 
-  public get isDead() {
-    return !this.isAlive
+  public get isDead(): boolean {
+    return this._health.isDead
   }
 
   public get level(): number {
