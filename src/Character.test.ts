@@ -2,6 +2,7 @@ import { describe, it, expect } from 'vitest'
 
 import {Character} from "./Character"
 import {Faction} from "./Faction";
+import {MagicalObject} from "./MagicalObject";
 
 
 const gildedOrderFaction = Faction.create(1, "Gilded Order")
@@ -37,7 +38,6 @@ describe('Character.join', () => {
         expect(character.belongsTo(ironTavernFaction.id)).toBeFalsy()
     })
 })
-
 
 
 
@@ -116,12 +116,13 @@ describe('Character.damage', () => {
 
 
 
-describe('Character.health', () => {
+describe('Character.healthHimself', () => {
+
     it('should health himself', () => {
         const attacker = Character.create()
 
         const character = Character.create()
-        character.damage(attacker,200)
+        character.damage(attacker, 200)
         character.healthHimself(50)
 
         expect(character.health).toBe(950)
@@ -152,6 +153,12 @@ describe('Character.health', () => {
         expect(() => character.healthHimself(100)).toThrowError()
     })
 
+})
+
+
+
+describe('Character.healthFromAllies', () => {
+
     it('allies should health character', () => {
         const allies = Character.create()
         allies.join(gildedOrderFaction)
@@ -175,5 +182,21 @@ describe('Character.health', () => {
         expect(() => character.healthFromAllies(notAllies, 100)).toThrowError()
     })
 
+})
+
+
+
+describe('Character.healthFromMagicalObject', () => {
+
+    it('magical object should health character', () => {
+        const magicalObject = MagicalObject.create(300)
+
+        const character = Character.create()
+        character.setLevel(6)
+
+        character.healthFromMagicalObject(magicalObject)
+
+        expect(character.health).toBe(1300)
+    })
 
 })

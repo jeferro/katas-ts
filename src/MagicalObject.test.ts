@@ -15,4 +15,17 @@ describe('MagicalObject.create', () => {
 
     expect(magicalObject.isDestroyed).toBe(true)
   })
+
+})
+
+
+
+describe('MagicalObject.decreaseHealth', () => {
+
+  it('Should has zero health when decrease value is greater than health', () => {
+    const magicalObject = MagicalObject.create(100)
+    magicalObject.decreaseHealth(200)
+
+    expect(magicalObject.health).toBe(0)
+  })
 })

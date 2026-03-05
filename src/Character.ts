@@ -1,4 +1,5 @@
 import {Faction} from "./Faction";
+import {MagicalObject} from "./MagicalObject";
 
 export class Character {
 
@@ -39,6 +40,12 @@ export class Character {
     }
 
     this.increaseHealth(value)
+  }
+
+  healthFromMagicalObject(magicalObject: MagicalObject) {
+    const realIncrease = this.increaseHealth(magicalObject.health)
+
+    magicalObject.decreaseHealth(realIncrease)
   }
 
   private increaseHealth(increase: number): number {
