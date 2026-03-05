@@ -2,7 +2,8 @@ import { describe, it, expect } from 'vitest'
 
 import {Character} from "./character"
 
-describe('Character', () => {
+
+describe('Character.create', () => {
 
     it('should create starting health at 1000 and level 1', () => {
         const character = Character.create()
@@ -12,6 +13,11 @@ describe('Character', () => {
         expect(character.isAlive).toBeTruthy()
         expect(character.isDead).toBeFalsy()
     })
+})
+
+
+
+describe('Character.damage', () => {
 
     it('should damage character in 100', () => {
         const character = Character.create()
@@ -28,7 +34,11 @@ describe('Character', () => {
         expect(character.isAlive).toBeFalsy()
         expect(character.isDead).toBeTruthy()
     })
+})
 
+
+
+describe('Character.health', () => {
     it('should health themselves', () => {
         const character = Character.create()
         character.damage(100)
