@@ -6,10 +6,6 @@ export class MagicalObject {
     this._maxHealth = _health
   }
 
-  static create(health: number): MagicalObject {
-    return new MagicalObject(health);
-  }
-
   public get isDestroyed(): boolean {
     return this._health === 0
   }
@@ -25,5 +21,12 @@ export class MagicalObject {
 
   public get health() {
     return this._health
+  }
+}
+
+export class HealingMagicalObject extends MagicalObject {
+
+  static create(health: number): MagicalObject {
+    return new MagicalObject(health);
   }
 }

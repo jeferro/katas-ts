@@ -2,7 +2,7 @@ import { describe, it, expect } from 'vitest'
 
 import {Character} from "./Character"
 import {Faction} from "./Faction";
-import {MagicalObject} from "./objects/MagicalObject";
+import {HealingMagicalObject} from "./objects/MagicalObject";
 
 
 const gildedOrderFaction = Faction.create(1, "Gilded Order")
@@ -189,7 +189,7 @@ describe('Character.healthFromAllies', () => {
 describe('Character.healthFromMagicalObject', () => {
 
     it('magical object should health character', () => {
-        const magicalObject = MagicalObject.create(300)
+        const magicalObject = HealingMagicalObject.create(300)
 
         const character = Character.create()
         character.setLevel(6)
