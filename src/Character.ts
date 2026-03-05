@@ -47,10 +47,6 @@ export class Character {
   }
 
   private increaseHealth(increase: number): number {
-    if (this.isDead) {
-      throw new Error('Health is already dead')
-    }
-
     return this._health.increase(increase)
   }
 

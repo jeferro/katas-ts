@@ -24,6 +24,10 @@ export class CharacterHealth {
   }
 
   public increase(value: number): number {
+    if (this.isDead) {
+      throw new Error('Health is already dead')
+    }
+
     const realIncrease = this.calculateRealIncrease(value, this._maxHealth)
 
     this._health += realIncrease
