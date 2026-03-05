@@ -1,4 +1,4 @@
-export class MagicalObject {
+export abstract class MagicalObject {
 
   private readonly _maxHealth: number
 
@@ -26,7 +26,7 @@ export class MagicalObject {
 
 export class HealingMagicalObject extends MagicalObject {
 
-  static create(health: number): MagicalObject {
-    return new MagicalObject(health);
+  static create(health: number): HealingMagicalObject {
+    return new HealingMagicalObject(health);
   }
 }
