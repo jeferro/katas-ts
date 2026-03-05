@@ -49,6 +49,10 @@ export class Character {
     this._factionId = faction.id
   }
 
+  leave() {
+    this._factionId = undefined
+  }
+
   public get health(): number {
     return this._health
   }

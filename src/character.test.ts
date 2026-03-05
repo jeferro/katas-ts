@@ -17,6 +17,8 @@ describe('Character.create', () => {
     })
 })
 
+
+
 describe('Character.join', () => {
 
     it('should join to faction', () => {
@@ -27,6 +29,23 @@ describe('Character.join', () => {
         character.join(faction)
 
         expect(character.factionId).toBe(faction.id)
+    })
+})
+
+
+
+
+describe('Character.leave', () => {
+
+    it('should leave faction', () => {
+        const faction = Faction.create(1, "My faction")
+
+        const character = Character.create()
+
+        character.join(faction)
+        character.leave()
+
+        expect(character.factionId).toBeUndefined()
     })
 })
 
