@@ -4,6 +4,11 @@ import {Character} from "./character"
 import {Faction} from "./Faction";
 
 
+const gildedOrderFaction = Faction.create(1, "Gilded Order")
+const alabasterCathedralFaction = Faction.create(2, "Alabaster Cathedral")
+const ironTavernFaction = Faction.create(3, "Iron Tavern")
+
+
 describe('Character.create', () => {
 
     it('should create starting health at 1000 and level 1', () => {
@@ -22,13 +27,11 @@ describe('Character.create', () => {
 describe('Character.join', () => {
 
     it('should join to faction', () => {
-        const faction = Faction.create(1, "My faction")
-
         const character = Character.create()
 
-        character.join(faction)
+        character.join(gildedOrderFaction)
 
-        expect(character.factionId).toBe(faction.id)
+        expect(character.factionId).toBe(gildedOrderFaction.id)
     })
 })
 
@@ -38,11 +41,10 @@ describe('Character.join', () => {
 describe('Character.leave', () => {
 
     it('should leave faction', () => {
-        const faction = Faction.create(1, "My faction")
 
         const character = Character.create()
 
-        character.join(faction)
+        character.join(gildedOrderFaction)
         character.leave()
 
         expect(character.factionId).toBeUndefined()
