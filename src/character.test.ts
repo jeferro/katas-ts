@@ -16,7 +16,7 @@ describe('Character.create', () => {
 
         expect(character.health).toBe(1000)
         expect(character.level).toBe(1)
-        expect(character.factionId).toBeUndefined()
+        expect(character.belongsToSomeFactory).toBeFalsy()
         expect(character.isAlive).toBeTruthy()
         expect(character.isDead).toBeFalsy()
     })
@@ -30,8 +30,11 @@ describe('Character.join', () => {
         const character = Character.create()
 
         character.join(gildedOrderFaction)
+        character.join(alabasterCathedralFaction)
 
-        expect(character.factionId).toBe(gildedOrderFaction.id)
+        expect(character.belongsTo(gildedOrderFaction)).toBeTruthy()
+        expect(character.belongsTo(alabasterCathedralFaction)).toBeTruthy()
+        expect(character.belongsTo(ironTavernFaction)).toBeFalsy()
     })
 })
 
@@ -45,9 +48,13 @@ describe('Character.leave', () => {
         const character = Character.create()
 
         character.join(gildedOrderFaction)
-        character.leave()
+        character.join(alabasterCathedralFaction)
 
-        expect(character.factionId).toBeUndefined()
+        character.leave(gildedOrderFaction)
+
+        expect(character.belongsTo(gildedOrderFaction)).toBeFalsy()
+        expect(character.belongsTo(alabasterCathedralFaction)).toBeTruthy()
+        expect(character.belongsTo(ironTavernFaction)).toBeFalsy()
     })
 })
 

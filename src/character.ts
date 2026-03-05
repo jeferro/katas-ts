@@ -4,11 +4,13 @@ export class Character {
 
   constructor(private _health: number,
               private _level: number,
-              private _factionId: number | undefined) {
+              private _factionIds: Set<number>) {
   }
 
   static create(): Character {
-    return new Character(1000, 1, undefined)
+    const factions = new Set<number>();
+
+    return new Character(1000, 1, factions)
   }
 
   damage(attacker: Character, damage: number) {
@@ -46,11 +48,19 @@ export class Character {
   }
 
   join(faction: Faction) {
-    this._factionId = faction.id
+    this._factionIds.add(faction.id)
   }
 
-  leave() {
-    this._factionId = undefined
+  leave(faction: Faction) {
+    this._factionIds.delete(faction.id)
+  }
+
+  belongsTo(faction: Faction) : boolean {
+    return this._factionIds.has(faction.id)
+  }
+
+  public get belongsToSomeFactory(): boolean {
+    return this._factionIds.size > 0
   }
 
   public get health(): number {
@@ -67,9 +77,5 @@ export class Character {
 
   public get level(): number {
     return this._level
-  }
-
-  public get factionId() {
-    return this._factionId
   }
 }
