@@ -29,7 +29,7 @@ export class Character {
   }
 
   healthHimself(value: number) {
-    this.increaseHealth(value);
+    this._health.increase(value)
   }
 
   healthFromAllies(other: Character, value: number) {
@@ -37,17 +37,13 @@ export class Character {
       throw new Error("Other character should belongs to same faction to health me");
     }
 
-    this.increaseHealth(value)
+    this._health.increase(value)
   }
 
   healthFromMagicalObject(magicalObject: MagicalObject) {
-    const realIncrease = this.increaseHealth(magicalObject.health)
+    const realIncrease = this._health.increase(magicalObject.health)
 
     magicalObject.decreaseHealth(realIncrease)
-  }
-
-  private increaseHealth(increase: number): number {
-    return this._health.increase(increase)
   }
 
   setLevel(level: number) {
