@@ -10,6 +10,7 @@ describe('Character.create', () => {
 
         expect(character.health).toBe(1000)
         expect(character.level).toBe(1)
+        expect(character.factionId).toBeUndefined()
         expect(character.isAlive).toBeTruthy()
         expect(character.isDead).toBeFalsy()
     })

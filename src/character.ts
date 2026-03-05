@@ -1,11 +1,12 @@
 export class Character {
 
   constructor(private _health: number,
-              private _level: number) {
+              private _level: number,
+              private _factionId: number | undefined) {
   }
 
   static create(): Character {
-    return new Character(1000, 1)
+    return new Character(1000, 1, undefined)
   }
 
   damage(attacker: Character, damage: number) {
@@ -38,12 +39,12 @@ export class Character {
     }
   }
 
-  public get health(): number {
-    return this._health
+  setLevel(level: number) {
+    this._level = level
   }
 
-  public get level(): number {
-    return this._level
+  public get health(): number {
+    return this._health
   }
 
   public get isAlive() {
@@ -54,7 +55,11 @@ export class Character {
     return !this.isAlive
   }
 
-  setLevel(level: number) {
-    this._level = level
+  public get level(): number {
+    return this._level
+  }
+
+  public get factionId() {
+    return this._factionId
   }
 }
