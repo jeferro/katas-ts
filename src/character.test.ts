@@ -117,12 +117,12 @@ describe('Character.damage', () => {
 
 
 describe('Character.health', () => {
-    it('should health themselves', () => {
+    it('should health himself', () => {
         const attacker = Character.create()
 
         const character = Character.create()
         character.damage(attacker,200)
-        character.addHealth(50)
+        character.healthHimself(50)
 
         expect(character.health).toBe(950)
     })
@@ -130,7 +130,7 @@ describe('Character.health', () => {
     it('should have a health above 1000 when they reach level 6', () => {
         const character = Character.create()
         character.setLevel(6)
-        character.addHealth(100)
+        character.healthHimself(100)
 
         expect(character.health).toBe(1100)
     })
@@ -138,18 +138,18 @@ describe('Character.health', () => {
     it('should have maximum of 1500 health when character has level 6', () => {
         const character = Character.create()
         character.setLevel(6)
-        character.addHealth(1000)
+        character.healthHimself(1000)
 
         expect(character.health).toBe(1500)
     })
 
-    it('not should health themselves when character is dead', () => {
+    it('not should health himself when character is dead', () => {
         const attacker = Character.create()
 
         const character = Character.create()
         character.damage(attacker, 2000)
 
-        expect(() => character.addHealth(100)).toThrowError()
+        expect(() => character.healthHimself(100)).toThrowError()
     })
 
 

@@ -29,7 +29,7 @@ export class Character {
     }
   }
 
-  addHealth(value: number) {
+  healthHimself(value: number) {
     if (this.isDead) {
       throw new Error('Health is already dead')
     }
