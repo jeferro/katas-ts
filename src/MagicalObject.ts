@@ -1,6 +1,9 @@
 export class MagicalObject {
 
-  constructor(public readonly health: number) {
+  private readonly _maxHealth: number
+
+  constructor(private _health: number) {
+    this._maxHealth = _health
   }
 
   static create(health: number): MagicalObject {
@@ -8,6 +11,10 @@ export class MagicalObject {
   }
 
   public get isDestroyed(): boolean {
-    return this.health === 0
+    return this._health === 0
+  }
+
+  public get health() {
+    return this._health
   }
 }
