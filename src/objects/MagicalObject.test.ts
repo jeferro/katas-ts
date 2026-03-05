@@ -1,5 +1,6 @@
 import { describe, it, expect } from 'vitest'
-import {HealingMagicalObject,} from "./MagicalObject";
+
+import {HealingMagicalObject} from "./HealingMagicalObject";
 
 
 describe('MagicalObject.create', () => {

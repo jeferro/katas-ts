@@ -2,7 +2,8 @@ import { describe, it, expect } from 'vitest'
 
 import {Character} from "./Character"
 import {Faction} from "./Faction";
-import {HealingMagicalObject} from "./objects/MagicalObject";
+
+import {HealingMagicalObject} from "./objects/HealingMagicalObject";
 
 
 const gildedOrderFaction = Faction.create(1, "Gilded Order")
