@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest'
 
-import {Character} from "./character"
+import {Character} from "./Character"
 import {Faction} from "./Faction";
 
 

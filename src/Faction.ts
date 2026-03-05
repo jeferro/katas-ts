@@ -1,4 +1,3 @@
-import {Character} from "./character";
 
 export class Faction {
   constructor(public readonly id: number,
