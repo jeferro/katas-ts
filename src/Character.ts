@@ -1,6 +1,7 @@
 import {Faction} from "./Faction"
 import {CharacterHealth} from "./CharacterHealth";
 import {HealingMagicalObject} from "./objects/HealingMagicalObject";
+import {MagicalWeapon} from "./objects/MagicalWeapon";
 
 export class Character {
 
@@ -26,6 +27,12 @@ export class Character {
         : damage * 1.5;
 
     this._health.decrease(newDamage);
+  }
+
+  damageUsingMagicalWeapon(magicalWeapon: MagicalWeapon) {
+    this._health.decrease(magicalWeapon.damage)
+
+    magicalWeapon.markAsUsed()
   }
 
   healthHimself(value: number) {

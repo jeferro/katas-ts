@@ -4,6 +4,7 @@ import {Character} from "./Character"
 import {Faction} from "./Faction";
 
 import {HealingMagicalObject} from "./objects/HealingMagicalObject";
+import {MagicalWeapon} from "./objects/MagicalWeapon";
 
 
 const gildedOrderFaction = Faction.create(1, "Gilded Order")
@@ -61,7 +62,7 @@ describe('Character.leave', () => {
 
 
 
-describe('Character.damage', () => {
+describe('Character.damageFromAttacker', () => {
 
     it('should damage character (reducing by 50% because attacker level is less than 5)', () => {
         const attacker = Character.create()
@@ -113,6 +114,32 @@ describe('Character.damage', () => {
 
         expect(() => character.damageFromAttacker(attacker, 2000)).toThrowError()
     })
+})
+
+
+
+describe('Character.damageUsingMagicalWeapon', () => {
+
+    it('should damage character using magical weapon', () => {
+        const magicalWeapon = MagicalWeapon.create(200, 2)
+
+        const character = Character.create()
+
+        character.damageUsingMagicalWeapon(magicalWeapon)
+
+        expect(character.health).toBe(800)
+    })
+
+    it('should decrease health by 1 when we used the weapon', () => {
+        const magicalWeapon = MagicalWeapon.create(200, 2)
+
+        const character = Character.create()
+
+        character.damageUsingMagicalWeapon(magicalWeapon)
+
+        expect(magicalWeapon.health).toBe(1)
+    })
+
 })
 
 

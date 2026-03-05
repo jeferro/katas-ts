@@ -14,18 +14,18 @@ export class CharacterHealth {
     this._maxHealth = value
   }
 
-  public decrease(value: number) {
-    this._value -= value
+  public decrease(damage: number) {
+    this.ensureIsAlive()
 
-    if (this._value < 0) {
-      this._value = 0
-    }
+    const realDamage = this._value - damage < 0
+        ? this._value
+        : damage
+
+    this._value -= realDamage
   }
 
   public increase(increase: number): number {
-    if (this.isDead) {
-      throw new Error('Health is already dead')
-    }
+    this.ensureIsAlive()
 
     const realIncrease = this._value + increase > this._maxHealth
         ? this._maxHealth - this._value
@@ -34,6 +34,12 @@ export class CharacterHealth {
     this._value += realIncrease
 
     return realIncrease
+  }
+
+  private ensureIsAlive() {
+    if (this.isDead) {
+      throw new Error('Health is already dead')
+    }
   }
 
   public get value(): number {
