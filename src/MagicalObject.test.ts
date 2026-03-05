@@ -9,4 +9,10 @@ describe('MagicalObject.create', () => {
 
     expect(magicalObject.health).toBe(1000)
   })
+
+  it('Should is destroyed when health is zero', () => {
+    const magicalObject = MagicalObject.create(0)
+
+    expect(magicalObject.isDestroyed).toBe(true)
+  })
 })
