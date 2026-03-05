@@ -32,9 +32,9 @@ describe('Character.join', () => {
         character.join(gildedOrderFaction)
         character.join(alabasterCathedralFaction)
 
-        expect(character.belongsTo(gildedOrderFaction)).toBeTruthy()
-        expect(character.belongsTo(alabasterCathedralFaction)).toBeTruthy()
-        expect(character.belongsTo(ironTavernFaction)).toBeFalsy()
+        expect(character.belongsTo(gildedOrderFaction.id)).toBeTruthy()
+        expect(character.belongsTo(alabasterCathedralFaction.id)).toBeTruthy()
+        expect(character.belongsTo(ironTavernFaction.id)).toBeFalsy()
     })
 })
 
@@ -52,9 +52,9 @@ describe('Character.leave', () => {
 
         character.leave(gildedOrderFaction)
 
-        expect(character.belongsTo(gildedOrderFaction)).toBeFalsy()
-        expect(character.belongsTo(alabasterCathedralFaction)).toBeTruthy()
-        expect(character.belongsTo(ironTavernFaction)).toBeFalsy()
+        expect(character.belongsTo(gildedOrderFaction.id)).toBeFalsy()
+        expect(character.belongsTo(alabasterCathedralFaction.id)).toBeTruthy()
+        expect(character.belongsTo(ironTavernFaction.id)).toBeFalsy()
     })
 })
 
@@ -100,6 +100,17 @@ describe('Character.damage', () => {
         expect(character.health).toBe(0)
         expect(character.isAlive).toBeFalsy()
         expect(character.isDead).toBeTruthy()
+    })
+
+
+    it('allies not should damage', () => {
+        const attacker = Character.create()
+        attacker.join(gildedOrderFaction)
+
+        const character = Character.create()
+        character.join(gildedOrderFaction)
+
+        expect(() => character.damage(attacker, 2000)).toThrowError()
     })
 })
 

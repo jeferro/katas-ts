@@ -14,6 +14,10 @@ export class Character {
   }
 
   damage(attacker: Character, damage: number) {
+    if(attacker.isAllies(this)){
+      throw new Error("Attacker is allies");
+    }
+
     const newDamage = attacker.level < 5
         ? damage * 0.5
         : damage * 1.5;
@@ -55,12 +59,22 @@ export class Character {
     this._factionIds.delete(faction.id)
   }
 
-  belongsTo(faction: Faction) : boolean {
-    return this._factionIds.has(faction.id)
+  belongsTo(factionId: number) : boolean {
+    return this._factionIds.has(factionId)
   }
 
   public get belongsToSomeFactory(): boolean {
     return this._factionIds.size > 0
+  }
+
+  private isAllies(other: Character): boolean {
+    for(const factoryId of this._factionIds) {
+      if(other.belongsTo(factoryId)) {
+        return true
+      }
+    }
+
+    return false
   }
 
   public get health(): number {
