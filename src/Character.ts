@@ -3,6 +3,8 @@ import {MagicalObject} from "./MagicalObject";
 
 export class Character {
 
+  private _maxHealth = 1000;
+
   constructor(private _health: number,
               private _level: number,
               private _factionIds: Set<number>) {
@@ -23,6 +25,10 @@ export class Character {
         ? damage * 0.5
         : damage * 1.5;
 
+    this.decreaseHealth(newDamage);
+  }
+
+  private decreaseHealth(newDamage: number) {
     this._health -= newDamage
 
     if (this._health < 0) {
@@ -54,7 +60,7 @@ export class Character {
     }
 
     const realIncrease = this._level < 6
-        ? this.calculateRealIncrease(increase, 1000)
+        ? this.calculateRealIncrease(increase, this._maxHealth)
         : this.calculateRealIncrease(increase, 1500);
 
     this._health += realIncrease
