@@ -58,9 +58,7 @@ export class Character {
       throw new Error('Health is already dead')
     }
 
-    const realIncrease = this._level < 6
-        ? this.calculateRealIncrease(increase, this._maxHealth)
-        : this.calculateRealIncrease(increase, this._maxHealth);
+    const realIncrease = this.calculateRealIncrease(increase, this._maxHealth)
 
     this._health += realIncrease
 
@@ -68,7 +66,9 @@ export class Character {
   }
 
   private calculateRealIncrease(increase: number, maxHealth: number) {
-    return this._health + increase > maxHealth ? maxHealth - this._health : increase;
+    return this._health + increase > this._maxHealth
+        ? this._maxHealth - this._health
+        : increase;
   }
 
   setLevel(level: number) {
