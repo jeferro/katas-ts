@@ -14,7 +14,7 @@ export class Character {
   }
 
   damage(attacker: Character, damage: number) {
-    if(attacker.isAllies(this)){
+    if (attacker.isAllies(this)) {
       throw new Error("Attacker is allies");
     }
 
@@ -34,29 +34,29 @@ export class Character {
   }
 
   healthFromAllies(other: Character, value: number) {
-    if(other.isNotAllies(this)) {
+    if (other.isNotAllies(this)) {
       throw new Error("Other character should belongs to same faction to health me");
     }
 
     this.increaseHealth(value)
   }
 
-  private increaseHealth(value: number) {
+  private increaseHealth(increase: number): number {
     if (this.isDead) {
       throw new Error('Health is already dead')
     }
 
-    this._health += value
+    const realIncrease = this._level < 6
+        ? this.calculateRealIncrease(increase, 1000)
+        : this.calculateRealIncrease(increase, 1500);
 
-    if (this._health > 1000 && this._level < 6) {
-      this._health = 1000
-      return
-    }
+    this._health += realIncrease
 
-    if (this._health > 1500) {
-      this._health = 1500
-      return
-    }
+    return realIncrease
+  }
+
+  private calculateRealIncrease(increase: number, maxHealth: number) {
+    return this._health + increase > maxHealth ? maxHealth - this._health : increase;
   }
 
   setLevel(level: number) {
@@ -71,7 +71,7 @@ export class Character {
     this._factionIds.delete(faction.id)
   }
 
-  belongsTo(factionId: number) : boolean {
+  belongsTo(factionId: number): boolean {
     return this._factionIds.has(factionId)
   }
 
@@ -80,8 +80,8 @@ export class Character {
   }
 
   private isAllies(other: Character): boolean {
-    for(const factoryId of this._factionIds) {
-      if(other.belongsTo(factoryId)) {
+    for (const factoryId of this._factionIds) {
+      if (other.belongsTo(factoryId)) {
         return true
       }
     }
