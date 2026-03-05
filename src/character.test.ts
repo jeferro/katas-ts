@@ -152,5 +152,28 @@ describe('Character.health', () => {
         expect(() => character.healthHimself(100)).toThrowError()
     })
 
+    it('allies should health character', () => {
+        const allies = Character.create()
+        allies.join(gildedOrderFaction)
+
+        const character = Character.create()
+        character.join(gildedOrderFaction)
+        character.setLevel(6)
+
+        character.healthFromAllies(allies, 100)
+
+        expect(character.health).toBe(1100)
+    })
+
+    it('non-allies should not health character', () => {
+        const notAllies = Character.create()
+        notAllies.join(ironTavernFaction)
+
+        const character = Character.create()
+        character.join(gildedOrderFaction)
+
+        expect(() => character.healthFromAllies(notAllies, 100)).toThrowError()
+    })
+
 
 })

@@ -30,6 +30,18 @@ export class Character {
   }
 
   healthHimself(value: number) {
+    this.increaseHealth(value);
+  }
+
+  healthFromAllies(other: Character, value: number) {
+    if(other.isNotAllies(this)) {
+      throw new Error("Other character should belongs to same faction to health me");
+    }
+
+    this.increaseHealth(value)
+  }
+
+  private increaseHealth(value: number) {
     if (this.isDead) {
       throw new Error('Health is already dead')
     }
@@ -75,6 +87,10 @@ export class Character {
     }
 
     return false
+  }
+
+  private isNotAllies(other: Character): boolean {
+    return !this.isAllies(other)
   }
 
   public get health(): number {
