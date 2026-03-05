@@ -19,16 +19,40 @@ describe('Character.create', () => {
 
 describe('Character.damage', () => {
 
-    it('should damage character in 100', () => {
-        const character = Character.create()
-        character.damage(100)
+    it('should damage character (reducing by 50% because attacker level is less than 5)', () => {
+        const attacker = Character.create()
 
-        expect(character.health).toBe(900)
+        const character = Character.create()
+        character.damage(attacker, 100)
+
+        expect(character.health).toBe(950)
+    })
+
+    it('should damage character (increased by 50% because attacker level is equals to 5)', () => {
+        const attacker = Character.create()
+        attacker.setLevel(5)
+
+        const character = Character.create()
+        character.damage(attacker, 100)
+
+        expect(character.health).toBe(850)
+    })
+
+    it('should damage character (increased by 50% because attacker level is greater than 5)', () => {
+        const attacker = Character.create()
+        attacker.setLevel(6)
+
+        const character = Character.create()
+        character.damage(attacker, 100)
+
+        expect(character.health).toBe(850)
     })
 
     it('should set health to 0 when damage is greater than health', () => {
+        const attacker = Character.create()
+
         const character = Character.create()
-        character.damage(2000)
+        character.damage(attacker, 2000)
 
         expect(character.health).toBe(0)
         expect(character.isAlive).toBeFalsy()
@@ -40,8 +64,10 @@ describe('Character.damage', () => {
 
 describe('Character.health', () => {
     it('should health themselves', () => {
+        const attacker = Character.create()
+
         const character = Character.create()
-        character.damage(100)
+        character.damage(attacker,200)
         character.addHealth(50)
 
         expect(character.health).toBe(950)
@@ -64,8 +90,10 @@ describe('Character.health', () => {
     })
 
     it('not should health themselves when character is dead', () => {
+        const attacker = Character.create()
+
         const character = Character.create()
-        character.damage(1000)
+        character.damage(attacker, 2000)
 
         expect(() => character.addHealth(100)).toThrowError()
     })
