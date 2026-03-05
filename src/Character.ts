@@ -1,6 +1,6 @@
 import {Faction} from "./Faction"
-import {MagicalObject} from "./objects/MagicalObject"
 import {CharacterHealth} from "./CharacterHealth";
+import {HealingMagicalObject} from "./objects/HealingMagicalObject";
 
 export class Character {
 
@@ -16,7 +16,7 @@ export class Character {
     return new Character(health,1, factions)
   }
 
-  damage(attacker: Character, damage: number) {
+  damageFromAttacker(attacker: Character, damage: number) {
     if (attacker.isAllies(this)) {
       throw new Error("Attacker is allies");
     }
@@ -40,10 +40,10 @@ export class Character {
     this._health.increase(value)
   }
 
-  healthFromMagicalObject(magicalObject: MagicalObject) {
-    const realIncrease = this._health.increase(magicalObject.health)
+  healthFromMagicalObject(healingMagicalObject: HealingMagicalObject) {
+    const realIncrease = this._health.increase(healingMagicalObject.health)
 
-    magicalObject.consume(realIncrease)
+    healingMagicalObject.consume(realIncrease)
   }
 
   setLevel(level: number) {

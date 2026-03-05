@@ -67,7 +67,7 @@ describe('Character.damage', () => {
         const attacker = Character.create()
 
         const character = Character.create()
-        character.damage(attacker, 100)
+        character.damageFromAttacker(attacker, 100)
 
         expect(character.health).toBe(950)
     })
@@ -77,7 +77,7 @@ describe('Character.damage', () => {
         attacker.setLevel(5)
 
         const character = Character.create()
-        character.damage(attacker, 100)
+        character.damageFromAttacker(attacker, 100)
 
         expect(character.health).toBe(850)
     })
@@ -87,7 +87,7 @@ describe('Character.damage', () => {
         attacker.setLevel(6)
 
         const character = Character.create()
-        character.damage(attacker, 100)
+        character.damageFromAttacker(attacker, 100)
 
         expect(character.health).toBe(850)
     })
@@ -96,7 +96,7 @@ describe('Character.damage', () => {
         const attacker = Character.create()
 
         const character = Character.create()
-        character.damage(attacker, 2000)
+        character.damageFromAttacker(attacker, 2000)
 
         expect(character.health).toBe(0)
         expect(character.isAlive).toBeFalsy()
@@ -111,7 +111,7 @@ describe('Character.damage', () => {
         const character = Character.create()
         character.join(gildedOrderFaction)
 
-        expect(() => character.damage(attacker, 2000)).toThrowError()
+        expect(() => character.damageFromAttacker(attacker, 2000)).toThrowError()
     })
 })
 
@@ -123,7 +123,7 @@ describe('Character.healthHimself', () => {
         const attacker = Character.create()
 
         const character = Character.create()
-        character.damage(attacker, 200)
+        character.damageFromAttacker(attacker, 200)
         character.healthHimself(50)
 
         expect(character.health).toBe(950)
@@ -149,7 +149,7 @@ describe('Character.healthHimself', () => {
         const attacker = Character.create()
 
         const character = Character.create()
-        character.damage(attacker, 2000)
+        character.damageFromAttacker(attacker, 2000)
 
         expect(() => character.healthHimself(100)).toThrowError()
     })
