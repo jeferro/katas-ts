@@ -1,3 +1,4 @@
+import {Cell} from "./Cell";
 
 export class BingoBoard {
   /**
@@ -12,12 +13,18 @@ export class BingoBoard {
    */
   private readonly marked: boolean[][];
 
+  private readonly board: Cell[][];
+
   constructor(width: number, height: number) {
     this.cells = Array.from({ length: width }, () =>
       Array.from({ length: height }, () => null)
     );
     this.marked = Array.from({ length: width }, () =>
       Array.from({ length: height }, () => false)
+    );
+
+    this.board = Array.from({ length: width }, (_, x) =>
+        Array.from({ length: height }, (_, y) => Cell.createEmpty())
     );
   }
 
@@ -27,15 +34,29 @@ export class BingoBoard {
     this.ensureValueIsNotUsed(value);
 
     this.cells[x][y] = value;
+    this.board[x][y].setValue(value)
   }
 
   markCell(x: number, y: number): void {
-    this.ensureCellsAreInitialized();
+    this.ensureCellsAreInitialized()
+
     this.marked[x][y] = true;
+    this.board[x][y].mark()
   }
 
   isMarked(x: number, y: number): boolean {
     return this.marked[x][y];
+  }
+
+  isInitialized(): boolean {
+    for (const row of this.cells) {
+      for (const col of row) {
+        if (col === null) {
+          return false;
+        }
+      }
+    }
+    return true;
   }
 
   /**
@@ -73,19 +94,5 @@ export class BingoBoard {
     if (!this.isInitialized()) {
       throw new Error("board not initialized");
     }
-  }
-
-  /**
-   * @deprecated
-   */
-  isInitialized(): boolean {
-    for (const row of this.cells) {
-      for (const col of row) {
-        if (col === null) {
-          return false;
-        }
-      }
-    }
-    return true;
   }
 }

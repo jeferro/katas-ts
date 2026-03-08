@@ -20,4 +20,12 @@ export class Cell {
   public get marked(): boolean {
     return this._marked
   }
+
+  setValue(value: string) {
+    this._value = value
+  }
+
+  mark() {
+    this._marked = true
+  }
 }
