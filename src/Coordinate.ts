@@ -11,4 +11,8 @@ export class Coordinate {
   static create(x: number, y: number): Coordinate {
     return new Coordinate(x, y)
   }
+
+  toKey(): string {
+    return `${this.x}:${this.y}`
+  }
 }

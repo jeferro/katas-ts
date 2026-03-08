@@ -9,8 +9,15 @@ export class Cell {
     this._marked = marked
   }
 
+  /**
+   * @deprecated
+   */
   static createEmpty(): Cell {
     return new Cell(undefined, false)
+  }
+
+  static create(value: string): Cell {
+    return new Cell(value, false)
   }
 
   setValue(value: string) {

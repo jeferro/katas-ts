@@ -1,8 +1,15 @@
 import {Cell} from "./Cell";
+import {Coordinate} from "./Coordinate";
 
 export class BingoBoard {
 
+  /**
+   * @deprecated
+   * @private
+   */
   private readonly board: Cell[][];
+
+  private readonly cells: Map<string, Cell> = new Map();
 
   constructor(width: number, height: number) {
     this.board = Array.from({ length: width }, () =>
@@ -11,17 +18,23 @@ export class BingoBoard {
   }
 
   defineCell(x: number, y: number, value: string): void {
+    const coordinate = Coordinate.create(x, y)
+
     this.ensureCellIsEmpty(x, y);
 
     this.ensureValueIsNotUsed(value);
 
     this.board[x][y].setValue(value)
+    this.cells.set(coordinate.toKey(), Cell.create(value))
   }
 
   markCell(x: number, y: number): void {
+    const coordinate = Coordinate.create(x, y)
+
     this.ensureCellsAreInitialized()
 
     this.board[x][y].mark()
+    this.cells.get(coordinate.toKey())!.mark()
   }
 
   isMarked(x: number, y: number): boolean {
