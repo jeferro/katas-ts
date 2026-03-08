@@ -1,10 +1,16 @@
+import {Coordinate} from "./Coordinate";
+
 export class Cell {
+  public readonly coordinate: Coordinate | undefined
+
   private _value: string | undefined
 
   private _marked: boolean
 
-  constructor(value: string | undefined,
+  constructor(coordinate: Coordinate | undefined,
+              value: string | undefined,
               marked: boolean) {
+    this.coordinate = coordinate
     this._value = value
     this._marked = marked
   }
@@ -13,11 +19,11 @@ export class Cell {
    * @deprecated
    */
   static createEmpty(): Cell {
-    return new Cell(undefined, false)
+    return new Cell(undefined, undefined, false)
   }
 
-  static create(value: string): Cell {
-    return new Cell(value, false)
+  static create(coordinate: Coordinate, value: string): Cell {
+    return new Cell(coordinate, value, false)
   }
 
   setValue(value: string) {

@@ -29,7 +29,7 @@ export class BingoBoard {
     this.ensureValueIsNotUsed(value);
 
     this.board[x][y].setValue(value)
-    this.cells.set(coordinate.toKey(), Cell.create(value))
+    this.cells.set(coordinate.toKey(), Cell.create(coordinate, value))
   }
 
   markCell(x: number, y: number): void {
@@ -64,13 +64,11 @@ export class BingoBoard {
   }
 
   private ensureValueIsNotUsed(value: string) {
-    for (let x = 0; x < this.board.length; x++) {
-      for (let y = 0; y < this.board[x].length; y++) {
-        if (value === this.board[x][y].value) {
-          throw new Error(`${value} already present at ${x},${y}`);
-        }
+    this.cells.forEach( cell => {
+      if(cell.value === value) {
+        throw new Error(`${value} already present at ${cell.coordinate!.x},${cell.coordinate!.y}`);
       }
-    }
+    });
   }
 
   private ensureCellsAreInitialized() {
