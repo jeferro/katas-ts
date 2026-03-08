@@ -1,5 +1,5 @@
-import {Cell} from "./Cell";
-import {Coordinate} from "./Coordinate";
+import {Cell} from "./Cell"
+import {Coordinate} from "./Coordinate"
 
 export class BingoBoard {
 
@@ -35,6 +35,10 @@ export class BingoBoard {
 
   isMarked(x: number, y: number): boolean {
     const coordinate = Coordinate.create(x, y)
+
+    if(!this.cells.has(coordinate.toKey())){
+      return false
+    }
 
     return this.cells.get(coordinate.toKey())!.marked
   }
