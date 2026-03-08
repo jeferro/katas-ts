@@ -1,33 +1,22 @@
 import {Coordinate} from "./Coordinate";
 
 export class Cell {
-  public readonly coordinate: Coordinate | undefined
+  public readonly coordinate: Coordinate
 
-  private _value: string | undefined
+  public readonly value: string
 
   private _marked: boolean
 
-  constructor(coordinate: Coordinate | undefined,
-              value: string | undefined,
+  constructor(coordinate: Coordinate,
+              value: string,
               marked: boolean) {
     this.coordinate = coordinate
-    this._value = value
+    this.value = value
     this._marked = marked
-  }
-
-  /**
-   * @deprecated
-   */
-  static createEmpty(): Cell {
-    return new Cell(undefined, undefined, false)
   }
 
   static create(coordinate: Coordinate, value: string): Cell {
     return new Cell(coordinate, value, false)
-  }
-
-  setValue(value: string) {
-    this._value = value
   }
 
   mark() {
@@ -36,17 +25,5 @@ export class Cell {
 
   public get marked(): boolean {
     return this._marked
-  }
-
-  public get value(): string | undefined {
-    return this._value
-  }
-
-  public get hasValue() : boolean {
-    return this._value !== undefined
-  }
-
-  public get hasNotValue(): boolean {
-    return !this.hasValue
   }
 }
