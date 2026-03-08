@@ -38,7 +38,9 @@ export class BingoBoard {
   }
 
   isMarked(x: number, y: number): boolean {
-    return this.board[x][y].marked;
+    const coordinate = Coordinate.create(x, y)
+
+    return this.cells.get(coordinate.toKey())!.marked
   }
 
   isInitialized(): boolean {
