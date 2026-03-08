@@ -9,9 +9,13 @@ export class BingoBoard {
    */
   private readonly board: Cell[][];
 
-  private readonly cells: Map<string, Cell> = new Map();
+  private readonly cells: Map<string, Cell> = new Map()
+
+  private readonly numCells: number
 
   constructor(width: number, height: number) {
+    this.numCells = width * height
+
     this.board = Array.from({ length: width }, () =>
         Array.from({ length: height }, () => Cell.createEmpty())
     );
@@ -44,14 +48,7 @@ export class BingoBoard {
   }
 
   isInitialized(): boolean {
-    for (const row of this.board) {
-      for (const cell of row) {
-        if (cell.hasNotValue) {
-          return false;
-        }
-      }
-    }
-    return true;
+    return this.cells.size === this.numCells
   }
 
   private ensureCellIsEmpty(x: number, y: number) {
