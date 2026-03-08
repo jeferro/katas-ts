@@ -59,23 +59,12 @@ export class BingoBoard {
     return true;
   }
 
-  /**
-   * @deprecated
-   * @param x
-   * @param y
-   * @private
-   */
   private ensureCellIsEmpty(x: number, y: number) {
     if (this.board[x][y].hasValue) {
       throw new Error("cell already defined");
     }
   }
 
-  /**
-   * @deprecated
-   * @param value
-   * @private
-   */
   private ensureValueIsNotUsed(value: string) {
     for (let x = 0; x < this.board.length; x++) {
       for (let y = 0; y < this.board[x].length; y++) {
@@ -86,10 +75,6 @@ export class BingoBoard {
     }
   }
 
-  /**
-   * @deprecated
-   * @private
-   */
   private ensureCellsAreInitialized() {
     if (!this.isInitialized()) {
       throw new Error("board not initialized");
