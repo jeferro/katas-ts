@@ -30,9 +30,7 @@ export class BingoBoard {
   }
 
   markCell(x: number, y: number): void {
-    if (!this.isInitialized()) {
-      throw new Error("board not initialized");
-    }
+    this.ensureCellsAreInitialized();
     this.marked[x][y] = true;
   }
 
@@ -67,6 +65,19 @@ export class BingoBoard {
     }
   }
 
+  /**
+   * @deprecated
+   * @private
+   */
+  private ensureCellsAreInitialized() {
+    if (!this.isInitialized()) {
+      throw new Error("board not initialized");
+    }
+  }
+
+  /**
+   * @deprecated
+   */
   isInitialized(): boolean {
     for (const row of this.cells) {
       for (const col of row) {
