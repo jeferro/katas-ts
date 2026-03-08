@@ -1,7 +1,7 @@
 export class Cell {
-  private _value: string | undefined;
+  private _value: string | undefined
 
-  private _marked: boolean;
+  private _marked: boolean
 
   constructor(value: string | undefined,
               marked: boolean) {
@@ -13,19 +13,23 @@ export class Cell {
     return new Cell(undefined, false)
   }
 
-  public get value(): string | undefined {
-    return this._value
-  }
-
-  public get marked(): boolean {
-    return this._marked
-  }
-
   setValue(value: string) {
     this._value = value
   }
 
   mark() {
     this._marked = true
+  }
+
+  public get marked(): boolean {
+    return this._marked
+  }
+
+  public get value(): string | undefined {
+    return this._value
+  }
+
+  public get hasValue() : boolean {
+    return this._value !== undefined
   }
 }

@@ -66,7 +66,7 @@ export class BingoBoard {
    * @private
    */
   private ensureCellIsEmpty(x: number, y: number) {
-    if (this.cells[x][y] !== null) {
+    if (this.board[x][y].hasValue) {
       throw new Error("cell already defined");
     }
   }
