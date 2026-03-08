@@ -32,4 +32,8 @@ export class Cell {
   public get hasValue() : boolean {
     return this._value !== undefined
   }
+
+  public get hasNotValue(): boolean {
+    return !this.hasValue
+  }
 }

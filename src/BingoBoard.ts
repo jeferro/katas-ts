@@ -49,9 +49,9 @@ export class BingoBoard {
   }
 
   isInitialized(): boolean {
-    for (const row of this.cells) {
-      for (const col of row) {
-        if (col === null) {
+    for (const row of this.board) {
+      for (const cell of row) {
+        if (cell.hasNotValue) {
           return false;
         }
       }
