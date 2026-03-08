@@ -1,5 +1,15 @@
+
 export class BingoBoard {
+  /**
+   * @deprecated
+   * @private
+   */
   private readonly cells: (string | null)[][];
+
+  /**
+   * @deprecated
+   * @private
+   */
   private readonly marked: boolean[][];
 
   constructor(width: number, height: number) {
@@ -12,17 +22,9 @@ export class BingoBoard {
   }
 
   defineCell(x: number, y: number, value: string): void {
-    if (this.cells[x][y] !== null) {
-      throw new Error("cell already defined");
-    }
+    this.ensureCellIsEmpty(x, y);
 
-    for (let c = 0; c < this.cells.length; c++) {
-      for (let r = 0; r < this.cells[c].length; r++) {
-        if (value === this.cells[c][r]) {
-          throw new Error(`${value} already present at ${c},${r}`);
-        }
-      }
-    }
+    this.ensureValueIsNotUsed(value);
 
     this.cells[x][y] = value;
   }
@@ -36,6 +38,33 @@ export class BingoBoard {
 
   isMarked(x: number, y: number): boolean {
     return this.marked[x][y];
+  }
+
+  /**
+   * @deprecated
+   * @param x
+   * @param y
+   * @private
+   */
+  private ensureCellIsEmpty(x: number, y: number) {
+    if (this.cells[x][y] !== null) {
+      throw new Error("cell already defined");
+    }
+  }
+
+  /**
+   * @deprecated
+   * @param value
+   * @private
+   */
+  private ensureValueIsNotUsed(value: string) {
+    for (let c = 0; c < this.cells.length; c++) {
+      for (let r = 0; r < this.cells[c].length; r++) {
+        if (value === this.cells[c][r]) {
+          throw new Error(`${value} already present at ${c},${r}`);
+        }
+      }
+    }
   }
 
   isInitialized(): boolean {
