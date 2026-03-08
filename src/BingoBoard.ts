@@ -55,8 +55,14 @@ export class BingoBoard {
   }
 
   private ensureCellIsEmpty(x: number, y: number) {
-    if (this.board[x][y].hasValue) {
-      throw new Error("cell already defined");
+    const coordinate = Coordinate.create(x, y)
+
+    if(!this.cells.has(coordinate.toKey())) {
+      return
+    }
+
+    if (this.cells.get(coordinate.toKey())!.hasValue) {
+      throw new Error("cell already defined")
     }
   }
 
