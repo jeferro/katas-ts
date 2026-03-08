@@ -77,9 +77,9 @@ export class BingoBoard {
    * @private
    */
   private ensureValueIsNotUsed(value: string) {
-    for (let c = 0; c < this.cells.length; c++) {
-      for (let r = 0; r < this.cells[c].length; r++) {
-        if (value === this.cells[c][r]) {
+    for (let c = 0; c < this.board.length; c++) {
+      for (let r = 0; r < this.board[c].length; r++) {
+        if (value === this.board[c][r].value) {
           throw new Error(`${value} already present at ${c},${r}`);
         }
       }
