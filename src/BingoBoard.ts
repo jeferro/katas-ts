@@ -45,7 +45,7 @@ export class BingoBoard {
   }
 
   isMarked(x: number, y: number): boolean {
-    return this.marked[x][y];
+    return this.board[x][y].marked;
   }
 
   isInitialized(): boolean {
