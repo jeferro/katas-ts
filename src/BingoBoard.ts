@@ -3,22 +3,26 @@ import {Coordinate} from "./Coordinate";
 
 export class BingoBoard {
 
-  private readonly cells: Map<string, Cell> = new Map()
+  private readonly cells: Map<string, Cell>
 
-  private readonly numCells: number
+  private readonly maxCells: number
 
   constructor(width: number, height: number) {
-    this.numCells = width * height
+    this.maxCells = width * height
+
+    this.cells = new Map()
   }
 
   defineCell(x: number, y: number, value: string): void {
     const coordinate = Coordinate.create(x, y)
 
-    this.ensureCellIsEmpty(x, y);
+    this.ensureCellIsEmpty(coordinate)
 
-    this.ensureValueIsNotUsed(value);
+    this.ensureValueIsNotUsed(value)
 
-    this.cells.set(coordinate.toKey(), Cell.create(coordinate, value))
+    const cell = Cell.create(coordinate, value)
+
+    this.cells.set(coordinate.toKey(), cell)
   }
 
   markCell(x: number, y: number): void {
@@ -36,12 +40,10 @@ export class BingoBoard {
   }
 
   isInitialized(): boolean {
-    return this.cells.size === this.numCells
+    return this.cells.size === this.maxCells
   }
 
-  private ensureCellIsEmpty(x: number, y: number) {
-    const coordinate = Coordinate.create(x, y)
-
+  private ensureCellIsEmpty(coordinate: Coordinate) {
     if(this.cells.has(coordinate.toKey())) {
       throw new Error("cell already defined")
     }
