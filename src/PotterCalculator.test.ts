@@ -28,4 +28,14 @@ describe('PotterCalculator', () => {
         expect(potterCalculator.calculate([0, 0, 1, 2, 2, 3])).toBe((8 * 4 * 0.8) + (8 * 2 * 0.95))
         expect(potterCalculator.calculate([0, 1, 1, 2, 3, 4])).toBe(8 + (8 * 5 * 0.75))
     })
+
+    it('should calculate edge discount', () => {
+        expect(potterCalculator.calculate([0, 0, 1, 1, 2, 2, 3, 4])).toBe((8 * 5 * 0.75) + (8 * 3 * 0.90))
+        expect(potterCalculator.calculate([
+            0, 0, 0, 0, 0,
+            1, 1, 1, 1, 1,
+            2, 2, 2, 2,
+            3, 3, 3, 3, 3,
+            4, 4, 4, 4])).toBe(((8 * 5 * 0.75) * 4) + (8 * 3 * 0.90))
+    })
 })
