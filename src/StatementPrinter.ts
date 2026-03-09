@@ -39,16 +39,16 @@ export class StatementPrinter {
   }
 
   private printText(invoice: Invoice, results: PlayResult[], totalAmount: number, totalCredits: number) {
-    let resultNew = `Statement for ${invoice.customer}\r\n\r\n`;
+    let resultText = `Statement for ${invoice.customer}\r\n\r\n`;
 
     results.forEach((result) => {
-      resultNew += `${result.play.name}: ${this.format(result.amount / 100)} (${result.audience} seats)\r\n`;
+      resultText += `${result.play.name}: ${this.format(result.amount / 100)} (${result.audience} seats)\r\n`;
     })
 
-    resultNew += `\r\nAmount owed is ${this.format(totalAmount / 100)}\r\n`;
-    resultNew += `You earned ${totalCredits} credits\r\n\r\n`;
+    resultText += `\r\nAmount owed is ${this.format(totalAmount / 100)}\r\n`;
+    resultText += `You earned ${totalCredits} credits\r\n\r\n`;
 
-    return resultNew;
+    return resultText;
   }
 }
 
