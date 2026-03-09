@@ -15,12 +15,11 @@ export class StatementPrinter {
 
     for (const perf of invoice.performances) {
       const play = plays[perf.playID];
-      let type = play.type;
       let audience = perf.audience;
 
       let thisAmount = play.calculateAmount(audience);
 
-      let credits = play.calculateCredits(audience, type);
+      let credits = play.calculateCredits(audience);
 
       volumeCredits += credits
 

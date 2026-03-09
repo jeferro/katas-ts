@@ -14,7 +14,7 @@ export abstract class Play {
 
   abstract calculateAmount(audience: number): number
 
-  abstract calculateCredits(audience: number, type: string): number
+  abstract calculateCredits(audience: number): number
 }
 
 class ComedyPlay extends Play {
@@ -33,7 +33,7 @@ class ComedyPlay extends Play {
     return amount + (300 * audience)
   }
 
-  calculateCredits(audience: number, type: string): number {
+  calculateCredits(audience: number): number {
     return Math.max(audience - 30, 0) + Math.floor(audience / 5)
   }
 }
@@ -54,7 +54,7 @@ class TragedyPlay extends Play {
     return amount;
   }
 
-  calculateCredits(audience: number, type: string): number {
+  calculateCredits(audience: number): number {
     return Math.max(audience - 30, 0)
   }
 }
