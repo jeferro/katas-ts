@@ -11,6 +11,12 @@ export class StatementPrinter {
   }).format;
 
   print(invoice: Invoice, plays: Record<string, Play>): string {
+    let invoiceResult = this.calculateInvoiceResult(invoice, plays);
+
+    return this.printTextInvoice(invoice, invoiceResult);
+  }
+
+  private calculateInvoiceResult(invoice: Invoice, plays: Record<string, Play>): InvoiceResult {
     let results = this.calculateResults(invoice, plays);
 
     const totalAmount = results.reduce(
@@ -22,8 +28,7 @@ export class StatementPrinter {
         (acc, result) => (acc + result.credits),
         0
     )
-
-    return this.printText(invoice, results, totalAmount, totalCredits);
+    return new InvoiceResult(results, totalAmount, totalCredits)
   }
 
   private calculateResults(invoice: Invoice, plays: Record<string, Play>) {
@@ -38,17 +43,27 @@ export class StatementPrinter {
     return results;
   }
 
-  private printText(invoice: Invoice, results: PlayResult[], totalAmount: number, totalCredits: number) {
+  private printTextInvoice(invoice: Invoice, result: InvoiceResult) {
     let resultText = `Statement for ${invoice.customer}\r\n\r\n`;
 
-    results.forEach((result) => {
+    result.results.forEach((result) => {
       resultText += `${result.play.name}: ${this.format(result.amount / 100)} (${result.audience} seats)\r\n`;
     })
 
-    resultText += `\r\nAmount owed is ${this.format(totalAmount / 100)}\r\n`;
-    resultText += `You earned ${totalCredits} credits\r\n\r\n`;
+    resultText += `\r\nAmount owed is ${this.format(result.totalAmount / 100)}\r\n`;
+    resultText += `You earned ${result.totalCredits} credits\r\n\r\n`;
 
     return resultText;
   }
+}
+
+export class InvoiceResult {
+
+  constructor(public readonly results: PlayResult[],
+              public readonly totalAmount: number,
+              public readonly totalCredits: number) {
+
+  }
+
 }
 
