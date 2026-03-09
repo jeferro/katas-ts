@@ -14,10 +14,14 @@ export class StatementPrinter {
     let totalAmount = 0;
     let volumeCredits = 0;
     let result = `Statement for ${invoice.customer}\r\n\r\n`;
+    let results : PlayResult[] = [];
 
     for (const perf of invoice.performances) {
       const play = plays[perf.playID];
       let audience = perf.audience;
+
+      const playResult = new PlayResult(play, audience);
+      results.push(playResult)
 
       let thisAmount = play.calculateAmount(audience);
       totalAmount += thisAmount;
