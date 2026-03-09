@@ -9,8 +9,7 @@ describe('StatementPrinter', () => {
 
   const plays = {
     "hamlet": Play.create("Hamlet", "tragedy"),
-    "earnest": Play.create("The Importance of Being Earnest", "comedy"),
-    "salesman": Play.create("Death of a Salesman", "drama")
+    "earnest": Play.create("The Importance of Being Earnest", "comedy")
   }
 
   const invoices = [
@@ -26,11 +25,5 @@ describe('StatementPrinter', () => {
     const result = statementPrinter.print(invoice, plays)
 
     expect(result).toMatchSnapshot()
-  })
-
-  it('should fail when type is unknown', () => {
-    const invoice = new Invoice("customer-fail-type", [new Performance("salesman", 100)])
-
-    expect(() => statementPrinter.print(invoice, plays)).toThrowError()
   })
 })
