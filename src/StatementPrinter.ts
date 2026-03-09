@@ -15,39 +15,46 @@ export class StatementPrinter {
 
     for (const perf of invoice.performances) {
       const play = plays[perf.playID];
-      let thisAmount = 0;
+      let type = play.type;
+      let audience = perf.audience;
 
-      switch (play.type) {
-        case "tragedy":
-          thisAmount = 40000;
-          if (perf.audience > 30) {
-            thisAmount += 1000 * (perf.audience - 30);
-          }
-          break;
+      let thisAmount = this.calculateAmount(type, audience);
 
-        case "comedy":
-          thisAmount = 30000;
-          if (perf.audience > 20) {
-            thisAmount += 10000 + 500 * (perf.audience - 20);
-          }
-          thisAmount += 300 * perf.audience;
-          break;
-
-        default:
-          throw new Error(`unknown type: ${play.type}`);
+      volumeCredits += Math.max(audience - 30, 0);
+      if (type === "comedy") {
+        volumeCredits += Math.floor(audience / 5);
       }
 
-      volumeCredits += Math.max(perf.audience - 30, 0);
-      if (play.type === "comedy") {
-        volumeCredits += Math.floor(perf.audience / 5);
-      }
-
-      result += `${play.name}: ${format(thisAmount / 100)} (${perf.audience} seats)\r\n`;
+      result += `${play.name}: ${format(thisAmount / 100)} (${audience} seats)\r\n`;
       totalAmount += thisAmount;
     }
 
     result += `\r\nAmount owed is ${format(totalAmount / 100)}\r\n`;
     result += `You earned ${volumeCredits} credits\r\n\r\n`;
     return result;
+  }
+
+  calculateAmount(type: string, audience: number) {
+    let thisAmount = 0;
+    switch (type) {
+      case "tragedy":
+        thisAmount = 40000;
+        if (audience > 30) {
+          thisAmount += 1000 * (audience - 30);
+        }
+        break;
+
+      case "comedy":
+        thisAmount = 30000;
+        if (audience > 20) {
+          thisAmount += 10000 + 500 * (audience - 20);
+        }
+        thisAmount += 300 * audience;
+        break;
+
+      default:
+        throw new Error(`unknown type: ${type}`);
+    }
+    return thisAmount;
   }
 }
