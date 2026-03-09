@@ -17,21 +17,21 @@ export class StatementPrinter {
   }
 
   private calculateInvoiceResult(invoice: Invoice, plays: Record<string, Play>): InvoiceResult {
-    let results = this.calculateResults(invoice, plays);
+    let playResults = this.calculatePlayResults(invoice, plays);
 
-    const totalAmount = results.reduce(
+    const totalAmount = playResults.reduce(
         (acc, result) => (acc + result.amount),
         0
     )
 
-    const totalCredits = results.reduce(
+    const totalCredits = playResults.reduce(
         (acc, result) => (acc + result.credits),
         0
     )
-    return new InvoiceResult(results, totalAmount, totalCredits)
+    return new InvoiceResult(playResults, totalAmount, totalCredits)
   }
 
-  private calculateResults(invoice: Invoice, plays: Record<string, Play>) {
+  private calculatePlayResults(invoice: Invoice, plays: Record<string, Play>) {
     let results: PlayResult[] = []
 
     for (const perf of invoice.performances) {
@@ -46,7 +46,7 @@ export class StatementPrinter {
   private printTextInvoice(invoice: Invoice, result: InvoiceResult) {
     let resultText = `Statement for ${invoice.customer}\r\n\r\n`;
 
-    result.results.forEach((result) => {
+    result.playResults.forEach((result) => {
       resultText += `${result.play.name}: ${this.format(result.amount / 100)} (${result.audience} seats)\r\n`;
     })
 
@@ -59,7 +59,7 @@ export class StatementPrinter {
 
 export class InvoiceResult {
 
-  constructor(public readonly results: PlayResult[],
+  constructor(public readonly playResults: PlayResult[],
               public readonly totalAmount: number,
               public readonly totalCredits: number) {
 
