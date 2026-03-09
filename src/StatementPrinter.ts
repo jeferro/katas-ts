@@ -20,7 +20,7 @@ export class StatementPrinter {
 
       let thisAmount = play.calculateAmount(audience);
 
-      let credits = Play.calculateCredits(audience, type);
+      let credits = play.calculateCredits(audience, type);
 
       volumeCredits += credits
 
