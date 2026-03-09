@@ -23,7 +23,7 @@ class ComedyPlay extends Play {
 
   calculateAmount(type: string, audience: number): number {
     let thisAmount = 0;
-    switch (type) {
+    switch (this.type) {
       case "tragedy":
         thisAmount = 40000;
         if (audience > 30) {
@@ -40,7 +40,7 @@ class ComedyPlay extends Play {
         break;
 
       default:
-        throw new Error(`unknown type: ${type}`);
+        throw new Error(`unknown type: ${this.type}`);
     }
     return thisAmount;
   }
@@ -54,7 +54,7 @@ class TragedyPlay extends Play {
 
   calculateAmount(type: string, audience: number): number {
     let thisAmount = 0;
-    switch (type) {
+    switch (this.type) {
       case "tragedy":
         thisAmount = 40000;
         if (audience > 30) {
@@ -71,7 +71,7 @@ class TragedyPlay extends Play {
         break;
 
       default:
-        throw new Error(`unknown type: ${type}`);
+        throw new Error(`unknown type: ${this.type}`);
     }
     return thisAmount;
   }
