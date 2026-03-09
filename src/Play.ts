@@ -4,9 +4,9 @@ export class Play {
   static create(name: string, type: string) : Play {
     switch (type) {
       case "comedy":
-        return new ComedyPlay(name, type)
+        return new ComedyPlay(name)
       case "tragedy":
-        return new TragedyPlay(name, type)
+        return new TragedyPlay(name)
       default:
         throw new Error("Unknown type " + type)
     }
@@ -15,14 +15,14 @@ export class Play {
 
 class ComedyPlay extends Play {
 
-  constructor(name: string, type: string) {
+  constructor(name: string) {
     super(name, "comedy")
   }
 }
 
 class TragedyPlay extends Play {
 
-  constructor(name: string, type: string) {
+  constructor(name: string) {
     super(name, "tragedy")
   }
 }
