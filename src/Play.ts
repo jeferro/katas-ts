@@ -23,25 +23,13 @@ class ComedyPlay extends Play {
 
   calculateAmount(audience: number): number {
     let thisAmount = 0;
-    switch (this.type) {
-      case "tragedy":
-        thisAmount = 40000;
-        if (audience > 30) {
-          thisAmount += 1000 * (audience - 30);
-        }
-        break;
 
-      case "comedy":
-        thisAmount = 30000;
-        if (audience > 20) {
-          thisAmount += 10000 + 500 * (audience - 20);
-        }
-        thisAmount += 300 * audience;
-        break;
-
-      default:
-        throw new Error(`unknown type: ${this.type}`);
+    thisAmount = 30000;
+    if (audience > 20) {
+      thisAmount += 10000 + 500 * (audience - 20);
     }
+    thisAmount += 300 * audience;
+
     return thisAmount;
   }
 }
@@ -54,25 +42,12 @@ class TragedyPlay extends Play {
 
   calculateAmount(audience: number): number {
     let thisAmount = 0;
-    switch (this.type) {
-      case "tragedy":
-        thisAmount = 40000;
-        if (audience > 30) {
-          thisAmount += 1000 * (audience - 30);
-        }
-        break;
 
-      case "comedy":
-        thisAmount = 30000;
-        if (audience > 20) {
-          thisAmount += 10000 + 500 * (audience - 20);
-        }
-        thisAmount += 300 * audience;
-        break;
-
-      default:
-        throw new Error(`unknown type: ${this.type}`);
+    thisAmount = 40000;
+    if (audience > 30) {
+      thisAmount += 1000 * (audience - 30);
     }
+
     return thisAmount;
   }
 }
