@@ -1,6 +1,6 @@
-import { Invoice } from "./Invoice";
-import { Play } from "./Play";
-import { Performance } from "./Performance";
+import {Invoice} from "./Invoice";
+import {Play} from "./Play";
+import {PlayResult} from "./PlayResult";
 
 export class StatementPrinter {
 
@@ -11,25 +11,21 @@ export class StatementPrinter {
   }).format;
 
   print(invoice: Invoice, plays: Record<string, Play>): string {
-    let totalAmount = 0;
-    let volumeCredits = 0;
-    let result = `Statement for ${invoice.customer}\r\n\r\n`;
-    let results : PlayResult[] = [];
+    let results : PlayResult[] = []
 
     for (const perf of invoice.performances) {
-      const play = plays[perf.playID];
-      let audience = perf.audience;
+      const play = plays[perf.playID]
 
-      const playResult = new PlayResult(play, audience);
+      const playResult = new PlayResult(play, perf.audience)
       results.push(playResult)
+    }
 
-      let thisAmount = play.calculateAmount(audience);
-      totalAmount += thisAmount;
+    let totalAmount = 0
+    let volumeCredits = 0
 
-      let credits = play.calculateCredits(audience);
-      volumeCredits += credits
-
-      result += `${play.name}: ${this.format(thisAmount / 100)} (${audience} seats)\r\n`;
+    for (const result of results) {
+      totalAmount += result.amount
+      volumeCredits += result.credits
     }
 
     let resultNew = `Statement for ${invoice.customer}\r\n\r\n`;
@@ -41,23 +37,7 @@ export class StatementPrinter {
     resultNew += `\r\nAmount owed is ${this.format(totalAmount / 100)}\r\n`;
     resultNew += `You earned ${volumeCredits} credits\r\n\r\n`;
 
-    result += `\r\nAmount owed is ${this.format(totalAmount / 100)}\r\n`;
-    result += `You earned ${volumeCredits} credits\r\n\r\n`;
-
     return resultNew;
   }
 }
 
-class PlayResult {
-  constructor(public readonly play: Play,
-              public readonly audience: number) {
-  }
-
-  public get amount(): number {
-    return this.play.calculateAmount(this.audience)
-  }
-
-  public get credits(): number {
-    return this.play.calculateCredits(this.audience)
-  }
-}
