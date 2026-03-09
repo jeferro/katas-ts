@@ -22,15 +22,13 @@ class ComedyPlay extends Play {
   }
 
   calculateAmount(audience: number): number {
-    let thisAmount = 0;
+    let amount = 30000
 
-    thisAmount = 30000;
     if (audience > 20) {
-      thisAmount += 10000 + 500 * (audience - 20);
+      amount += 10000 + 500 * (audience - 20)
     }
-    thisAmount += 300 * audience;
 
-    return thisAmount;
+    return amount + (300 * audience)
   }
 }
 
@@ -41,14 +39,13 @@ class TragedyPlay extends Play {
   }
 
   calculateAmount(audience: number): number {
-    let thisAmount = 0;
+    let amount = 40000
 
-    thisAmount = 40000;
     if (audience > 30) {
-      thisAmount += 1000 * (audience - 30);
+      amount += 1000 * (audience - 30)
     }
 
-    return thisAmount;
+    return amount;
   }
 }
 
