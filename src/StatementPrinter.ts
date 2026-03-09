@@ -20,10 +20,7 @@ export class StatementPrinter {
 
       let thisAmount = play.calculateAmount(audience);
 
-      let credits = Math.max(audience - 30, 0);
-      if (type === "comedy") {
-        credits += Math.floor(audience / 5);
-      }
+      let credits = Play.calculateCredits(audience, type);
 
       volumeCredits += credits
 

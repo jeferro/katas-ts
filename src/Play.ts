@@ -13,6 +13,14 @@ export abstract class Play {
   }
 
   abstract calculateAmount(audience: number): number;
+
+  static calculateCredits(audience: number, type: string) {
+    let credits = Math.max(audience - 30, 0);
+    if (type === "comedy") {
+      credits += Math.floor(audience / 5);
+    }
+    return credits;
+  }
 }
 
 class ComedyPlay extends Play {
