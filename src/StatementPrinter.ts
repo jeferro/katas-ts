@@ -3,6 +3,7 @@ import { Play } from "./Play";
 import { Performance } from "./Performance";
 
 export class StatementPrinter {
+
   private readonly format = new Intl.NumberFormat("en-US", {
     style: "currency",
     currency: "USD",
@@ -31,5 +32,19 @@ export class StatementPrinter {
     result += `You earned ${volumeCredits} credits\r\n\r\n`;
 
     return result;
+  }
+}
+
+class PlayResult {
+  constructor(public readonly play: Play,
+              public readonly audience: number) {
+  }
+
+  public get amount(): number {
+    return this.play.calculateAmount(this.audience)
+  }
+
+  public get credits(): number {
+    return this.play.calculateCredits(this.audience)
   }
 }
