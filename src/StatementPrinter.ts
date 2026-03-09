@@ -1,6 +1,7 @@
 import {Invoice} from "./Invoice";
 import {Play} from "./Play";
 import {PlayResult} from "./PlayResult";
+import {InvoiceResult} from "./InvoiceResult";
 
 export class StatementPrinter {
 
@@ -55,15 +56,5 @@ export class StatementPrinter {
 
     return resultText;
   }
-}
-
-export class InvoiceResult {
-
-  constructor(public readonly playResults: PlayResult[],
-              public readonly totalAmount: number,
-              public readonly totalCredits: number) {
-
-  }
-
 }
 
