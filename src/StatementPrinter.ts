@@ -18,7 +18,7 @@ export class StatementPrinter {
       let type = play.type;
       let audience = perf.audience;
 
-      let thisAmount = Play.calculateAmount(type, audience);
+      let thisAmount = play.calculateAmount(type, audience);
 
       volumeCredits += Math.max(audience - 30, 0);
       if (type === "comedy") {

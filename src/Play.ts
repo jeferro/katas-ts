@@ -1,4 +1,4 @@
-export class Play {
+export abstract class Play {
   constructor(public name: string, public type: string) {}
 
   static create(name: string, type: string) : Play {
@@ -12,7 +12,16 @@ export class Play {
     }
   }
 
-  static calculateAmount(type: string, audience: number) {
+  abstract calculateAmount(type: string, audience: number): number;
+}
+
+class ComedyPlay extends Play {
+
+  constructor(name: string) {
+    super(name, "comedy")
+  }
+
+  calculateAmount(type: string, audience: number): number {
     let thisAmount = 0;
     switch (type) {
       case "tragedy":
@@ -37,17 +46,34 @@ export class Play {
   }
 }
 
-class ComedyPlay extends Play {
-
-  constructor(name: string) {
-    super(name, "comedy")
-  }
-}
-
 class TragedyPlay extends Play {
 
   constructor(name: string) {
     super(name, "tragedy")
+  }
+
+  calculateAmount(type: string, audience: number): number {
+    let thisAmount = 0;
+    switch (type) {
+      case "tragedy":
+        thisAmount = 40000;
+        if (audience > 30) {
+          thisAmount += 1000 * (audience - 30);
+        }
+        break;
+
+      case "comedy":
+        thisAmount = 30000;
+        if (audience > 20) {
+          thisAmount += 10000 + 500 * (audience - 20);
+        }
+        thisAmount += 300 * audience;
+        break;
+
+      default:
+        throw new Error(`unknown type: ${type}`);
+    }
+    return thisAmount;
   }
 }
 
