@@ -12,7 +12,7 @@ export abstract class Play {
     }
   }
 
-  abstract calculateAmount(type: string, audience: number): number;
+  abstract calculateAmount(audience: number): number;
 }
 
 class ComedyPlay extends Play {
@@ -21,7 +21,7 @@ class ComedyPlay extends Play {
     super(name, "comedy")
   }
 
-  calculateAmount(type: string, audience: number): number {
+  calculateAmount(audience: number): number {
     let thisAmount = 0;
     switch (this.type) {
       case "tragedy":
@@ -52,7 +52,7 @@ class TragedyPlay extends Play {
     super(name, "tragedy")
   }
 
-  calculateAmount(type: string, audience: number): number {
+  calculateAmount(audience: number): number {
     let thisAmount = 0;
     switch (this.type) {
       case "tragedy":
