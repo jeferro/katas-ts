@@ -8,9 +8,9 @@ import {Play} from "./Play"
 describe('StatementPrinter', () => {
 
   const plays = {
-    "hamlet": new Play("Hamlet", "tragedy"),
-    "earnest": new Play("The Importance of Being Earnest", "comedy"),
-    "salesman": new Play("Death of a Salesman", "drama")
+    "hamlet": Play.create("Hamlet", "tragedy"),
+    "earnest": Play.create("The Importance of Being Earnest", "comedy"),
+    "salesman": Play.create("Death of a Salesman", "drama")
   }
 
   const invoices = [
