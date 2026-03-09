@@ -34,11 +34,7 @@ class ComedyPlay extends Play {
   }
 
   calculateCredits(audience: number, type: string): number {
-    let credits = Math.max(audience - 30, 0);
-    if (type === "comedy") {
-      credits += Math.floor(audience / 5);
-    }
-    return credits;
+    return Math.max(audience - 30, 0) + Math.floor(audience / 5)
   }
 }
 
@@ -59,11 +55,7 @@ class TragedyPlay extends Play {
   }
 
   calculateCredits(audience: number, type: string): number {
-    let credits = Math.max(audience - 30, 0);
-    if (type === "comedy") {
-      credits += Math.floor(audience / 5);
-    }
-    return credits;
+    return Math.max(audience - 30, 0)
   }
 }
 
