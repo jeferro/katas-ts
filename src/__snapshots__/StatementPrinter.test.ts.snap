@@ -1,0 +1,45 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`StatementPrinter > should pass invoice to customer: 'customer-test-1' 1`] = `
+"Statement for customer-test-1
+
+Hamlet: $1,100.00 (100 seats)
+
+Amount owed is $1,100.00
+You earned 70 credits
+
+"
+`;
+
+exports[`StatementPrinter > should pass invoice to customer: 'customer-test-2' 1`] = `
+"Statement for customer-test-2
+
+Hamlet: $400.00 (30 seats)
+
+Amount owed is $400.00
+You earned 0 credits
+
+"
+`;
+
+exports[`StatementPrinter > should pass invoice to customer: 'customer-test-3' 1`] = `
+"Statement for customer-test-3
+
+The Importance of Being Earnest: $1,100.00 (100 seats)
+
+Amount owed is $1,100.00
+You earned 90 credits
+
+"
+`;
+
+exports[`StatementPrinter > should pass invoice to customer: 'customer-test-4' 1`] = `
+"Statement for customer-test-4
+
+The Importance of Being Earnest: $360.00 (20 seats)
+
+Amount owed is $360.00
+You earned 4 credits
+
+"
+`;
