@@ -1,0 +1,12 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`StatementPrinter > should pass invoice to customer: 'customer-test-1' 1`] = `
+"Statement for customer-test-1
+
+Hamlet: $1,100.00 (100 seats)
+
+Amount owed is $1,100.00
+You earned 70 credits
+
+"
+`;
