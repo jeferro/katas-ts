@@ -17,11 +17,26 @@ export class StatementPrinter {
     let resultText = `Statement for ${invoice.customer}\r\n\r\n`;
 
     invoiceResult.playResults.forEach((playResult) => {
-      resultText += `${playResult.play.name}: ${this.format(playResult.amount / 100)} (${playResult.audience} seats)\r\n`;
+      resultText += `${playResult.play.name}: ${this.format(playResult.amount / 100)} (${playResult.audience} seats)\r\n`
     })
 
-    resultText += `\r\nAmount owed is ${this.format(invoiceResult.totalAmount / 100)}\r\n`;
-    resultText += `You earned ${invoiceResult.totalCredits} credits\r\n\r\n`;
+    resultText += `\r\nAmount owed is ${this.format(invoiceResult.totalAmount / 100)}\r\n`
+    resultText += `You earned ${invoiceResult.totalCredits} credits\r\n\r\n`
+
+    return resultText
+  }
+
+  printHtml(invoice: Invoice, plays: Record<string, Play>): string {
+    let invoiceResult = this.calculateInvoiceResult(invoice, plays);
+
+    let resultText = `<h1>Statement for ${invoice.customer}</h1>`;
+
+    invoiceResult.playResults.forEach((playResult) => {
+      resultText += `<p>${playResult.play.name}: ${this.format(playResult.amount / 100)} (${playResult.audience} seats)</p>`
+    })
+
+    resultText += `<p>Amount owed is ${this.format(invoiceResult.totalAmount / 100)}</p>`;
+    resultText += `<p>You earned ${invoiceResult.totalCredits} credits</p>`;
 
     return resultText
   }
