@@ -20,10 +20,12 @@ export class StatementPrinter {
 
       let thisAmount = play.calculateAmount(audience);
 
-      volumeCredits += Math.max(audience - 30, 0);
+      let credits = Math.max(audience - 30, 0);
       if (type === "comedy") {
-        volumeCredits += Math.floor(audience / 5);
+        credits += Math.floor(audience / 5);
       }
+
+      volumeCredits += credits
 
       result += `${play.name}: ${format(thisAmount / 100)} (${audience} seats)\r\n`;
       totalAmount += thisAmount;
