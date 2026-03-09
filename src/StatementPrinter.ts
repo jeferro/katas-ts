@@ -18,7 +18,7 @@ export class StatementPrinter {
       let type = play.type;
       let audience = perf.audience;
 
-      let thisAmount = this.calculateAmount(type, audience);
+      let thisAmount = Play.calculateAmount(type, audience);
 
       volumeCredits += Math.max(audience - 30, 0);
       if (type === "comedy") {
@@ -32,29 +32,5 @@ export class StatementPrinter {
     result += `\r\nAmount owed is ${format(totalAmount / 100)}\r\n`;
     result += `You earned ${volumeCredits} credits\r\n\r\n`;
     return result;
-  }
-
-  calculateAmount(type: string, audience: number) {
-    let thisAmount = 0;
-    switch (type) {
-      case "tragedy":
-        thisAmount = 40000;
-        if (audience > 30) {
-          thisAmount += 1000 * (audience - 30);
-        }
-        break;
-
-      case "comedy":
-        thisAmount = 30000;
-        if (audience > 20) {
-          thisAmount += 10000 + 500 * (audience - 20);
-        }
-        thisAmount += 300 * audience;
-        break;
-
-      default:
-        throw new Error(`unknown type: ${type}`);
-    }
-    return thisAmount;
   }
 }
