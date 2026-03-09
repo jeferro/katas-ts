@@ -14,8 +14,16 @@ export class Play {
 }
 
 class ComedyPlay extends Play {
+
+  constructor(name: string, type: string) {
+    super(name, "comedy")
+  }
 }
 
 class TragedyPlay extends Play {
+
+  constructor(name: string, type: string) {
+    super(name, "tragedy")
+  }
 }
 
