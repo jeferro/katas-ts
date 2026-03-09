@@ -11,7 +11,23 @@ export class StatementPrinter {
   }).format;
 
   print(invoice: Invoice, plays: Record<string, Play>): string {
-    let results : PlayResult[] = []
+    let results = this.calculateResults(invoice, plays);
+
+    const totalAmount = results.reduce(
+        (acc, result) => (acc + result.amount),
+        0
+    )
+
+    const totalCredits = results.reduce(
+        (acc, result) => (acc + result.credits),
+        0
+    )
+
+    return this.printText(invoice, results, totalAmount, totalCredits);
+  }
+
+  private calculateResults(invoice: Invoice, plays: Record<string, Play>) {
+    let results: PlayResult[] = []
 
     for (const perf of invoice.performances) {
       const play = plays[perf.playID]
@@ -19,15 +35,10 @@ export class StatementPrinter {
       const playResult = new PlayResult(play, perf.audience)
       results.push(playResult)
     }
+    return results;
+  }
 
-    let totalAmount = 0
-    let volumeCredits = 0
-
-    for (const result of results) {
-      totalAmount += result.amount
-      volumeCredits += result.credits
-    }
-
+  private printText(invoice: Invoice, results: PlayResult[], totalAmount: number, totalCredits: number) {
     let resultNew = `Statement for ${invoice.customer}\r\n\r\n`;
 
     results.forEach((result) => {
@@ -35,7 +46,7 @@ export class StatementPrinter {
     })
 
     resultNew += `\r\nAmount owed is ${this.format(totalAmount / 100)}\r\n`;
-    resultNew += `You earned ${volumeCredits} credits\r\n\r\n`;
+    resultNew += `You earned ${totalCredits} credits\r\n\r\n`;
 
     return resultNew;
   }
